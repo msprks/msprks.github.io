@@ -1,0 +1,62 @@
+
+*{
+  display:border-box;
+  font-family: sans-serif;
+}
+html, body{
+  height:100%;
+  width:100%;
+  margin:0px;
+  padding:0px;
+}
+
+a{
+  color:grey;
+  text-decoration: none;
+}
+a:hover{
+  color:black;
+}
+
+
+.top-bar{
+  position:fixed;
+  width:100%;
+  background: none;
+  height:5%;
+  font-size:2.5em;
+}
+.slide-container{
+  width:100%;
+  margin:auto;
+  margin-top:4%;
+  max-width:800px;
+  background: none;
+  margin-bottom:25%;
+
+}
+
+.slide{
+width:100%;
+}
+
+.slidevert{
+width:75%;
+margin-left:12.5%;
+}
+
+.caption{
+  margin-bottom:5em;
+  margin-top:.25em;
+  color:grey;
+
+}
+#zoom-container{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:red;
+}
+#zoom-slide{
+  height:100%;
+}
