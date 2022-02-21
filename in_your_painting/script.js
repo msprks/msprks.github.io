@@ -141,12 +141,12 @@ function poem9(){
 }
 
 function poem10(){
-  let poem = "In your studio I found the "+random(NOUNS)+" "+random(VERBSVBG);
+  let poem = "In your studio I noticed the "+random(NOUNS)+" "+random(VERBSVBG);
 	return poem;
 }
 
 function poem11(){
-  let poem = "In your painting I saw "+random(NOUNS)+" and "+random(NOUNS);
+  let poem = "In your painting I found the "+random(NOUNS);
 	return poem;
 }
 
