@@ -5,7 +5,7 @@ const NOUNS = ['portobello', 'king', 'patience', 'summertime', 'still life', 'vi
 const VERBS = ['run', 'float', 'make', 'profile', 'read', 'rest', 'get', 'taught', 'learnt', 'sleep', 'read', 'seated', 'rest', 'folded', 'stand', 'stand', 'dress', 'dream', 'sleep', 'sit', 'get'];
 const VERBSVB = [];
 const VERBSVBG = ['floating', 'reading', 'resting', 'sleeping', 'standing', 'dressing', 'dreaming', 'sleeping', 'sitting', 'getting up', 'sewing', 'looking', 'watching', 'thinking', 'talking', 'humming', 'singing', 'falling', 'posing'];
-const NAMES = ['Thérèse', 'André Derain', 'Katia', 'Joan', 'Joan Miró', 'Lady Abdy', 'Pierre Matisse', 'Cathy', 'Lelia Caetani'];
+const NAMES = ['Thérèse', 'André Derain', 'André', 'Katia', 'Joan', 'Joan Miró', 'Lady Abdy', 'Pierre',  'Matisse', 'Cathy', 'Lelia Caetani'];
 const ADJECTIVESJJ = ['london', 'precarious', 'blue', 'easter', 'eccentric', 'new', 'red', 'pink', 'special', 'red', 'greedy', 'white', 'Larchant',
  'golden', 'triangular', 'white', 'sill', 'pink', 'red', 'young', 'sleepy', 'nude', 'white', 'golden', 'golden', 'sleepy'];
 const VERBSPAST = ['laughed', 'asked', 'checked', 'kicked', 'looked', 'talked', 'walked','worked', 'crossed', 'dressed', 'guessed', 'missed', 'danced', 'brushed', 'crashed', 'pushed', 'rushed', 'reached', 'finished', 'fixed', 'relaxed', 'cheated', 'accepted', 'invented', 'departed', 'left', 'waited', 'avoided', 'decided', 'expanded', 'grew', 'pretended', 'succeeded', 'found it', 'appeared', 'considered', 'entered', 'remembered', 'arrived', 'observed', 'improved', 'buzzed', 'paused', 'turned', 'warned', 'carried', 'judged', 'questioned']
