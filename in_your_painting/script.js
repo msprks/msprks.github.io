@@ -121,7 +121,7 @@ function poem6(){
 }
 
 function poem7(){
-  let poem = "In your dream I watched the "+random(NOUNS)+" "+random(VERBSVBG);
+  let poem = "In your dream I watched my "+random(NOUNS)+" "+random(VERBSVBG);
 	return poem;
 }
 
@@ -141,12 +141,12 @@ function poem9(){
 }
 
 function poem10(){
-  let poem = "In your studio I found "+random(NOUNS)+" "+random(VERBSVBG);
+  let poem = "In your studio I found the "+random(NOUNS)+" "+random(VERBSVBG);
 	return poem;
 }
 
 function poem11(){
-  let poem = "In your painting I saw "+random(NOUNDS)+" and "+random(NOUNS);
+  let poem = "In your painting I saw "+random(NOUNS)+" and "+random(NOUNS);
 	return poem;
 }
 
