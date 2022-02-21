@@ -101,7 +101,7 @@ function poem4(){
 }
 
 function poem4a(){
-  let poem = "In your photo I spotted "+random(NAMES);
+  let poem = "In your photo I "+random(SPOTTED)+" "+random(NAMES);
   return poem;
 }
 
