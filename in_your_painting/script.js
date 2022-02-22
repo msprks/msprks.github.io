@@ -20,7 +20,7 @@ poemList=[
   poem10,
   // poem10a,
   poem11,
-  poem11a,
+  // poem11a,
 ];
 let p = 0;
 
@@ -101,7 +101,7 @@ function poem4(){
 }
 
 function poem4a(){
-  let poem = "In your photo I "+random(SPOTTED)+" "+random(NAMES);
+  let poem = "In your photo I saw "+random(NAMES);
   return poem;
 }
 
@@ -150,7 +150,7 @@ function poem11(){
 	return poem;
 }
 
-function poem11a(){
-  let poem = "In your "+random(NOUNS)+" I "+random(VERBSPAST);
-	return poem;
-}
+// function poem11a(){
+//   let poem = "In your "+random(NOUNS)+" I "+random(VERBSPAST);
+// 	return poem;
+// }
