@@ -20,7 +20,8 @@ poemList=[
   poem10,
   // poem10a,
   poem11,
-  // poem11a,
+  poem11a,
+  poem11b
 ];
 let p = 0;
 
@@ -147,6 +148,16 @@ function poem10(){
 
 function poem11(){
   let poem = "In your painting I saw the "+random(NOUNS);
+	return poem;
+}
+
+function poem11a(){
+  let poem = " ";
+	return poem;
+}
+
+function poem11b(){
+  let poem = " ";
 	return poem;
 }
 
