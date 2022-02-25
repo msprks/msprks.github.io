@@ -32,6 +32,10 @@ window.onload = ()=>{
   wrapper.addEventListener("click",()=>{
     makeNewPoem();
   });
+
+  wrapper.addEventListener("keypress",()=>{
+    makeNewPoem();
+  });
 }
 
 window.setInterval(flashCursor,500);

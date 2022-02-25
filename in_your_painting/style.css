@@ -13,7 +13,7 @@ html{
 body{
   height:100%;
   overflow:hidden;
-  cursor: cell;
+  cursor: pointer;
 }
 #backgroundimage {
   width:100%;
