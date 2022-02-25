@@ -139,7 +139,7 @@ function poem6(){
 }
 
 function poem7(){
-  let poem = "_in your dream I watched my "+random(NOUNS)+" "+random(VERBSVBG);
+  let poem = "_in your dream I watched "+random(MY)+" "+random(NOUNS)+" "+random(VERBSVBG);
 	return poem;
 }
 
@@ -164,7 +164,7 @@ function poem10(){
 }
 
 function poem11(){
-  let poem = "_in your painting I saw the "+random(NOUNS);
+  let poem = "_in your painting I saw my "+random(NOUNS);
 	return poem;
 }
 
