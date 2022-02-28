@@ -33,7 +33,7 @@ window.onload = ()=>{
     makeNewPoem();
   });
 
-  wrapper.addEventListener("keypress",()=>{
+  wrapper.addEventListener("keydown",()=>{
     makeNewPoem();
   });
 }
