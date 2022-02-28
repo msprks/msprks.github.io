@@ -15,7 +15,7 @@ html{
 body{
   height:100%;
   overflow:hidden;
-  /* padding-bottom: 10em; */
+  /* padding-bottom: 10%; */
   cursor: pointer;
 }
 #backgroundimage {
@@ -39,7 +39,7 @@ body{
       font-size: 2.5em;
       font-family: monospace;
       position: fixed;
-      bottom: 20px;
+      bottom: 10%;
       padding: 1em;
       font-weight: lighter;
 
