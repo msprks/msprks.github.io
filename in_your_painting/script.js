@@ -27,7 +27,7 @@ let p = 0;
 window.onload = ()=>{
 
   let wrapper = document.getElementById("body");
-  // makeNewPoem();
+  makeNewPoem();
 
   wrapper.addEventListener("click",()=>{
     makeNewPoem();
@@ -35,6 +35,7 @@ window.onload = ()=>{
 
   wrapper.addEventListener("keydown",()=>{
     makeNewPoem();
+    return false
   });
 }
 

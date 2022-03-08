@@ -5,6 +5,8 @@
   padding:0px;
   box-sizing: border-box;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
 }
 
 html{
