@@ -5,13 +5,11 @@ poemList=[
   // poem2a,
   poem3,
   poem3a,
-  // poem3b,
   poem4b,
   // poem4c,
   poem5,
   poem4,
   poem4a,
-  // poem5a,
   poem6,
   // poem6a,
   poem7,
@@ -25,7 +23,7 @@ poemList=[
   poem11,
   poem1a,
   poem1b,
-  poem11a
+  space1
 ];
 let p = 0;
 
@@ -120,24 +118,15 @@ function poem3(){
 }
 
 function poem3a(){
-	let poem = "and erased the part about my "+random(NOUNS);
+	let poem = "&#8205 and erased the part about my "+random(NOUNS)+"<br>&#8205";
 	return poem;
 }
 
-// function poem3b(){
-//   let poem = "_in your "+random(NOUNS)+" I "+random(VERBSPAST);
-// 	return poem;
-// }
 
 function poem4b(){
   let poem = "_in your photo I saw "+random(NAMES);
   return poem;
 }
-
-// function poem4c(){
-//   let poem = "looking "+random(ADJECTIVES);
-//   return poem;
-// }
 
 
 function poem5(){
@@ -145,10 +134,6 @@ function poem5(){
 	return poem;
 }
 
-// function poem5a(){
-//   let poem = "but only found "+random(NOUNSNN);
-// 	return poem;
-// }
 
 function poem4(){
   let poem = "_in your drawer I took your "+random(NOUNS);
@@ -156,7 +141,7 @@ function poem4(){
 }
 
 function poem4a(){
-  let poem = "and left the "+random(NOUNS)+" for later";
+  let poem = "&#8205 and left the "+random(NOUNS)+" for later"+"<br>&#8205";
 	return poem;
 }
 
@@ -182,7 +167,7 @@ function poem8(){
 }
 
 function poem8a(){
-  let poem = "and didn't rinse my dishes";
+  let poem = "&#8205 and didn't rinse my dishes"+"<br>&#8205";
 	return poem;
 }
 
@@ -202,16 +187,15 @@ function poem11(){
 }
 
 function poem1a(){
-	let poem = "with "+random(NOUNSNN)+" in one hand";
+	let poem = "&#8205 with "+random(NOUNSNN)+" in one hand";
 	return poem;
 }
 
 function poem1b(){
-	let poem = "and "+random(NOUNSNN)+" in the other";
+	let poem = "&#8205 and "+random(NOUNSNN)+" in the other";
   return poem;
 }
 
-function poem11a(){
-  let poem = "&#8205;";
-	return poem;
+function space1(){
+  return "&#8205;";
 }
