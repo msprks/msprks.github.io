@@ -118,7 +118,7 @@ function poem3(){
 }
 
 function poem3a(){
-	let poem = "&#8205 and erased the part about my "+random(NOUNS)+"<br>&#8205";
+	let poem = "_and erased the part about my "+random(NOUNS)+"<br>&#8205";
 	return poem;
 }
 
@@ -141,7 +141,7 @@ function poem4(){
 }
 
 function poem4a(){
-  let poem = "&#8205 and left the "+random(NOUNS)+" for later"+"<br>&#8205";
+  let poem = "_and left the "+random(NOUNS)+" for later"+"<br>&#8205";
 	return poem;
 }
 
@@ -167,7 +167,7 @@ function poem8(){
 }
 
 function poem8a(){
-  let poem = "&#8205 and didn't rinse my dishes"+"<br>&#8205";
+  let poem = "_and didn't rinse my dishes"+"<br>&#8205";
 	return poem;
 }
 
@@ -187,12 +187,12 @@ function poem11(){
 }
 
 function poem1a(){
-	let poem = "&#8205 with "+random(NOUNSNN)+" in one hand";
+	let poem = "_with "+random(NOUNSNN)+" in one hand";
 	return poem;
 }
 
 function poem1b(){
-	let poem = "&#8205 and "+random(NOUNSNN)+" in the other";
+	let poem = "_and "+random(NOUNSNN)+" in the other";
   return poem;
 }
 
