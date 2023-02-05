@@ -11,15 +11,19 @@
 
     <script>
 
+    function hide(ELEMENT){
+      let element = document.getElementById(ELEMENT);
+      element.style.display = "none";
+    }
+
     function toggle (ELEMENT){
       let element = document.getElementById(ELEMENT);
       if (element.style.display == "none"){
-      element.style.display = "block";
+        element.style.display = "inline-block";
       }
       else {
-      element.style.display = "none";
+        element.style.display = "none";
       }
-
     }
     </script>
 
@@ -33,23 +37,27 @@
 
     <div class="slide-container">
 
-      <p style="margin-left:10%; margin-right:10%; margin-top:7em">M.E. Sparks (she/her) is an artist and educator currently living in Winnipeg, MB, Treaty 1 Territory.
+      <img class="slide" style="width:100%;margin-bottom:1em;" alt="hood" src="images/web_alternator_postcard.jpg">
+
+      <div style="display:block; width:100%">
+          <a class="info-link" href="otherprojects.html"> OTHER PROJECTS </a>
+          <a class="info-link" href="archive.html"> PAST WORK </a>
+          <span class="info-link" onclick="hide('CV');toggle('insta');toggle('email')"> CONTACT </span>
+          <span class="info-link" onclick="hide('email');hide('insta');toggle('CV')"> CV </span>
+
+          <a class="info-link, toggles" id="CV" style="display:none;" target="blank" href="web_Sparks_CV2022.pdf"> Download </a>
+          <span class="toggles" id="email" style="display:none;" ><code>m.eliz.sparks</code>&#64;gmail&#46;com</span>
+          <a id="insta" style="display:none;" class="info-link, toggles" target="blank" href="https://www.instagram.com/msprks/"> @msprks </a> </span>
+
+        </div>
+      <p style="margin-left:0%; margin-right:0%; margin-top:2em; color:grey; font-size:.85em">M.E. Sparks (she/her) is an artist and educator currently living in Winnipeg, MB, Treaty 1 Territory.
         Sparks works primarily with paint and canvas. Through a practice of pulling apart and recombining borrowed forms, both art historical and autobiographical, she looks for the moment an image loses its representational solidity.
         Recently, she has been exploring material possibilities of un-stretched painted canvas. Paintings are cut apart, layered and draped in an effort to obstruct and reimagine both the pictorial space of painting and its historical narrative.
-        Sparks holds an MFA from Emily Carr University (Vancouver) and BFA from NSCAD University (Halifax). She is a recipient of project and research grants from Canada Council for the Arts, Winnipeg Arts Council, BC Arts Council, and Arts Nova Scotia.
+        <br><br>Sparks holds an MFA from Emily Carr University (Vancouver) and BFA from NSCAD University (Halifax). She is a recipient of project and research grants from Canada Council for the Arts, Winnipeg Arts Council, BC Arts Council, and Arts Nova Scotia.
         Recent exhibitions include <em>and a Rag in the Other</em> at the Alternator Centre for Contemporary Art (Kelowna, 2022), <em>We can only hint at this with words</em> at the Gordon Smith Gallery of Canadian Art (North Vancouver, 2022) and <em>A Fine Line</em> at Trapp Projects (Vancouver, 2021).
       <br> <br>
       </p>
 
-      <div> <a href="otherprojects.html"> <h4 style="margin-left:10%; margin-right:10%"> OTHER PROJECTS </h4> </a> </div>
-
-      <div> <a href="archive.html"> <h4 style="margin-left:10%; margin-right:10%"> PAST WORK </h4> </a> </div>
-
-      <div onclick="toggle('contact')"> <a> <h4 style="margin-left:10%; margin-right:10%"> CONTACT </h4></a> </div>
-      <div id="contact" style="display:none;"> <p style="margin-left:10%; margin-right:10%"> <code>m.eliz.sparks</code>&#64;gmail&#46;com <br><br> <a target="blank" href="https://www.instagram.com/msprks/"> @msprks </a> <p> </div>
-
-        <div onclick="toggle('CV')"> <a> <h4 style="margin-left:10%; margin-right:10%"> CV </h4> </a> </div>
-        <div id="CV" style="display:none;"> <p style="margin-left:10%; margin-right:10%"> <a target="blank" href="web_Sparks_CV2022.pdf"> Download </a> <p> </div>
 
 
   </div>

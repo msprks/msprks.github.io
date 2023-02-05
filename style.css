@@ -1,6 +1,6 @@
 
 *{
-  display:border-box;
+  box-sizing: border-box;
   font-family: sans-serif;
 }
 html, body{
@@ -18,6 +18,25 @@ a:hover{
   color:black;
 }
 
+.info-link{
+  display:inline-block;
+  padding:0.5em;
+  border-style:solid;
+  border-color:white;
+  color:grey;
+  text-decoration: none;
+  margin-right:1em;
+}
+.info-link:hover{
+    color:black;
+}
+.toggles{
+  padding:0.5em;
+  border-style: dashed;
+  border-color: grey;
+
+}
+
 
 .top-bar{
   position:fixed;
@@ -29,7 +48,7 @@ a:hover{
 .slide-container{
   width:100%;
   margin:auto;
-  margin-top:4%;
+  margin-top:1em;
   max-width:800px;
   background: none;
   margin-bottom:25%;
@@ -40,13 +59,15 @@ a:hover{
 .slide-container2{
   width:100%;
   margin:auto;
-  margin-top:4%;
-  max-width:600px;
+  margin-top:1em;
+  max-width:800px;
   background: none;
   margin-bottom:25%;
   font-size: .75em;
 
 }
+
+
 
 .slide{
 width:100%;
@@ -66,8 +87,8 @@ margin-left:12.5%;
 
 .caption2{
   margin-top:.75em;
-  color:black;
-  font-size: 1.15em;
+  color:grey;
+  font-size: 1.1em;
   padding-bottom: 4em;
 }
 
@@ -80,4 +101,10 @@ margin-left:12.5%;
 }
 #zoom-slide{
   height:100%;
+}
+
+@media screen and (min-width: 900px) {
+  .slide-container2{
+    width:50%;
+  }
 }
