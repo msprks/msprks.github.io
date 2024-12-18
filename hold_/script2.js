@@ -1,6 +1,6 @@
 poemList=[
   poem1c,
-  // poem1d,
+  poem1d,
   poem2,
   // poem2a,
   poem3,
@@ -106,7 +106,7 @@ function poem1c(){
   return poem;
 }
 
-function poem1a(){
+function poem1d(){
 let poem = "pull "+random(MY)+" "+random(NOUNS)+" from the "+random(NOUNS);
   return poem;
 }
