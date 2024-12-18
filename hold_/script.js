@@ -87,22 +87,22 @@ function random(wordArr){
 
 //poemsbelow
 
-function poem1c(){
+function poem1(){
 	let poem = "place "+random(MY)+" "+random(NOUNS)+" over the "+random(NOUNS);
   return poem;
 }
 
-function poem1a(){
+function poem2(){
 let poem = "pull "+random(MY)+" "+random(NOUNS)+" from the "+random(NOUNS);
   return poem;
 }
 
-function poem2(){
+function poem3(){
 let poem = "hold "+random(MY)+" "+random(NOUNS)+" "+random(ADVERBS);
   return poem;
 }
 
-function poem3(){
+function poem3a(){
 let poem = "slip behind "+random(MY)+" "+random(ADJECTIVESJJ)+" "+random(NOUNS);
   return poem;
 }
@@ -122,7 +122,7 @@ let poem = +random(VERBS)+" the pieces";
   return poem;
 }
 
-function poem5a(){
+function poem5(){
 let poem = +random(VERBS)+" the parts";
   return poem;
 }
