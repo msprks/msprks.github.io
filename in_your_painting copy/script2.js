@@ -1,25 +1,29 @@
 poemList=[
-  poem1,
+  poem1c,
+  // poem1d,
   poem2,
   // poem2a,
   poem3,
   poem3a,
+  poem4b,
+  // poem4c,
+  poem5,
   poem4,
   poem4a,
-  poem5,
-  // poem5a,
   poem6,
   // poem6a,
   poem7,
-  poem7a,
+  // poem7a,
   poem8,
-  // poem8a,
+  poem8a,
   poem9,
   // poem9a,
   poem10,
   // poem10a,
   poem11,
-  poem11a
+  poem1a,
+  poem1b,
+  space1
 ];
 let p = 0;
 
@@ -87,6 +91,16 @@ function random(wordArr){
 
 //poemsbelow
 
+// place (my) (noun) over the (noun)
+// pull (my)) (noun) from the (noun)
+// hold (my) (noun)(adverb)
+// slip behind (my) (adjec) (noun)
+// slide underneath (my) (adjec) (noun)
+// (verbs) the pieces
+// (verbs) the parts
+//
+
+
 function poem1c(){
 	let poem = "place "+random(MY)+" "+random(NOUNS)+" over the "+random(NOUNS);
   return poem;
@@ -133,10 +147,12 @@ let poem = " begin again with" +random(NOUNSNN);
 }
 
 
-// function poem1(){
-// 	let poem = "_in your house I was "+random(VERBSVBG)+" and "+random(VERBSVBG);
-// 	return poem;
-// }
+
+//
+// // function poem1d(){
+// //   let poem = "and "+random(VERBSVBG);
+// // 	return poem;
+// // }
 //
 // // function poem1a(){
 // //   let poem = "In your "+random(NOUNS)+" I "+random(VERBSPAST);
@@ -145,7 +161,7 @@ let poem = " begin again with" +random(NOUNSNN);
 //
 //
 // function poem2(){
-// 	let poem = "_in your chair I thought about my "+random(ADJECTIVES)+" "+random(NOUNS);
+// 	let poem = "_in your chair I thought about my "+random(NOUNS);
 // 	return poem;
 // }
 //
@@ -155,29 +171,33 @@ let poem = " begin again with" +random(NOUNSNN);
 // }
 //
 // function poem3a(){
-//   let poem = "_in your "+random(NOUNS)+" I "+random(VERBSPAST);
+// 	let poem = "_and erased the part about my "+random(NOUNS)+"<br>&#8205";
 // 	return poem;
 // }
 //
-// function poem4(){
-//   let poem = "_in your drawer I touched your "+random(ADJECTIVES)+" "+random(NOUNS);
-// 	return poem;
-// }
 //
-// function poem4a(){
+// function poem4b(){
 //   let poem = "_in your photo I saw "+random(NAMES);
 //   return poem;
 // }
+//
 //
 // function poem5(){
 //   let poem = "_in your closet I searched for the "+random(ADJECTIVES)+" "+random(NOUNS);
 // 	return poem;
 // }
 //
-// // function poem5a(){
-// //   let poem = "In your photo album I saw "+random(NAMES);
-// // 	return poem;
-// // }
+//
+// function poem4(){
+//   let poem = "_in your drawer I took your "+random(NOUNS);
+// 	return poem;
+// }
+//
+// function poem4a(){
+//   let poem = "_and left the "+random(NOUNS)+" for later"+"<br>&#8205";
+// 	return poem;
+// }
+//
 //
 // function poem6(){
 //   let poem = "_in your bed I uncovered my "+random(ADJECTIVES)+" "+random(NOUNS);
@@ -189,13 +209,18 @@ let poem = " begin again with" +random(NOUNSNN);
 // 	return poem;
 // }
 //
-// function poem7a(){
+// function poem7b(){
 //   let poem = "_in your "+random(NOUNS)+" I "+random(VERBSPAST);
 // 	return poem;
 // }
 //
 // function poem8(){
 //   let poem = "_in your kitchen I tasted "+random(ADJECTIVES)+" "+random(NOUNS);
+// 	return poem;
+// }
+//
+// function poem8a(){
+//   let poem = "_and didn't rinse my dishes"+"<br>&#8205";
 // 	return poem;
 // }
 //
@@ -210,11 +235,20 @@ let poem = " begin again with" +random(NOUNSNN);
 // }
 //
 // function poem11(){
-//   let poem = "_in your painting I saw my "+random(NOUNS);
+//   let poem = "_in your painting I saw myself";
 // 	return poem;
 // }
 //
-// function poem11a(){
-//   let poem = "&#8205;";
+// function poem1a(){
+// 	let poem = "_with "+random(NOUNSNN)+" in one hand";
 // 	return poem;
+// }
+//
+// function poem1b(){
+// 	let poem = "_and "+random(NOUNSNN)+" in the other";
+//   return poem;
+// }
+//
+// function space1(){
+//   return "&#8205;";
 // }
