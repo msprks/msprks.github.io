@@ -119,7 +119,7 @@ let poem = "pull apart "+random(MY)+" "+random(ADJECTIVESJJ)+" "+random(NOUNS)+"
 }
 
 function poem9(){
-let poem = "and after " +random(VERBSVBG)+" begin again. ";
+let poem = "and after " +random(VERBSVBG)+","+" begin again. ";
   return poem;
 }
 
