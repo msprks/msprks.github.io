@@ -29,9 +29,9 @@ body{
 #poem{
 
 }
-/* #cursor{
-  color:white;
-} */
+#cursor{
+  color:chartreuse;
+}
 #outputwrapper {
       display:block;
       /* left:50%;
