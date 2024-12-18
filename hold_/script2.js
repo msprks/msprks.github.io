@@ -81,7 +81,7 @@ function poem1(){
 }
 
 function poem2(){
-let poem = "hold "+random(MY)+" "+random(NOUNS)+" from the "+random(NOUNS);
+let poem = "hold "+random(MY)+" "+random(NOUNS)+" from "+random(NOUNS);
   return poem;
 }
 
