@@ -15,11 +15,10 @@ html{
 }
 
 body {
-        display: flex;
         align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        height: 100vh;
+        height: 100%;
+        overflow: hidden;
+        cursor: pointer;
       }
 
 /* body{
