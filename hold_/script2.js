@@ -1,28 +1,12 @@
 poemList=[
-  poem1c,
-  poem1d,
+  poem1,
   poem2,
-  // poem2a,
   poem3,
-  poem3a,
-  poem4b,
-  // poem4c,
-  poem5,
   poem4,
-  poem4a,
+  poem5,
   poem6,
-  // poem6a,
   poem7,
-  // poem7a,
   poem8,
-  poem8a,
-  poem9,
-  // poem9a,
-  poem10,
-  // poem10a,
-  poem11,
-  poem1a,
-  poem1b,
   space1
 ];
 let p = 0;
@@ -101,47 +85,47 @@ function random(wordArr){
 //
 
 
-function poem1c(){
+function poem1(){
 	let poem = "place "+random(MY)+" "+random(NOUNS)+" over the "+random(NOUNS);
   return poem;
 }
 
-function poem1d(){
+function poem2(){
 let poem = "pull "+random(MY)+" "+random(NOUNS)+" from the "+random(NOUNS);
   return poem;
 }
 
-function poem2(){
+function poem3(){
 let poem = "hold "+random(MY)+" "+random(NOUNS)+" "+random(ADVERBS);
   return poem;
 }
 
-function poem3(){
+function poem4(){
 let poem = "slip behind "+random(MY)+" "+random(ADJECTIVESJJ)+" "+random(NOUNS);
   return poem;
 }
 
-function poem4(){
+function poem5(){
 let poem = +random(VERBS)+" "+random(MY)+" "+random(NOUNS);
   return poem;
 }
 
-function poem4a(){
+function poem6(){
 let poem = "slide underneath "+random(MY)+" "+random(ADJECTIVESJJ)+" "+random(NOUNS);
   return poem;
 }
 
-function poem5(){
+function poem7(){
 let poem = +random(VERBS)+" the pieces";
   return poem;
 }
 
-function poem5a(){
+function poem8(){
 let poem = +random(VERBS)+" the parts";
   return poem;
 }
 
-function poem6(){
+function poem7(){
 let poem = " begin again with" +random(NOUNSNN);
   return poem;
 }
