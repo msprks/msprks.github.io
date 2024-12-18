@@ -6,8 +6,7 @@ poemList=[
   poem5,
   poem6,
   poem7,
-  poem8,
-  space1
+  poem8
 ];
 let p = 0;
 
