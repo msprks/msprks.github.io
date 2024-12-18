@@ -124,7 +124,7 @@ let poem = "and after " +random(VERBSVBG)+" begin again. ";
 }
 
 function poem10(){
-let poem = "  ";
+let poem = " _____________________________________ ";
   return poem;
 }
 
