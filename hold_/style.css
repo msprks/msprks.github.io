@@ -11,14 +11,22 @@
 
 html{
   height:100%;
-  background:#CCFF99;
+  background:chartreuse;
 }
 
-body{
+body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        height: 100vh;
+      }
+
+/* body{
   height:100%;
   overflow:hidden;
   cursor: pointer;
-}
+} */
 #backgroundimage {
   width:100%;
   height:100%;
