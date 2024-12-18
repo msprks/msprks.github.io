@@ -79,7 +79,7 @@ function random(wordArr){
 
 
 function poem1(){
-	let poem = "hold "+random(NOUNSNN)+" and lift "+random(NOUNSNN)+",";
+	let poem = "hold "+random(NOUNSNN)+" and lift "+random(NOUNS)+",";
   return poem;
 }
 
