@@ -84,7 +84,7 @@ function poem1(){
 }
 
 function poem2(){
-let poem = "place "+random(MY)+" "+random(NOUNS)+" over "+random(NOUNSNN)+", ";
+let poem = "place "+random(MY)+" "+random(NOUNS)+"over "+random(MY)+" "+random(NOUNS)+", ";
   return poem;
 }
 
@@ -104,7 +104,7 @@ let poem = "push "+random(MY)+" "+random(NOUNS)+", ";
 }
 
 function poem6(){
-let poem = "slide under "+random(MY)+" "+random(ADJECTIVESJJ)+" "+random(NOUNS)+", ";
+let poem = "slide under "+random(MY)+" "+random(NOUNS)+", ";
   return poem;
 }
 
