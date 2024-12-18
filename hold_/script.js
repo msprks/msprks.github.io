@@ -38,18 +38,19 @@ window.onload = ()=>{
   });
 }
 
-window.setInterval(flashCursor,500);
+// FLASHING CURSOR
+// window.setInterval(flashCursor,500);
 
-function flashCursor(){
-  let cursor = document.getElementById("cursor");
-
-  if(cursor.style.color == "black"){
-    cursor.style.color = "white";
-  }else{
-    cursor.style.color = "black";
-  }
-
-}
+// function flashCursor(){
+//   let cursor = document.getElementById("cursor");
+//
+//   if(cursor.style.color == "black"){
+//     cursor.style.color = "white";
+//   }else{
+//     cursor.style.color = "black";
+//   }
+//
+// }
 
 function makeNewPoem(){
   //  let image = document.getElementById("backgroundimage");

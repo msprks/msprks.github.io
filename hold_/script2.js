@@ -6,7 +6,9 @@ poemList=[
   poem5,
   poem6,
   poem7,
-  poem8
+  poem8,
+  poem9,
+  poem10
 ];
 let p = 0;
 
@@ -25,18 +27,19 @@ window.onload = ()=>{
   });
 }
 
-window.setInterval(flashCursor,500);
-
-function flashCursor(){
-  let cursor = document.getElementById("cursor");
-
-  if(cursor.style.color == "black"){
-    cursor.style.color = "white";
-  }else{
-    cursor.style.color = "black";
-  }
-
-}
+// FLASHING CURSOR
+// window.setInterval(flashCursor,500);
+//
+// function flashCursor(){
+//   let cursor = document.getElementById("cursor");
+//
+//   if(cursor.style.color == "black"){
+//     cursor.style.color = "white";
+//   }else{
+//     cursor.style.color = "black";
+//   }
+//
+// }
 
 function makeNewPoem(){
   //  let image = document.getElementById("backgroundimage");
@@ -76,17 +79,17 @@ function random(wordArr){
 
 
 function poem1(){
-	let poem = "place "+random(MY)+" "+random(NOUNS)+" over the "+random(NOUNS);
+	let poem = "hold "+random(MY)+" "+random(NOUNS)+" and lift the "+random(NOUNS);
   return poem;
 }
 
 function poem2(){
-let poem = "hold "+random(MY)+" "+random(NOUNS)+" from "+random(NOUNS);
+let poem = "place "+random(MY)+" "+random(NOUNS)+" over "+random(NOUNS);
   return poem;
 }
 
 function poem3(){
-let poem = "lift "+random(MY)+" "+random(NOUNS)+" "+random(ADVERBS);
+let poem = "give "+random(MY)+" "+random(NOUNS)+" "+random(ADVERBS);
   return poem;
 }
 
@@ -115,11 +118,15 @@ let poem = "pull apart "+random(MY)+" "+random(ADJECTIVESJJ)+" "+random(NOUNS);
   return poem;
 }
 
-function poem7(){
+function poem9(){
 let poem = "begin again with " +random(VERBSVBG);
   return poem;
 }
 
+function poem10(){
+let poem = "  ";
+  return poem;
+}
 
 
 //
