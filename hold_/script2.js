@@ -84,7 +84,7 @@ function poem1(){
 }
 
 function poem2(){
-let poem = "place "+random(MY)+" "+random(NOUNS)+"over "+random(MY)+" "+random(NOUNS)+", ";
+let poem = "place "+random(MY)+" "+random(NOUNS)+"  over "+random(MY)+" "+random(NOUNS)+", ";
   return poem;
 }
 
