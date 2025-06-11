@@ -45,6 +45,15 @@ a:hover{
   height:5%;
   font-size:2.5em;
 }
+
+.top-bar2{
+  position:fixed;
+  width:100%;
+  background: none;
+  height:5%;
+  font-size:1.5em;
+}
+
 .slide-container{
   width:100%;
   margin:auto;
