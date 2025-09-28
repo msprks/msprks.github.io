@@ -29,7 +29,7 @@ function setup() {
   textFont('Courier New');
   textSize(50);
 
-  for(let i=0; i<5; i++){
+  for(let i=0; i<15; i++){
   	t_pt.push({
   		x: random(width),
   		y: random(height),
