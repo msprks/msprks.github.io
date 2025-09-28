@@ -28,7 +28,7 @@ function setup() {
   blendMode(BLEND);
   textFont('Courier New');
   textSize(50);
-  
+
   for(let i=0; i<5; i++){
   	t_pt.push({
   		x: random(width),
@@ -36,7 +36,7 @@ function setup() {
   		n: i
   	});
   }
-  
+
   for(let i=0; i<5; i++){
 		pt.push({
 		x: random(width),
@@ -67,14 +67,14 @@ function draw() {
 			image(img[pt[i].n%img.length], 0, 0);
 			pop();
 	}
-  
+
  	for(let i=0;i<t_pt.length;i++){
      fill(255);
      blendMode(BLEND);
-     text(NOUNS[i],t_pt[i].x,t_pt[i].y);
-     text(VERBS[i],t_pt[i].y,t_pt[i].x);
+     text(CHATGPT[i],t_pt[i].x,t_pt[i].y);
+     text(NOUNSNN[i],t_pt[i].y,t_pt[i].x);
    }
-   
+
    if(frameCount%50==0){
    	k++;
    	print(k%t_pt.length);
