@@ -73,8 +73,7 @@ function draw() {
      blendMode(BLEND);
      text(CHATGPT[i],t_pt[i].x,t_pt[i].y);
      text(NOUNSNN[i],t_pt[i].y,t_pt[i].x);
-		 text(ADVERBS[i],t_pt[i].y,t_pt[i].x);
-		 text(VERBS[i],t_pt[i].x,t_pt[i].y);
+
    }
 
    if(frameCount%50==0){
