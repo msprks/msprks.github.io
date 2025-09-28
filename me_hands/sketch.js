@@ -68,11 +68,22 @@ function draw() {
 			pop();
 	}
 
- 	for(let i=0;i<t_pt.length;i++){
-     fill(255);
-     blendMode(BLEND);
-     text(CHATGPT[i],t_pt[i].x,t_pt[i].y);
-     text(NOUNSNN[i],t_pt[i].y,t_pt[i].x);
+ 	// for(let i=0;i<t_pt.length;i++){
+  //    fill(255);
+  //    blendMode(BLEND);
+  //    text(CHATGPT[i],t_pt[i].x,t_pt[i].y);
+  //    text(NOUNSNN[i],t_pt[i].y,t_pt[i].x);
+
+	for (let i = 0; i < t_pt.length; i++) {
+    fill(255);
+    blendMode(BLEND);
+
+    // Pick a random index from each array
+    let randChatGPT = CHATGPT[int(random(CHATGPT.length))];
+    let randNoun = NOUNSNN[int(random(NOUNSNN.length))];
+
+    text(randChatGPT, t_pt[i].x, t_pt[i].y);
+    text(randNoun, t_pt[i].y, t_pt[i].x);
 
    }
 
