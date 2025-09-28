@@ -29,7 +29,7 @@ function setup() {
   textFont('Courier New');
   textSize(50);
 
-  for(let i=0; i<5; i++){
+  for(let i=0; i<150; i++){
   	t_pt.push({
   		x: random(width),
   		y: random(height),
@@ -73,7 +73,6 @@ function draw() {
      blendMode(BLEND);
      text(CHATGPT[i],t_pt[i].x,t_pt[i].y);
      text(NOUNSNN[i],t_pt[i].y,t_pt[i].x);
-
    }
 
    if(frameCount%50==0){
