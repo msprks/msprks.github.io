@@ -74,17 +74,28 @@ function draw() {
   //    text(CHATGPT[i],t_pt[i].x,t_pt[i].y);
   //    text(NOUNSNN[i],t_pt[i].y,t_pt[i].x);
 
-	for (let i = 0; i < t_pt.length; i++) {
-    fill(255);
-    blendMode(BLEND);
+	let selectedChatGPT = [];
+	let selectedNoun = [];
 
-    // Pick a random index from each array
-    let randChatGPT = CHATGPT[int(random(CHATGPT.length))];
-    let randNoun = NOUNSNN[int(random(NOUNSNN.length))];
+	function setup() {
+	    createCanvas(800, 800); // or whatever your canvas size is
 
-    text(randChatGPT, t_pt[i].x, t_pt[i].y);
-    text(randNoun, t_pt[i].y, t_pt[i].x);
+	    // Assuming t_pt is already defined/populated before this
+	    for (let i = 0; i < t_pt.length; i++) {
+	        selectedChatGPT.push(CHATGPT[int(random(CHATGPT.length))]);
+	        selectedNoun.push(NOUNSNN[int(random(NOUNSNN.length))]);
+	    }
+	}
 
+	function draw() {
+	    background(0); // clear background each frame if needed
+	    fill(255);
+	    blendMode(BLEND);
+
+	    for (let i = 0; i < t_pt.length; i++) {
+	        text(selectedChatGPT[i], t_pt[i].x, t_pt[i].y);
+	        text(selectedNoun[i], t_pt[i].y, t_pt[i].x);
+	    }
    }
 
    if(frameCount%50==0){
