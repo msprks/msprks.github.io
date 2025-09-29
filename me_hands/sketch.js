@@ -29,7 +29,7 @@ function setup() {
   textFont('Courier New');
   textSize(50);
 
-  for(let i=0; i<15; i++){
+  for(let i=0; i<5; i++){
   	t_pt.push({
   		x: random(width),
   		y: random(height),
@@ -57,7 +57,7 @@ function draw() {
 			if(pt[i].y > height){
 				pt[i].y = 0;
 				pt[i].x = random(width);
-				pt[i].s = random(1,2);
+				pt[i].s = random(0.25,1);
 				pt[i].n++;
 			}
 			push();
@@ -71,16 +71,16 @@ function draw() {
  	for(let i=0;i<t_pt.length;i++){
      fill(255);
      blendMode(BLEND);
-     text(CHATGPT[i],t_pt[i].x,t_pt[i].y);
-     text(NOUNSNN[i],t_pt[i].y,t_pt[i].x);
+     text(CHATGPT[t_pt[i].n],t_pt[i].x,t_pt[i].y);
+    // text(NOUNSNN[i],t_pt[i].y,t_pt[i].x);
    }
 
-   if(frameCount%50==0){
+   if(frameCount%95==0){
    	k++;
    	print(k%t_pt.length);
    	t_pt[k%t_pt.length].x = random(width);
    	t_pt[k%t_pt.length].y = random(height);
-   	t_pt[k%t_pt.length].n = floor(random(0,t_pt.length));
+   	t_pt[k%t_pt.length].n = floor(random(0,CHATGPT.length));
    }
 
 }
