@@ -24,6 +24,7 @@ function preload() {
 function setup() {
   background(0);
   createCanvas(windowWidth, windowHeight);
+	fullscreen();
   imageMode(CENTER);
   blendMode(BLEND);
   textFont('Courier New');
