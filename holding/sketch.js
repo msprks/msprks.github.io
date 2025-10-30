@@ -24,7 +24,7 @@ function preload() {
 
 function setup() {
   background(0);
-  createCanvas(1080, 2400);
+  createCanvas(windowWidth, windowHeight);
 	fullscreen();
   imageMode(CENTER);
   blendMode(BLEND);
