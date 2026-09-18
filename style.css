@@ -179,6 +179,19 @@ button.info-link {
   width: max-content;
 }
 
+.video-coming-soon-row {
+  margin-top: 1.5em;
+}
+
+.texts-coming-soon-row {
+  margin-top: 1.5em;
+}
+
+.video-coming-soon-row .video-coming-soon,
+.texts-coming-soon-row .texts-coming-soon {
+  margin-top: 0;
+}
+
 .images-coming-soon {
   display: inline-block;
   margin-top: 0.5em;
@@ -683,9 +696,13 @@ button.info-link {
     margin-top: 2em;
   }
 
-  .video-coming-soon,
-  .texts-coming-soon {
-    flex-basis: max-content;
+  .video-coming-soon-row {
+    flex-basis: 100%;
+    margin-top: 1em;
+  }
+
+  .texts-coming-soon-row {
+    flex-basis: 100%;
     margin-top: 1em;
   }
 
