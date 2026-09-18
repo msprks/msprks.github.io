@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ace Art — M.E. Sparks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+  </head>
+
+  <body class="exhibition-page aceart-page">
+    <header class="top-bar">
+      <a class="site-title" href="index.html">M.E. Sparks</a>
+      <nav class="site-navigation" aria-label="Main navigation">
+        <a href="index.html">painting</a>
+        <a href="video.html">video</a>
+        <a href="otherprojects.html">other projects</a>
+        <a href="info.html">about</a>
+        <span class="exhibition-text-nav perennial-info-link"><em>Perennial</em>, 2025<br>ace<strong>art</strong>inc.<br><a href="aceart-text.html">exhibition text</a></span>
+      </nav>
+    </header>
+    <div class="site-header-spacer"></div>
+
+    <main class="slide-container exhibition-gallery" aria-label="Ace Art exhibition">
+      <figure>
+        <img class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_02_aceart2-balanced.jpg">
+        <figcaption>Left / Right: <em>Draped Composition (In-Progress)</em>, 2024–2025, acrylic, tempera, ink, oil paint on canvas and recycled fabrics<br><span class="caption-following-line">Centre: <em>Perennial</em>, 2025, 4K digital video, loop / <em>Seated Figure</em>, 2025, 4K digital video, loop</span></figcaption>
+      </figure>
+      <figure>
+        <img class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_01_aceart1-balanced.jpg">
+        <figcaption>Left: <em>Draped Composition (In-Progress)</em>, 2024–2025, acrylic, tempera, ink, oil paint on canvas and recycled fabrics<br><span class="caption-following-line">Centre: <em>Yellow Curtain</em>, 2025, 4K digital video, loop</span></figcaption>
+      </figure>
+      <figure>
+        <img class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_04_install2-balanced.jpg">
+        <figcaption>Right: <em>Draped Composition (In-Progress)</em>, 2024–2025, acrylic, tempera, ink, oil paint on canvas and recycled fabrics<br><span class="caption-following-line">Left: <em>Yellow Curtain</em>, 2025, 4K digital video, loop</span></figcaption>
+      </figure>
+      <figure>
+        <img class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_03_install6-balanced.jpg">
+        <figcaption>Installation view</figcaption>
+      </figure>
+      <figure>
+        <img class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_06_install4-balanced.jpg">
+        <figcaption>Installation view</figcaption>
+      </figure>
+      <figure>
+        <img class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_07_install8-balanced.jpg">
+        <figcaption>Installation view</figcaption>
+      </figure>
+      <figure>
+        <img class="slidevert" alt="Ace Art video still" src="images/exhibitions/aceart/web_08_perennial_videostill2-balanced.jpg">
+        <figcaption><em>Perennial</em>, 2025, 4K digital video, loop</figcaption>
+      </figure>
+      <figure>
+        <img class="slidevert" alt="Ace Art video still" src="images/exhibitions/aceart/web_09_seatedfigure_videostill1-balanced.jpg">
+        <figcaption><em>Seated Figure</em>, 2025, 4K digital video, loop</figcaption>
+      </figure>
+      <figure>
+        <img class="slidevert" alt="Ace Art video still" src="images/exhibitions/aceart/web_10yellowcurtain_videostill3-balanced.jpg">
+        <figcaption><em>Yellow Curtain</em>, 2025, 4K digital video, loop</figcaption>
+      </figure>
+      <figure>
+        <img class="slide" alt="Ace Art video still" src="images/exhibitions/aceart/web_11_videostill_holdingpatterns_videostill4-balanced.jpg">
+        <figcaption><em>Holding Patterns (No.3)</em>, 2025, 4K digital video and sound, loop</figcaption>
+      </figure>
+    </main>
+    <button class="gallery-scroll-button gallery-scroll-left" type="button" aria-label="Scroll images to the left">←</button>
+    <button class="gallery-scroll-button gallery-scroll-right" type="button" aria-label="Scroll images to the right">→</button>
+
+    <script>
+      const gallery = document.querySelector('.exhibition-gallery');
+      const leftButton = document.querySelector('.gallery-scroll-left');
+      const rightButton = document.querySelector('.gallery-scroll-right');
+
+      const updateArrows = () => {
+        leftButton.classList.toggle('is-hidden', gallery.scrollLeft <= 2);
+        rightButton.classList.toggle('is-hidden', gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2);
+      };
+
+      gallery.addEventListener('scroll', updateArrows, { passive: true });
+      window.addEventListener('resize', updateArrows);
+      updateArrows();
+
+      document.querySelector('.gallery-scroll-left').addEventListener('click', () => {
+        gallery.scrollBy({ left: -gallery.clientWidth * 0.8, behavior: 'smooth' });
+      });
+
+      document.querySelector('.gallery-scroll-right').addEventListener('click', () => {
+        gallery.scrollBy({ left: gallery.clientWidth * 0.8, behavior: 'smooth' });
+      });
+    </script>
+  </body>
+</html>

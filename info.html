@@ -25,35 +25,61 @@
         element.style.display = "none";
       }
     }
+
+    function activateInfoLink(element){
+      document.querySelectorAll('.info-action-group > .info-link').forEach((link) => link.classList.remove('is-active'));
+      element.classList.add('is-active');
+    }
     </script>
 
   </head>
 
-  <body>
+  <body class="info-page">
 
-    <div class="top-bar"><a href="index.html"><span>M.E. SPARKS</span></a> <span style="float:right;"> INFO </span></div>
-    <div style="height:5%; width:100%;" ></div>
+    <header class="top-bar">
+      <a href="index.html">M.E. Sparks</a>
+      <nav class="site-navigation" aria-label="Main navigation">
+        <a href="index.html">painting</a>
+        <a href="video.html">video</a>
+        <a href="otherprojects.html">other projects</a>
+        <a href="info.html" aria-current="page">about</a>
+        <div class="info-actions exhibition-text-nav info-navigation-actions">
+          <div class="info-action-group">
+            <button class="info-link" type="button" onclick="hide('CV');hide('writing-links');toggle('contact-details');activateInfoLink(this)">contact</button>
+            <span id="contact-details" style="display:none;">
+              <span class="toggles" id="email"><code>m.eliz.sparks</code>&#64;gmail&#46;com</span>
+              <a id="insta" class="info-link toggles" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/msprks/">@msprks</a>
+            </span>
+          </div>
+          <div class="info-action-group">
+            <button class="info-link" type="button" onclick="hide('contact-details');hide('writing-links');toggle('CV');activateInfoLink(this)">cv</button>
+            <a class="info-link toggles" id="CV" style="display:none;" target="_blank" rel="noopener noreferrer" href="web_Sparks_CV2026.pdf">download</a>
+          </div>
+          <div class="info-action-group">
+            <button class="info-link" type="button" onclick="hide('CV');hide('contact-details');toggle('writing-links');activateInfoLink(this)">text</button>
+            <span id="writing-links" class="writing-links" style="display:none;">
+              <a class="info-link" href="written-about.html">written about</a>
+              <a class="info-link" href="written-by.html">written by</a>
+            </span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="site-header-spacer"></div>
 
 
 
-    <div class="slide-container">
+    <div class="slide-container info-content">
 
       <img class="slide" style="width:100%;margin-bottom:1em;" alt="hood" src="images/web_alternator_postcard.jpg">
 
-      <div style="display:block; width:100%">
-          <a class="info-link" href="otherprojects.html"> OTHER PROJECTS </a>
-          <a class="info-link" href="archive.html"> PAST WORK </a>
-          <span class="info-link" onclick="hide('CV');toggle('insta');toggle('email')"> CONTACT </span>
-          <span class="info-link" onclick="hide('email');hide('insta');toggle('CV')"> CV </span>
+      <p class="bio-summary" style="margin:1.5em 0 1.5em; color:grey; font-size:.85em">M.E. Sparks (she/her) is an artist and educator based in Winnipeg, Treaty 1 Territory, where she is a faculty member at the University of Manitoba School of Art. Sparks holds an MFA from Emily Carr University of Art + Design and a BFA from NSCAD University. She is the recipient of research and creation grants from Canada Council for the Arts, Manitoba Arts Council, Winnipeg Arts Council, BC Arts Council, and Arts Nova Scotia, and was a finalist in the 2017 and 2018 RBC Canadian Painting Competition. Her work has been included in exhibitions at the Gordon Smith Gallery of Canadian Art (North Vancouver), Alternator Centre for Contemporary Art (Kelowna), Trapp Projects (Vancouver), Access Gallery (Vancouver), The Painting Center (NYC), Galerie Shibumi (NYC), AceArtInc. (Winnipeg), Galerie Buhler Gallery (Winnipeg), among others. Sparks has participated in residencies in Canada, Germany, Finland, and the USA, most recently at the Vermont Studio Center and NARS Foundation International Residency.</p>
 
-          <a class="info-link, toggles" id="CV" style="display:none;" target="blank" href="Sparks_CV2025.pdf"> Download </a>
-          <span class="toggles" id="email" style="display:none;" ><code>m.eliz.sparks</code>&#64;gmail&#46;com</span>
-          <a id="insta" style="display:none;" class="info-link, toggles" target="blank" href="https://www.instagram.com/msprks/"> @msprks </a> </span>
+      <p style="margin:0 0 1.5em; color:grey; font-size:.85em">I work with methods of painting and collage to examine the relationship between surface, image, and materiality. Through a process of fragmenting and recombining borrowed forms, both art historical and autobiographical, I search for the moment an image loses its representational solidity and orientation. While figurative traces often remain within my paintings, I am interested in how and when a familiar form slips from its origins, resists classification, and evokes a feeling of disorientation.</p>
 
-        </div>
-      <p style="margin-left:0%; margin-right:0%; margin-top:2em; color:grey; font-size:.85em"> M.E. Sparks (she/her) is an artist and educator based in Winnipeg, Treaty 1 Territory, Canada. In recent work Sparks uses painting and collage to examine the relationships between surface and image, materiality and content, legibility and disorientation. In her paintings she pulls apart and recombines art historical imagery, searching for the moment a form dislocates from its origins to resist classification. Recently, this method of abstraction occurs through the cutting, draping, and layering of painted canvas. By reconsidering the conventions of painting, Sparks searches for uncertain and unsettled spaces of representation, as well as the reconciliation and transformation of historical narrative.<br> <br>Sparks received her MFA from Emily Carr University and BFA from NSCAD University. She is a recipient of project and research grants from Canada Council for the Arts, Manitoba Arts Council, Winnipeg Arts Council and BC Arts Council. She has participated in international residencies in Germany, Finland and the USA, including NARS Foundation and Vermont Studio Center, and was a 2016 and 2017 finalist in the RBC Canadian Painting Competition. Sparks’ work has been exhibited at Gordon Smith Gallery of Canadian Art (North Vancouver), Alternator Centre for Contemporary Art (Kelowna), Trapp Projects (Vancouver), Access Gallery (Vancouver), among others. Upcoming projects include a solo exhibition at aceartinc (Winnipeg) in 2025.
-      <br> <br>
-      </p>
+      <p style="margin:0 0 1.5em; color:grey; font-size:.85em">In recent installation and video work, this process of abstraction unfolds through the cutting, draping, and layering of painted canvas and recycled fabric. By pulling apart and reassembling once-whole paintings, the art historical images I draw from are distanced from their sources, becoming both faintly familiar signifiers and new, autonomous objects. These image-objects hover at the edge of recognition, and I think of them as both resistant and flirtatious forms. They playfully lean into representational space, yet withhold the ease and immediacy of being pinned down, defined, and categorized. Modular in nature, the draped paintings defer a finished state by suggesting the possibility of future reconfiguration. Rather than present a linear narrative, this potential for reassembly tempers expectations of legibility, interrupts an immediate reading of the image, and insists on duration.</p>
+
+      <p style="margin:0; color:grey; font-size:.85em">Across all facets of my practice, I see painting as a space of complication rather than confirmation. I question how the viewer may become caught, willingly, in a state of uncertainty or disorientation, described by the feminist scholar, Sarah Ahmed, as “bodily experiences that throw the world up, or throw the body from its ground”. My work plays with the vulnerability and transformative potential that arise through the experience of disorientation — when we are not quite able to name what we see — and how this might lead to a <em>re</em>orientation; in the ways we we observe, sift through, and find meaning in the condensed and collapsing layers of visual culture.</p>
 
 
 

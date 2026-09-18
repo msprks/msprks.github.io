@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exhibition Text — M.E. Sparks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+  </head>
+  <body class="exhibition-text-page">
+    <header class="top-bar">
+      <a class="site-title" href="index.html">M.E. Sparks</a>
+      <nav class="site-navigation" aria-label="Main navigation">
+        <a href="index.html">painting</a>
+        <a href="video.html">video</a>
+        <a href="otherprojects.html">other projects</a>
+        <a href="info.html">about</a>
+        <span class="exhibition-text-nav exhibition-back-nav"><a class="exhibition-back-link" id="exhibition-back-link" href="index.html" aria-label="Back to exhibition">←</a></span>
+      </nav>
+    </header>
+    <div class="site-header-spacer"></div>
+    <main class="slide-container" aria-label="Exhibition writing"></main>
+    <script>
+      const slug = new URLSearchParams(window.location.search).get('exhibition');
+      if (slug) {
+        document.getElementById('exhibition-back-link').href = `${slug}.html`;
+      }
+    </script>
+  </body>
+</html>
