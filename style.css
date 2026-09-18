@@ -166,7 +166,8 @@ button.info-link {
   margin-top: 4em;
 }
 
-.video-coming-soon {
+.video-coming-soon,
+.texts-coming-soon {
   margin-top: 1.5em;
   color: grey;
   font-size: 0.75em;
@@ -680,7 +681,8 @@ button.info-link {
     margin-top: 2em;
   }
 
-  .video-coming-soon {
+  .video-coming-soon,
+  .texts-coming-soon {
     flex-basis: max-content;
     margin-top: 1em;
   }
@@ -820,6 +822,10 @@ button.info-link {
 .aceart-exhibition-title,
 .aceart-exhibition-gallery {
   display: block;
+}
+
+.aceart-exhibition-gallery + a {
+  margin-top: 1em;
 }
 
 .exhibition-back-nav {
