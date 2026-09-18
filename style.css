@@ -817,6 +817,8 @@ button.info-link {
   .aceart-page .aceart-exhibition-gallery {
     grid-column: 1 / -1;
     grid-row: 2;
+    display: block;
+    width: 100%;
   }
 
   .info-navigation-actions {
