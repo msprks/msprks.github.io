@@ -775,6 +775,11 @@ button.info-link {
   color: blue;
 }
 
+.aceart-exhibition-title,
+.aceart-exhibition-gallery {
+  display: block;
+}
+
 .exhibition-back-nav {
   margin-top: 2.5em;
 }
@@ -789,6 +794,29 @@ button.info-link {
 
   .perennial-info-link {
     margin-top: 1em;
+  }
+
+  .aceart-page .perennial-info-link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 1em;
+    align-items: baseline;
+  }
+
+  .aceart-page .aceart-exhibition-title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .aceart-page .perennial-info-link a {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 0;
+  }
+
+  .aceart-page .aceart-exhibition-gallery {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
   .info-navigation-actions {
