@@ -667,13 +667,21 @@ button.info-link {
     margin-top: 0.75em;
   }
 
+  .site-navigation > a:first-child::before {
+    position: fixed;
+    top: calc(var(--page-gutter) + 0.25rem);
+    bottom: auto;
+    right: var(--page-gutter);
+    left: auto;
+  }
+
   .exhibition-text-nav {
     flex-basis: 100%;
     margin-top: 2em;
   }
 
   .video-coming-soon {
-    flex-basis: 100%;
+    flex-basis: max-content;
     margin-top: 1em;
   }
 
