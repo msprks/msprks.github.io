@@ -33,7 +33,7 @@ if (exhibition) {
 
   navigation.insertAdjacentHTML(
     'beforeend',
-    `<span class="exhibition-text-nav perennial-info-link">${exhibitionTitle}${dateSeparator}${exhibition.year}<br>images coming soon</span>`
+    `<span class="exhibition-text-nav perennial-info-link">${exhibitionTitle}${dateSeparator}${exhibition.year}<br><span class="images-coming-soon">images coming soon</span></span>`
   );
 
   gallery.classList.add('slide-container', 'exhibition-gallery');

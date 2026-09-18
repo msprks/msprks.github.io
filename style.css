@@ -38,6 +38,24 @@ a:hover {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
+.site-navigation > a:first-child {
+  position: relative;
+}
+
+.site-navigation > a:first-child::before {
+  content: "website under construction";
+  position: absolute;
+  bottom: calc(100% + 0.9em);
+  left: 0;
+  color: grey;
+  font-size: 0.75em;
+  font-style: italic;
+  font-weight: normal;
+  white-space: nowrap;
+  padding: 0.15em 0.35em;
+  border: 1px dotted #d6b500;
+}
+
 .site-title:hover {
   color: grey;
 }
@@ -151,6 +169,22 @@ button.info-link {
 .video-coming-soon {
   margin-top: 1.5em;
   color: grey;
+  font-size: 0.75em;
+  font-style: italic;
+  padding: 0.15em 0.35em;
+  border: 1px dotted #d6b500;
+  width: max-content;
+}
+
+.images-coming-soon {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: grey;
+  font-size: 0.75em;
+  font-style: italic;
+  font-weight: normal;
+  padding: 0.15em 0.35em;
+  border: 1px dotted #d6b500;
 }
 
 .exhibition-text {
