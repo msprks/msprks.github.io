@@ -44,9 +44,11 @@ a:hover {
 
 .site-navigation > a:first-child::before {
   content: "website under construction";
-  position: absolute;
-  bottom: calc(100% + 0.9em);
-  left: 0;
+  position: fixed;
+  top: calc(var(--page-gutter) + 0.75em);
+  right: var(--page-gutter);
+  bottom: auto;
+  left: auto;
   color: grey;
   font-size: 0.75em;
   font-style: italic;
@@ -670,7 +672,7 @@ button.info-link {
 
   .site-navigation > a:first-child::before {
     position: fixed;
-    top: calc(var(--page-gutter) + 0.25rem);
+    top: calc(var(--page-gutter) + 0.75em);
     bottom: auto;
     right: var(--page-gutter);
     left: auto;
@@ -769,6 +771,15 @@ button.info-link {
   }
 }
 
+@media screen and (min-width: 1201px) {
+  .site-navigation > a:first-child::before {
+    top: 2.2em;
+    right: calc(var(--page-gutter) + 1.25rem);
+    bottom: auto;
+    left: auto;
+  }
+}
+
 /* Move navigation to the phone-style top row before the gallery itself changes layout. */
 @media screen and (min-width: 900px) and (max-width: 1200px) {
   .top-bar {
@@ -786,6 +797,14 @@ button.info-link {
     gap: 1em;
     row-gap: 0;
     margin-top: 0.75em;
+  }
+
+  .site-navigation > a:first-child::before {
+    position: fixed;
+    top: calc(var(--page-gutter) + 0.75em);
+    right: var(--page-gutter);
+    bottom: auto;
+    left: auto;
   }
 
   .exhibition-text-nav {
