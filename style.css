@@ -629,23 +629,6 @@ button.info-link {
   transition: opacity 0.2s ease;
 }
 
-.homepage-exhibition::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0;
-  background: repeating-linear-gradient(
-    135deg,
-    transparent 0,
-    transparent 9px,
-    rgba(0, 0, 0, 0.8) 9px,
-    rgba(0, 0, 0, 0.8) 10px
-  );
-  transition: opacity 0.2s ease;
-}
-
 .homepage-exhibition-link {
   position: absolute;
   inset: 0;
@@ -660,10 +643,6 @@ button.info-link {
   opacity: 0.7;
 }
 
-.homepage-exhibition:has(.homepage-exhibition-link:is(:hover, :focus-visible))::before {
-  opacity: 1;
-}
-
 .homepage-exhibition:has(.homepage-exhibition-link:is(:hover, :focus-visible)) + .caption .homepage-caption-link {
   color: blue;
 }
@@ -674,10 +653,6 @@ button.info-link {
 
 .homepage-exhibition:has(+ .caption .homepage-caption-link:is(:hover, :focus-visible)) .homepage-image {
   opacity: 0.7;
-}
-
-.homepage-exhibition:has(+ .caption .homepage-caption-link:is(:hover, :focus-visible))::before {
-  opacity: 1;
 }
 
 .homepage-caption-link:hover,
@@ -714,32 +689,12 @@ button.info-link {
   position: relative;
 }
 
-.other-project-image-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  background: repeating-linear-gradient(
-    135deg,
-    transparent 0,
-    transparent 9px,
-    rgba(0, 0, 0, 0.8) 9px,
-    rgba(0, 0, 0, 0.8) 10px
-  );
-  transition: opacity 0.2s ease;
-}
-
 .other-project-image-link .slide {
   transition: opacity 0.2s ease;
 }
 
 .other-project-image-link:is(:hover, :focus-visible) .slide {
   opacity: 0.7;
-}
-
-.other-project-image-link:is(:hover, :focus-visible)::after {
-  opacity: 1;
 }
 
 
@@ -917,6 +872,13 @@ button.info-link {
   .exhibition-home-back {
     flex-basis: calc(3.5 * var(--caption-size));
     margin-top: 2em;
+  }
+
+  /* Keep the placeholder on its own left-aligned row when navigation wraps. */
+  .video-coming-soon-row {
+    flex-basis: 100%;
+    align-self: flex-start;
+    margin-top: 1em;
   }
 
   .info-navigation-actions {
