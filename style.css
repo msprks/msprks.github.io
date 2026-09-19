@@ -532,19 +532,23 @@ button.info-link {
   cursor: zoom-in;
 }
 
-.image-zoom-dialog {
-  max-width: min(90vw, 1000px);
-  max-height: 90vh;
-  padding: 0;
-  border: 0;
-  background: transparent;
-}
-
-.image-zoom-dialog::backdrop {
+.image-zoom-overlay {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 5vw;
   background: rgba(255, 255, 255, 0.92);
+  cursor: zoom-out;
 }
 
-.image-zoom-dialog img {
+.image-zoom-overlay[hidden] {
+  display: none;
+}
+
+.image-zoom-overlay img {
   display: block;
   max-width: 90vw;
   max-height: 90vh;

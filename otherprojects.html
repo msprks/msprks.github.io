@@ -28,7 +28,7 @@
     <div class="slide-container2" >
 
       <div class="other-project-pair">
-        <div class="other-project-image-frame"><button class="zoomable-image" type="button" data-image="images/otherprojects/web_eob-poster.jpg" data-alt="Edges of Becoming poster"><img class="slide" alt="Edges of Becoming poster" src="images/otherprojects/web_eob-poster.jpg"></button></div>
+        <div class="other-project-image-frame"><a class="zoomable-image" href="images/otherprojects/web_eob-poster.jpg" data-image="images/otherprojects/web_eob-poster.jpg" data-alt="Edges of Becoming poster"><img class="slide" alt="Edges of Becoming poster" src="images/otherprojects/web_eob-poster.jpg"></a></div>
         <div class="other-project-image-frame"><img class="slide" alt="Edges of Becoming workshop" src="images/otherprojects/EoB.jpg"></div>
       </div>
       <div class="caption2">
@@ -72,19 +72,23 @@
 
 
 
-    <dialog class="image-zoom-dialog" aria-label="Enlarged image"><img alt=""></dialog>
+    <div class="image-zoom-overlay" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden><img alt=""></div>
     <script>
-      const imageZoomDialog = document.querySelector('.image-zoom-dialog');
-      const imageZoomTarget = imageZoomDialog.querySelector('img');
+      const imageZoomOverlay = document.querySelector('.image-zoom-overlay');
+      const imageZoomTarget = imageZoomOverlay.querySelector('img');
       document.querySelectorAll('.zoomable-image').forEach((button) => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
           imageZoomTarget.src = button.dataset.image;
           imageZoomTarget.alt = button.dataset.alt;
-          imageZoomDialog.showModal();
+          imageZoomOverlay.hidden = false;
         });
       });
-      imageZoomDialog.addEventListener('click', (event) => {
-        if (event.target === imageZoomDialog) imageZoomDialog.close();
+      imageZoomOverlay.addEventListener('click', () => {
+        imageZoomOverlay.hidden = true;
+      });
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') imageZoomOverlay.hidden = true;
       });
     </script>
   </body>
