@@ -177,6 +177,8 @@ button.info-link {
   padding: 0.15em 0.35em;
   border: 1px dotted #d6b500;
   width: max-content;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .video-coming-soon-row {
@@ -202,14 +204,19 @@ button.info-link {
   margin-top: 0;
 }
 
+@media screen and (min-width: 900px) {
+  .writing-page .info-navigation-actions .texts-coming-soon-row {
+    top: calc(100% + 5em);
+    left: 0;
+  }
+}
+
 @media screen and (min-width: 900px) and (max-width: 1400px) {
   .writing-page .texts-coming-soon-row {
     margin-top: 2.5em;
   }
 
-  .writing-page .info-navigation-actions .texts-coming-soon-row {
-    top: calc(100% + 1.75em);
-  }
+  .writing-page .info-navigation-actions .texts-coming-soon-row { top: calc(100% + 5em); }
 }
 
 .video-coming-soon-row .video-coming-soon,
