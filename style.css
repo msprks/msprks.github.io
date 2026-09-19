@@ -664,6 +664,9 @@ button.info-link {
   padding-bottom: 5em;
   color: grey;
   font-size: var(--caption-size);
+  line-height: 1.35;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .other-project-pair {
