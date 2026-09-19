@@ -235,6 +235,11 @@ button.info-link {
   border: 1px dotted #d6b500;
 }
 
+/* Keep the placeholder below the exhibition details at every screen width. */
+.perennial-info-link > br.images-coming-soon-break:first-of-type {
+  display: block;
+}
+
 .exhibition-text {
   color: grey;
   font-size: 0.85em;

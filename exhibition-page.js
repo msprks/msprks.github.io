@@ -8,10 +8,10 @@ const exhibitionDetails = {
   gordonsmith: { title: 'We can only hint at this with words', year: '2022', gallery: 'Gordon Smith Gallery of Canadian Art' },
   snaked: { title: 'Snaked', year: '2022' },
   trapp: { title: 'A Fine Line', year: '2021', gallery: 'Trapp Projects' },
-  paintings: { title: 'Paintings', year: '2020-2018', italic: false, dateSeparator: ' ' },
+  paintings: { title: 'Paintings', year: '2020-2018', italic: false, dateSeparator: ' ', afterYearComma: false },
   ou: { title: 'Hiatus', year: '2019', gallery: 'Ou Gallery' },
   fiftyfifty: { title: 'Pleated Fingers Parted', year: '2019', gallery: 'Fifty Fifty Collective' },
-  '13suite15': { title: '13suite15', year: '2019' },
+  '13suite15': { title: '13suite15', year: '2019', afterYearComma: false },
   soma: { title: 'somebody any body', year: '2019', gallery: 'SOMA' },
   dynamo: { title: 'Mother Tongue', year: '2018', gallery: 'Dynamo Arts Association' },
   support: { title: 'near channels', year: '2018', gallery: 'Support Support' },
@@ -33,7 +33,7 @@ if (exhibition) {
 
   navigation.insertAdjacentHTML(
     'beforeend',
-    `<span class="exhibition-text-nav perennial-info-link">${exhibitionTitle}${dateSeparator}${exhibition.year}${exhibition.gallery ? `<br><span class="exhibition-gallery-name">${exhibition.gallery}</span>` : ''}<br><span class="images-coming-soon">images coming soon</span></span>`
+    `<span class="exhibition-text-nav perennial-info-link">${exhibitionTitle}${dateSeparator}${exhibition.year}${exhibition.afterYearComma === false ? '' : ','}${exhibition.gallery ? `<br><span class="exhibition-gallery-name">${exhibition.gallery}</span>` : ''}<br class="images-coming-soon-break"><span class="images-coming-soon">images coming soon</span></span>`
   );
 
   navigation.insertAdjacentHTML(
