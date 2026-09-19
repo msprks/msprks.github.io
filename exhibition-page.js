@@ -1,25 +1,25 @@
 const exhibitionDetails = {
-  shibumi: { title: 'Soft Power', year: '2026' },
-  touchy: { title: 'Touchy', year: '2025' },
+  shibumi: { title: 'Soft Power', year: '2026', gallery: 'Galerie Shibumi' },
+  touchy: { title: 'Touchy', year: '2025', gallery: '226 Gallery' },
   hemming: { title: 'Hemming', year: '2025' },
-  pieceandparse: { title: 'Piece and Parse', year: '2025' },
-  nars: { title: 'Undercurrents', year: '2025' },
-  alternator: { title: 'and a Rag in the Other', year: '2022' },
-  gordonsmith: { title: 'We can only hint at this with words', year: '2022' },
+  pieceandparse: { title: 'Piece and Parse', year: '2025', gallery: '226 Gallery' },
+  nars: { title: 'Undercurrents', year: '2025', gallery: 'NARS' },
+  alternator: { title: 'and a Rag in the Other', year: '2022', gallery: 'Alternator Centre for Contemporary Art' },
+  gordonsmith: { title: 'We can only hint at this with words', year: '2022', gallery: 'Gordon Smith Gallery for Canadian Art' },
   snaked: { title: 'Snaked', year: '2022' },
-  trapp: { title: 'A Fine Line', year: '2021' },
+  trapp: { title: 'A Fine Line', year: '2021', gallery: 'Trapp Projects' },
   paintings: { title: 'Paintings', year: '2020-2018', italic: false, dateSeparator: ' ' },
-  ou: { title: 'Hiatus', year: '2019' },
-  fiftyfifty: { title: 'Pleated Fingers Parted', year: '2019' },
+  ou: { title: 'Hiatus', year: '2019', gallery: 'Ou Gallery' },
+  fiftyfifty: { title: 'Pleated Fingers Parted', year: '2019', gallery: 'Fifty Fifty Collective' },
   '13suite15': { title: '13suite15', year: '2019' },
-  soma: { title: 'somebody any body', year: '2019' },
-  dynamo: { title: 'Mother Tongue', year: '2018' },
-  support: { title: 'near channels', year: '2018' },
-  glogauair: { title: 'Dear Home', year: '2017' },
-  access: { title: 'A Terrible Signal', year: '2017' },
-  franc: { title: 'A Beast Salient', year: '2017' },
-  artmur: { title: 'Fresh Paint New Construction', year: '2016' },
-  stillhere: { title: 'Still Here', year: '2016' }
+  soma: { title: 'somebody any body', year: '2019', gallery: 'SOMA' },
+  dynamo: { title: 'Mother Tongue', year: '2018', gallery: 'Dynamo Arts Association' },
+  support: { title: 'near channels', year: '2018', gallery: 'Support Support' },
+  glogauair: { title: 'Dear Home', year: '2017', gallery: 'GlogauAIR' },
+  access: { title: 'A Terrible Signal', year: '2017', gallery: 'Access Gallery' },
+  franc: { title: 'A Beast Salient', year: '2017', gallery: 'Franc Gallery' },
+  artmur: { title: 'Fresh Paint New Construction', year: '2016', gallery: 'Art Mur' },
+  stillhere: { title: 'Still Here', year: '2016', gallery: 'Concourse Gallery' }
 };
 
 const exhibitionSlug = window.location.pathname.split('/').pop().replace(/\.html$/, '');
@@ -33,7 +33,7 @@ if (exhibition) {
 
   navigation.insertAdjacentHTML(
     'beforeend',
-    `<span class="exhibition-text-nav perennial-info-link">${exhibitionTitle}${dateSeparator}${exhibition.year}<br><span class="images-coming-soon">images coming soon</span></span>`
+    `<span class="exhibition-text-nav perennial-info-link">${exhibitionTitle}${dateSeparator}${exhibition.year}${exhibition.gallery ? ',' : ''}${exhibition.gallery ? `<span class="exhibition-gallery-name"> ${exhibition.gallery}</span>` : ''}<br><span class="images-coming-soon">images coming soon</span></span>`
   );
 
   gallery.classList.add('slide-container', 'exhibition-gallery');

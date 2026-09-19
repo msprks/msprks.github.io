@@ -14,6 +14,9 @@
     function hide(ELEMENT){
       let element = document.getElementById(ELEMENT);
       element.style.display = "none";
+      if (ELEMENT === 'writing-links') {
+        element.querySelectorAll('[aria-current="page"]').forEach((link) => link.removeAttribute('aria-current'));
+      }
     }
 
     function toggle (ELEMENT){
@@ -30,6 +33,12 @@
       document.querySelectorAll('.info-action-group > .info-link').forEach((link) => link.classList.remove('is-active'));
       element.classList.add('is-active');
     }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('.info-action-group > .info-link');
+      if (window.location.hash === '#contact') links[0].click();
+      if (window.location.hash === '#cv') links[1].click();
+    });
     </script>
 
   </head>
