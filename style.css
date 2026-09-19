@@ -437,6 +437,10 @@ button.info-link {
   overflow-wrap: break-word;
 }
 
+.aceart-page .exhibition-gallery figure:last-child figcaption {
+  padding-bottom: 1em;
+}
+
 .caption-following-line {
   display: inline-block;
   margin-top: 0.4em;
@@ -980,6 +984,7 @@ button.info-link {
 
 .exhibition-page .site-navigation {
   background: white;
+  padding-bottom: 0.75em;
 }
 
 .perennial-info-link a {
@@ -1024,7 +1029,7 @@ button.info-link {
   display: block;
   width: calc(3.5 * var(--caption-size));
   height: calc(0.85 * var(--caption-size));
-  margin-top: 1.5em;
+  margin-top: 1em;
   background: grey;
   clip-path: polygon(0 35%, 62% 35%, 62% 0, 100% 50%, 62% 100%, 62% 65%, 0 65%);
   transform: scaleX(-1);
@@ -1172,7 +1177,7 @@ button.info-link {
 @media screen and (max-width: 899px) {
   .exhibition-home-back {
     order: 3;
-    margin-top: 0.35em;
+    margin-top: 0.15em;
   }
 
   .perennial-info-link {
@@ -1325,7 +1330,7 @@ button.info-link {
     flex-basis: 1.7em;
     width: 1.7em;
     height: 1em;
-    margin-top: 0.35em;
+    margin-top: 0.15em;
   }
 
   .perennial-info-link > br:first-of-type {
