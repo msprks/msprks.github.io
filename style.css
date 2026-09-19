@@ -971,8 +971,8 @@ button.info-link {
 }
 
 .aceart-exhibition-gallery {
-  display: inline;
-  margin-left: 0.5em;
+  display: block;
+  margin-left: 0;
 }
 
 .aceart-exhibition-gallery + a {
@@ -981,11 +981,7 @@ button.info-link {
 }
 
 @media screen and (min-width: 900px) and (max-width: 1400px) {
-  .aceart-exhibition-gallery,
-  .perennial-info-link .exhibition-gallery-name {
-    display: block;
-    margin-left: 0;
-  }
+  .perennial-info-link .exhibition-gallery-name { display: block; }
 }
 
 .exhibition-back-nav {
@@ -1004,29 +1000,16 @@ button.info-link {
     margin-top: 1em;
   }
 
-  .aceart-page .perennial-info-link {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    column-gap: 1em;
-    align-items: baseline;
-  }
-
   .aceart-page .aceart-exhibition-title {
-    grid-column: 1;
-    grid-row: 1;
+    display: block;
   }
 
   .aceart-page .perennial-info-link a {
-    grid-column: 1 / -1;
-    grid-row: 2;
     margin-top: 1em;
   }
 
   .aceart-page .aceart-exhibition-gallery {
-    grid-column: 2;
-    grid-row: 1;
-    display: inline;
-    width: auto;
+    display: block;
     margin-left: 0;
   }
 

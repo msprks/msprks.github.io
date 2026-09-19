@@ -5,7 +5,7 @@ const exhibitionDetails = {
   pieceandparse: { title: 'Piece and Parse', year: '2025', gallery: '226 Gallery' },
   nars: { title: 'Undercurrents', year: '2025', gallery: 'NARS' },
   alternator: { title: 'and a Rag in the Other', year: '2022', gallery: 'Alternator Centre for Contemporary Art' },
-  gordonsmith: { title: 'We can only hint at this with words', year: '2022', gallery: 'Gordon Smith Gallery for Canadian Art' },
+  gordonsmith: { title: 'We can only hint at this with words', year: '2022', gallery: 'Gordon Smith Gallery of Canadian Art' },
   snaked: { title: 'Snaked', year: '2022' },
   trapp: { title: 'A Fine Line', year: '2021', gallery: 'Trapp Projects' },
   paintings: { title: 'Paintings', year: '2020-2018', italic: false, dateSeparator: ' ' },
@@ -33,7 +33,7 @@ if (exhibition) {
 
   navigation.insertAdjacentHTML(
     'beforeend',
-    `<span class="exhibition-text-nav perennial-info-link">${exhibitionTitle}${dateSeparator}${exhibition.year}${exhibition.gallery ? ',' : ''}${exhibition.gallery ? `<span class="exhibition-gallery-name"> ${exhibition.gallery}</span>` : ''}<br><span class="images-coming-soon">images coming soon</span></span>`
+    `<span class="exhibition-text-nav perennial-info-link">${exhibitionTitle}${dateSeparator}${exhibition.year}${exhibition.gallery ? `<br><span class="exhibition-gallery-name">${exhibition.gallery}</span>` : ''}<br><span class="images-coming-soon">images coming soon</span></span>`
   );
 
   gallery.classList.add('slide-container', 'exhibition-gallery');
