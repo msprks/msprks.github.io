@@ -381,6 +381,21 @@ button.info-link {
   color: blue;
 }
 
+/* Keep the writing destinations together as one unbroken line in every browser. */
+.writing-page .writing-links {
+  display: inline-flex !important;
+  flex-wrap: nowrap;
+  gap: 1em;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.writing-page .writing-links .info-link {
+  display: inline-block;
+  margin: 0;
+  white-space: nowrap;
+}
+
 .info-navigation-actions .info-link:hover {
   color: blue;
 }
