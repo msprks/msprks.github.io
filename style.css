@@ -384,13 +384,30 @@ button.info-link {
 /* Keep the writing destinations together as one unbroken line in every browser. */
 .writing-page .writing-links {
   display: inline-flex !important;
+  flex-direction: column;
   flex-wrap: nowrap;
-  gap: 1em;
+  gap: 0.25em;
   width: max-content;
   white-space: nowrap;
 }
 
 .writing-page .writing-links .info-link {
+  display: inline-block;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* The same menu is also shown directly on the About page. */
+#writing-links[style*="inline-block"] {
+  display: inline-flex !important;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.25em;
+  width: max-content;
+  white-space: nowrap;
+}
+
+#writing-links[style*="inline-block"] .info-link {
   display: inline-block;
   margin: 0;
   white-space: nowrap;
