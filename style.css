@@ -1358,6 +1358,7 @@ button.info-link {
 
   .writing-page .writing-links {
     display: flex !important;
+    flex-direction: row;
     gap: 1em;
   }
 
@@ -1367,6 +1368,7 @@ button.info-link {
 
   #writing-links[style*="inline-block"] {
     display: flex !important;
+    flex-direction: row;
     gap: 1em;
   }
 
