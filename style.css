@@ -289,6 +289,15 @@ button.info-link {
   font-size: var(--caption-size);
 }
 
+.sundialling-caption a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.sundialling-caption a:hover {
+  color: grey;
+}
+
 .exhibition-back-link {
   display: block;
   width: calc(3.5 * var(--caption-size));
