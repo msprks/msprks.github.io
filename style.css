@@ -23,6 +23,13 @@ body {
 a {
   color: black;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
 }
 
 a:hover {
@@ -43,7 +50,7 @@ a:hover {
 }
 
 .site-navigation > a:first-child::before {
-  content: "website under construction";
+  content: "under construction";
   position: fixed;
   top: calc(var(--page-gutter) + 0.75em);
   right: var(--page-gutter);
@@ -182,7 +189,7 @@ button.info-link {
 }
 
 .video-coming-soon-row {
-  margin-top: 1.5em;
+  margin-top: 4.5em;
 }
 
 .texts-coming-soon-row {
@@ -381,6 +388,19 @@ button.info-link {
   font-size: 0.8em;
 }
 
+/* Use one shared size for every secondary About-page destination. */
+.info-page #contact-details #email,
+.info-page #contact-details #insta,
+.info-page #CV,
+.info-page .writing-links .info-link {
+  font-size: var(--caption-size) !important;
+  line-height: 1;
+}
+
+.info-page #email code {
+  font: inherit;
+}
+
 .writing-links .info-link {
   display: block;
   margin: 0;
@@ -391,6 +411,17 @@ button.info-link {
 
 .writing-links .info-link[aria-current="page"] {
   color: blue;
+}
+
+@media screen and (min-width: 900px) {
+  /* Match the email/Instagram spacing to the writing-link list. */
+  .info-page #contact-details[style*="inline-block"] {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25em;
+  }
+
 }
 
 /* Keep the writing destinations together as one unbroken line in every browser. */
@@ -430,6 +461,10 @@ button.info-link {
 }
 
 .info-navigation-actions #insta:hover {
+  color: blue;
+}
+
+.info-navigation-actions #email:hover {
   color: blue;
 }
 
@@ -778,7 +813,7 @@ button.info-link {
 
   .video-coming-soon-row {
     flex-basis: 100%;
-    margin-top: 1em;
+    margin-top: 2em;
   }
 
   .texts-coming-soon-row {
