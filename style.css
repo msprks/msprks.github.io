@@ -304,8 +304,76 @@ button.info-link {
 }
 
 .bio-summary {
+  padding-bottom: 0;
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
+  gap: 2em;
+  align-items: stretch;
   border-bottom: 1px dotted grey;
   padding-bottom: 1.5em;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+}
+
+.about-bio-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-support-images {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  column-gap: 1em;
+  row-gap: 0.75em;
+  margin-top: auto;
+}
+
+.about-support-images img {
+  display: block;
+  width: auto;
+  height: 1.75em;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.about-support-images img:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.about-statement-start {
+  margin: 1.5em 0;
+}
+
+.about-intro .bio-summary,
+.info-content > p {
+  font-family: inherit;
+  font-size: var(--caption-size) !important;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@media screen and (max-width: 899px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+
+  .about-support-images {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1.5em;
+  }
 }
 
 .info-content {
@@ -774,6 +842,26 @@ button.info-link {
 
 .other-project-image-link:is(:hover, :focus-visible) .slide {
   opacity: 0.7;
+}
+
+.other-project-diagonal-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 9px,
+    rgba(0, 0, 0, 0.8) 9px,
+    rgba(0, 0, 0, 0.8) 10px
+  );
+  transition: opacity 0.2s ease;
+}
+
+.other-project-diagonal-link:is(:hover, :focus-visible)::after {
+  opacity: 1;
 }
 
 
@@ -1285,8 +1373,8 @@ button.info-link {
 }
 
 .gallery-scroll-button {
-  width: 3em;
-  height: 1.8em;
+  width: 3.5em;
+  height: 2.1em;
   background: grey;
   clip-path: none;
   -webkit-mask: url("images/arrow-right-straight.svg") center / contain no-repeat;
@@ -1360,6 +1448,11 @@ button.info-link {
 }
 
 @media screen and (min-width: 900px) and (max-width: 1400px) {
+  .gallery-scroll-button {
+    width: 2em;
+    height: 1.2em;
+  }
+
   .exhibition-text-nav {
     order: 1;
     flex-basis: 100%;
