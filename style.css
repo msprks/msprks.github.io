@@ -679,6 +679,10 @@ button.info-link {
   margin-left: 0;
 }
 
+.other-project-pair + .caption2 {
+  margin-top: 0.75em;
+}
+
 .other-project-image-frame {
   aspect-ratio: 842 / 1191;
   overflow: hidden;
@@ -1493,6 +1497,10 @@ button.info-link {
 }
 
 @media screen and (max-width: 899px) {
+  .info-page .site-navigation {
+    padding-bottom: 0.75em;
+  }
+
   .exhibition-home-back:hover,
   .exhibition-home-back:focus-visible,
   .exhibition-home-back:active {
@@ -1522,4 +1530,5 @@ button.info-link {
   .exhibition-review-link {
     margin-top: 1.75em;
   }
+
 }
