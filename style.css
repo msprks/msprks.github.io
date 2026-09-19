@@ -502,7 +502,7 @@ button.info-link {
 
 .other-project-pair {
   display: grid;
-  grid-template-columns: 0.666667fr 0.706969fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2em;
   align-items: start;
   justify-content: center;
@@ -510,9 +510,47 @@ button.info-link {
   margin-left: 0;
 }
 
-.other-project-pair .slide {
+.other-project-image-frame {
+  aspect-ratio: 842 / 1191;
+  overflow: hidden;
+}
+
+.other-project-image-frame .slide {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.zoomable-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.image-zoom-dialog {
+  max-width: min(90vw, 1000px);
+  max-height: 90vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.image-zoom-dialog::backdrop {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.image-zoom-dialog img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
   height: auto;
+  cursor: zoom-out;
 }
 
 .homepage-image {

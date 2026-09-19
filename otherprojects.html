@@ -28,11 +28,11 @@
     <div class="slide-container2" >
 
       <div class="other-project-pair">
-        <img class="slide" alt="Edges of Becoming workshop" src="images/otherprojects/EoB.jpg">
-        <img class="slide" alt="Edges of Becoming poster" src="images/otherprojects/web_eob-poster.jpg">
+        <div class="other-project-image-frame"><button class="zoomable-image" type="button" data-image="images/otherprojects/web_eob-poster.jpg" data-alt="Edges of Becoming poster"><img class="slide" alt="Edges of Becoming poster" src="images/otherprojects/web_eob-poster.jpg"></button></div>
+        <div class="other-project-image-frame"><img class="slide" alt="Edges of Becoming workshop" src="images/otherprojects/EoB.jpg"></div>
       </div>
       <div class="caption2">
-        <em>Edges of Becoming</em> is an ongoing collaboration between the Jo O'Brien and M.E. Sparks, exploring practices that embrace uncertainty rather than seek to resolve it. Always in the midst of “figuring itself out”, the project recently struck a pose in the form of a workshop. With a group of momentary collaborators, we experimented with methods of drawing and collage in response to looped video projections. Over one evening, we shared embodied, collaborative, and provisional ways of working together without a clear end in sight, building images and practices on the edge of becoming.
+        <em>Edges of Becoming</em> is an ongoing collaboration between Jo O'Brien and M.E. Sparks, exploring practices that embrace uncertainty rather than seek to resolve it. Always in the midst of “figuring itself out”, the project recently struck a pose in the form of a workshop. With a group of momentary collaborators, we experimented with methods of drawing and collage in response to looped video projections. Over one evening, we shared embodied, collaborative, and provisional ways of working together without a clear end in sight, building images and practices on the edge of becoming.
       </div>
 
       <a class="other-project-image-link" target="_blank" rel="noopener noreferrer" href="https://www.mesparks.com/in_your_painting/">
@@ -72,5 +72,20 @@
 
 
 
+    <dialog class="image-zoom-dialog" aria-label="Enlarged image"><img alt=""></dialog>
+    <script>
+      const imageZoomDialog = document.querySelector('.image-zoom-dialog');
+      const imageZoomTarget = imageZoomDialog.querySelector('img');
+      document.querySelectorAll('.zoomable-image').forEach((button) => {
+        button.addEventListener('click', () => {
+          imageZoomTarget.src = button.dataset.image;
+          imageZoomTarget.alt = button.dataset.alt;
+          imageZoomDialog.showModal();
+        });
+      });
+      imageZoomDialog.addEventListener('click', (event) => {
+        if (event.target === imageZoomDialog) imageZoomDialog.close();
+      });
+    </script>
   </body>
 </html>
