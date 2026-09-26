@@ -18,6 +18,19 @@ body {
 
 body {
   padding: var(--page-gutter);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keep artwork captions at their existing weight and rendering. */
+.caption,
+.caption2,
+figcaption,
+.sundialling-caption {
+  font-weight: 400;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 a {
@@ -630,10 +643,6 @@ button.info-link {
 .gallery-scroll-left {
   transform: scaleX(-1);
   right: calc(var(--page-gutter) + 8.5em);
-}
-
-.gallery-scroll-button:enabled {
-  background: blue;
 }
 
 .gallery-scroll-button:disabled {
@@ -1929,8 +1938,9 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
   }
 }
 
-/* Unavailable directions stay visible and grey, including on hover. */
+/* Only available directions turn blue on hover or keyboard focus. */
 .gallery-scroll-button:disabled:hover,
+.gallery-scroll-button:disabled:focus-visible,
 .gallery-scroll-button:disabled:active {
   background: grey;
 }
