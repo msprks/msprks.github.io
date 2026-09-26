@@ -111,6 +111,7 @@ button.info-link {
 
 /* Keep the title area legible while page content moves beneath it. */
 .top-bar::before {
+  pointer-events: none;
   content: "";
   position: fixed;
   z-index: -1;
@@ -711,7 +712,11 @@ button.info-link {
   padding: 0;
   border: 0;
   background: none;
-  cursor: zoom-in;
+  cursor: url("images/cursor-zoom-in.svg") 12 12, zoom-in;
+}
+
+.zoomable-image img {
+  cursor: inherit;
 }
 
 .image-zoom-overlay {
@@ -802,15 +807,15 @@ button.info-link {
   text-decoration: none;
 }
 
-.homepage-exhibition:has(.homepage-exhibition-link:is(:hover, :focus-visible)) .homepage-image {
+.homepage-exhibition:is(:hover, :focus-within) .homepage-image {
   opacity: 0.7;
 }
 
-.homepage-exhibition:has(.homepage-exhibition-link:is(:hover, :focus-visible)) + .caption .homepage-caption-link {
+.homepage-exhibition:is(:hover, :focus-within) + .caption .homepage-caption-link {
   color: blue;
 }
 
-.homepage-exhibition:has(.homepage-exhibition-link:is(:hover, :focus-visible)) + .caption .homepage-caption-link::after {
+.homepage-exhibition:is(:hover, :focus-within) + .caption .homepage-caption-link::after {
   background: blue;
 }
 
@@ -1540,4 +1545,340 @@ button.info-link {
     margin-top: 1.75em;
   }
 
+}
+
+/* Let compact headers grow with wrapped navigation and expanded About links. */
+@media screen and (max-width: 1400px) {
+  .top-bar,
+  .top-bar2 {
+    position: fixed;
+    top: var(--page-gutter);
+    right: var(--page-gutter);
+    bottom: auto;
+    left: var(--page-gutter);
+    height: auto;
+    padding-top: 0.25rem;
+    padding-bottom: 1.5rem;
+    background: white;
+  }
+
+  .top-bar::before {
+    display: block;
+    position: absolute;
+    top: calc(-1 * var(--page-gutter));
+    right: calc(-1 * var(--page-gutter));
+    bottom: 0;
+    left: calc(-1 * var(--page-gutter));
+    height: auto;
+  }
+
+  .site-navigation {
+    position: relative;
+    inset: auto;
+    transform: none;
+    column-gap: 1em;
+    row-gap: 0.5em;
+  }
+
+  .top-bar > a:first-child {
+    display: block;
+    padding-right: 10rem;
+    font-size: clamp(1rem, 4.5vw, 1.5rem);
+    white-space: nowrap;
+  }
+
+  .site-header-spacer,
+  .exhibition-page .site-header-spacer,
+  .exhibition-text-page .site-header-spacer,
+  .info-page .site-header-spacer {
+    height: var(--compact-header-height, 8rem);
+  }
+
+  .info-navigation-actions {
+    margin-bottom: 0;
+    align-items: flex-start;
+  }
+
+  #contact-details,
+  #CV,
+  #writing-links,
+  .writing-page .info-navigation-actions .texts-coming-soon-row {
+    position: static;
+    margin-top: 0.75em;
+    max-width: 100%;
+  }
+
+  .writing-page .writing-links,
+  #writing-links[style*="inline-block"] {
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  .perennial-info-link {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .about-support-images {
+    flex-wrap: wrap;
+  }
+}
+
+.homepage-caption-link {
+  padding-right: 3.5em;
+}
+
+@media screen and (max-width: 600px) {
+  .top-bar > a:first-child {
+    display: block;
+  }
+
+  .caption,
+  .exhibition-gallery figure {
+    margin-bottom: 3em;
+  }
+
+  .caption2 {
+    padding-bottom: 3em;
+    text-align: left;
+  }
+
+  .other-project-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1em;
+  }
+
+  .about-intro .bio-summary,
+  .info-content > p {
+    text-align: left;
+  }
+
+  .homepage-exhibition-portrait,
+  .homepage-exhibition-portrait + .caption,
+  .slidevert,
+  .exhibition-gallery figure:has(.slidevert) {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1400px) {
+  .exhibition-gallery .slide,
+  .exhibition-gallery .slidevert,
+  .aceart-page .exhibition-gallery figure:nth-last-child(-n + 4) .slide,
+  .aceart-page .exhibition-gallery figure:nth-last-child(-n + 4) .slidevert {
+    height: auto;
+    max-height: min(530px, 65vh);
+    max-width: calc(100vw - 2 * var(--page-gutter) - var(--homepage-column-offset));
+    width: auto;
+    margin-top: 0;
+  }
+
+  .aceart-page .exhibition-gallery figure:nth-last-child(-n + 4) figcaption {
+    margin-top: 0.75em;
+  }
+}
+
+/* Keep the status at the viewport's top right at every breakpoint. */
+.site-navigation > a:first-child::before {
+  position: fixed;
+  top: calc(var(--page-gutter) + 0.25rem);
+  right: var(--page-gutter);
+  bottom: auto;
+  left: auto;
+  margin: 0;
+  background: white;
+}
+
+/* Secondary controls stay in one row; open details use a separate full-width row. */
+@media screen and (max-width: 1400px) {
+  .info-navigation-actions {
+    display: grid;
+    grid-template-columns: repeat(3, max-content) minmax(0, 1fr);
+    grid-template-rows: auto 2.5em;
+    gap: 0.75em 1em;
+  }
+
+  .info-action-group {
+    display: contents;
+  }
+
+  .info-action-group > .info-link:not(.toggles) {
+    grid-row: 1;
+  }
+
+  .info-action-group:nth-child(1) > .info-link:not(.toggles) { grid-column: 1; }
+  .info-action-group:nth-child(2) > .info-link:not(.toggles) { grid-column: 2; }
+  .info-action-group:nth-child(3) > .info-link:not(.toggles) { grid-column: 3; }
+
+  #contact-details,
+  #CV,
+  #writing-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+    align-self: start;
+    margin: 0;
+  }
+
+  .writing-page .info-navigation-actions .texts-coming-soon-row {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 0;
+  }
+}
+
+/* Keep the compact gap at every width using top navigation. */
+html[data-navigation="top"] .info-page .top-bar,
+html[data-navigation="top"] .exhibition-page .top-bar {
+  padding-bottom: 0.75rem;
+}
+
+html[data-navigation="top"] .info-page .site-navigation,
+html[data-navigation="top"] .exhibition-page .site-navigation,
+html[data-navigation="top"] .info-page .info-navigation-actions {
+  padding-bottom: 0;
+}
+
+html[data-navigation="top"] .info-navigation-actions {
+  grid-template-rows: auto 1.75em;
+}
+
+html[data-navigation="top"] .info-page .info-content,
+html[data-navigation="top"] .exhibition-page .slide-container.exhibition-gallery {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 899px) {
+  /* Match the first-image breathing room of pages with secondary navigation. */
+  .homepage > .slide-container,
+  .video-browser-page > .slide-container2 {
+    margin-top: 4.75rem;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .video-page .video-coming-soon-row {
+    position: absolute;
+    top: calc(100% + 6.25rem);
+    left: 0;
+    margin-top: 0;
+  }
+}
+
+/* Active secondary links must still give visible hover feedback. */
+.info-action-group > .info-link.is-active:hover,
+.writing-links .info-link[aria-current="page"]:hover {
+  color: grey;
+}
+
+button.info-link {
+  cursor: pointer;
+}
+
+/* Reserve room for the sidebar when a desktop window is moderately narrowed. */
+@media screen and (min-width: 900px) {
+  html[data-navigation="side"] .site-navigation {
+    max-width: 14rem;
+  }
+
+  html[data-navigation="side"] .slide-container:not(.exhibition-gallery),
+  html[data-navigation="side"] .slide-container2 {
+    width: min(800px, calc(100% - 16rem));
+    margin-left: max(16rem, calc((100% - 800px) / 2));
+    margin-right: auto;
+  }
+
+  html[data-navigation="side"] .slide-container.exhibition-gallery {
+    --homepage-column-offset: max(16rem, calc((100vw - 50rem - var(--page-gutter) - var(--page-gutter)) / 2));
+  }
+}
+
+@media screen and (min-width: 900px) {
+  /* Keep a clear controls column even when navigation switches to the top. */
+  .slide-container.exhibition-gallery {
+    --homepage-column-offset: max(8rem, calc((100vw - 50rem - var(--page-gutter) - var(--page-gutter)) / 2));
+  }
+
+  .exhibition-page .gallery-scroll-button {
+    position: absolute;
+    top: var(--gallery-controls-bottom, 0px);
+    bottom: auto;
+    right: auto;
+    left: var(--page-gutter);
+    width: 3em;
+    height: 1.8em;
+    transform: translateY(-100%);
+  }
+
+  .exhibition-page .gallery-scroll-left {
+    transform: translateY(-100%) scaleX(-1);
+  }
+
+  .exhibition-page .gallery-scroll-right {
+    left: calc(var(--page-gutter) + 4rem);
+  }
+
+  html[data-navigation="side"] .gallery-scroll-left {
+    left: calc(var(--page-gutter) + 1.25rem);
+  }
+
+  html[data-navigation="side"] .gallery-scroll-right {
+    left: calc(var(--page-gutter) + 5.25rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .exhibition-page .gallery-scroll-right,
+  html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
+    left: calc(var(--gallery-left-edge, 8rem) - 3em - 1rem);
+  }
+}
+
+/* Match the sidebar back arrow's em scale, including the right-arrow offset. */
+html[data-navigation="side"] .exhibition-page .gallery-scroll-button {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 900px) {
+  .exhibition-page .gallery-scroll-left,
+  html[data-navigation="side"] .exhibition-page .gallery-scroll-left {
+    left: calc(var(--gallery-left-edge, 8rem) - 6em - 1.75rem);
+  }
+}
+
+/* Expanded details follow the horizontal navigation layout without wrapping. */
+html[data-navigation="top"] .info-page #contact-details[style*="inline-block"],
+html[data-navigation="top"] .info-page #writing-links[style*="inline-block"] {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 1em;
+  white-space: nowrap;
+}
+
+html[data-navigation="top"] .info-page #contact-details .toggles,
+html[data-navigation="top"] .info-page #writing-links .info-link,
+html[data-navigation="top"] .info-page #CV {
+  flex: 0 0 auto;
+  margin: 0;
+  white-space: nowrap;
+}
+
+html[data-navigation="top"] .info-page #writing-links[style*="none"] {
+  display: none !important;
+}
+
+@media screen and (min-width: 900px) {
+  html[data-navigation="top"] .homepage .top-bar,
+  html[data-navigation="top"] .video-browser-page .top-bar {
+    padding-bottom: 0.75rem;
+  }
+
+  html[data-navigation="top"] .homepage > .slide-container,
+  html[data-navigation="top"] .video-browser-page > .slide-container2 {
+    /* Reserve the same space as About's controls and details row. */
+    margin-top: 5.25rem;
+  }
 }
