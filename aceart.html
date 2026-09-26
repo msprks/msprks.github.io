@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ace Art — M.E. Sparks</title>
-    <link rel="stylesheet" href="style.css?v=20260926-21">
+    <link rel="stylesheet" href="style.css?v=20260926-27">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <script src="responsive-header.js?v=2" defer></script>
-    <script src="exhibition-controls-layout.js?v=5" defer></script>
+    <script src="exhibition-controls-layout.js?v=8" defer></script>
   </head>
 
   <body class="exhibition-page aceart-page">
@@ -75,12 +75,16 @@
       const rightButton = document.querySelector('.gallery-scroll-right');
 
       const updateArrows = () => {
-        leftButton.classList.toggle('is-hidden', gallery.scrollLeft <= 2);
-        rightButton.classList.toggle('is-hidden', gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2);
+        leftButton.disabled = gallery.scrollLeft <= 2;
+        rightButton.disabled = gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2;
       };
 
       gallery.addEventListener('scroll', updateArrows, { passive: true });
       window.addEventListener('resize', updateArrows);
+      gallery.addEventListener('load', updateArrows, true);
+      const arrowObserver = new ResizeObserver(updateArrows);
+      arrowObserver.observe(gallery);
+      gallery.querySelectorAll('figure').forEach(figure => arrowObserver.observe(figure));
       updateArrows();
 
       document.querySelector('.gallery-scroll-left').addEventListener('click', () => {

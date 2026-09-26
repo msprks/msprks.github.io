@@ -57,15 +57,14 @@ if (exhibition) {
   document.body.append(leftButton, rightButton);
 
   const updateArrows = () => {
-    leftButton.classList.toggle('is-hidden', gallery.scrollLeft <= 2);
-    rightButton.classList.toggle(
-      'is-hidden',
-      gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2
-    );
+    leftButton.disabled = gallery.scrollLeft <= 2;
+    rightButton.disabled = gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2;
   };
 
   gallery.addEventListener('scroll', updateArrows, { passive: true });
   window.addEventListener('resize', updateArrows);
+  gallery.addEventListener('load', updateArrows, true);
+  new ResizeObserver(updateArrows).observe(gallery);
   leftButton.addEventListener('click', () => {
     gallery.scrollBy({ left: -gallery.clientWidth * 0.8, behavior: 'smooth' });
   });

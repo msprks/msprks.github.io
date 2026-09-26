@@ -1,19 +1,24 @@
-// Keep gallery controls level with the first caption, outside the gallery.
+// Place controls below the gallery on wide screens, beside it in the top-nav layout.
 const horizontalGallery = document.querySelector('.exhibition-gallery');
-const galleryImage = horizontalGallery?.querySelector('img');
-const galleryCaption = galleryImage?.closest('figure')?.querySelector('figcaption');
-if (horizontalGallery && galleryImage) {
+const galleryButtons = document.querySelectorAll('.gallery-scroll-button');
+if (horizontalGallery?.querySelector('img') && galleryButtons.length) {
+  const galleryControls = document.createElement('div');
+  galleryControls.className = 'gallery-controls';
+  galleryControls.setAttribute('role', 'group');
+  galleryControls.setAttribute('aria-label', 'Exhibition scrolling controls');
+  galleryButtons.forEach(button => galleryControls.append(button));
+  horizontalGallery.after(galleryControls);
+
   const alignGalleryControls = () => {
-    const galleryBounds = horizontalGallery.getBoundingClientRect();
-    document.documentElement.style.setProperty('--gallery-left-edge', `${galleryBounds.left + window.scrollX}px`);
-    // Anchor to the first caption so horizontal scrolling never shifts the arrows.
-    const controlsBottom = (galleryCaption || galleryImage).getBoundingClientRect().bottom + window.scrollY;
-    document.documentElement.style.setProperty('--gallery-controls-bottom', `${controlsBottom}px`);
+    galleryControls.style.setProperty('--gallery-margin-left', getComputedStyle(horizontalGallery).marginLeft);
+    const bounds = horizontalGallery.getBoundingClientRect();
+    const firstImage = horizontalGallery.querySelector('img');
+    galleryControls.style.setProperty('--gallery-left', `${bounds.left + window.scrollX}px`);
+    galleryControls.style.setProperty('--first-image-bottom', `${firstImage.getBoundingClientRect().bottom + window.scrollY}px`);
   };
-  const galleryLayoutObserver = new ResizeObserver(alignGalleryControls);
-  galleryLayoutObserver.observe(horizontalGallery);
-  galleryLayoutObserver.observe(galleryImage);
-  if (galleryCaption) galleryLayoutObserver.observe(galleryCaption);
+  const controlsObserver = new ResizeObserver(alignGalleryControls);
+  controlsObserver.observe(horizontalGallery);
+  controlsObserver.observe(horizontalGallery.querySelector('img'));
   horizontalGallery.addEventListener('load', alignGalleryControls, true);
   window.addEventListener('resize', alignGalleryControls);
   alignGalleryControls();

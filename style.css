@@ -632,9 +632,14 @@ button.info-link {
   right: calc(var(--page-gutter) + 8.5em);
 }
 
-.gallery-scroll-button.is-hidden {
-  opacity: 0;
-  pointer-events: none;
+.gallery-scroll-button:enabled {
+  background: blue;
+}
+
+.gallery-scroll-button:disabled {
+  opacity: 1;
+  background: grey;
+  cursor: default;
 }
 
 .slide-container,
@@ -1880,5 +1885,65 @@ html[data-navigation="top"] .info-page #writing-links[style*="none"] {
   html[data-navigation="top"] .video-browser-page > .slide-container2 {
     /* Reserve the same space as About's controls and details row. */
     margin-top: 5.25rem;
+  }
+}
+
+/* Align the pair’s right edge with the sidebar text, preserving the 12px gap. */
+html[data-navigation="side"] .exhibition-page .gallery-scroll-left {
+  left: calc(var(--gallery-navigation-right, 16rem) - 6em - 0.75rem);
+}
+
+html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
+  left: calc(var(--gallery-navigation-right, 16rem) - 3em);
+}
+
+.gallery-controls {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .exhibition-page .slide-container.exhibition-gallery {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .gallery-controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-left: var(--gallery-margin-left, 0px);
+    margin-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .exhibition-page .gallery-controls .gallery-scroll-button,
+  html[data-navigation="side"] .exhibition-page .gallery-controls .gallery-scroll-button {
+    position: static;
+    inset: auto;
+    flex: 0 0 auto;
+    transform: none;
+  }
+
+  .exhibition-page .gallery-controls .gallery-scroll-left,
+  html[data-navigation="side"] .exhibition-page .gallery-controls .gallery-scroll-left {
+    transform: scaleX(-1);
+  }
+}
+
+/* Unavailable directions stay visible and grey, including on hover. */
+.gallery-scroll-button:disabled:hover,
+.gallery-scroll-button:disabled:active {
+  background: grey;
+}
+
+@media screen and (min-width: 900px) {
+  html[data-navigation="top"] .exhibition-page .gallery-controls {
+    position: absolute;
+    top: var(--first-image-bottom);
+    right: auto;
+    left: var(--page-gutter);
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-100%);
   }
 }
