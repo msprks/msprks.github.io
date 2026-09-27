@@ -28,6 +28,9 @@ body {
 .caption2,
 figcaption,
 .sundialling-caption {
+  font-size: var(--caption-size);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   font-weight: 400;
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
