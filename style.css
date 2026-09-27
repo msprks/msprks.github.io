@@ -598,7 +598,8 @@ button.info-link {
   margin: 0;
 }
 
-.exhibition-gallery figcaption {
+.exhibition-gallery figcaption,
+.vertical-exhibition-gallery figcaption {
   width: 100%;
   max-width: 100%;
   margin-top: 0.75em;
@@ -607,7 +608,7 @@ button.info-link {
   overflow-wrap: break-word;
 }
 
-.aceart-page .exhibition-gallery figure:last-child figcaption {
+:is(.aceart-page, .touchy-page) .exhibition-gallery figure:last-child figcaption {
   padding-bottom: 1em;
 }
 
@@ -1015,13 +1016,15 @@ button.info-link {
     margin-right: 0;
   }
 
-  .aceart-page .exhibition-gallery figure:nth-last-child(-n + 4) .slide,
-  .aceart-page .exhibition-gallery figure:nth-last-child(-n + 4) .slidevert {
+  :is(.aceart-page, .touchy-page) .exhibition-gallery figure:nth-last-child(-n + 4) .slide,
+  .shibumi-page .exhibition-gallery figure:last-child .slidevert,
+  :is(.aceart-page, .touchy-page) .exhibition-gallery figure:nth-last-child(-n + 4) .slidevert {
     height: 460px;
     margin-top: 35px;
   }
 
-  .aceart-page .exhibition-gallery figure:nth-last-child(-n + 4) figcaption {
+  .shibumi-page .exhibition-gallery figure:last-child figcaption,
+  :is(.aceart-page, .touchy-page) .exhibition-gallery figure:nth-last-child(-n + 4) figcaption {
     margin-top: calc(35px + 0.75em);
   }
 
@@ -1265,15 +1268,15 @@ button.info-link {
     margin-top: 1em;
   }
 
-  .aceart-page .aceart-exhibition-title {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-title {
     display: block;
   }
 
-  .aceart-page .perennial-info-link a {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .perennial-info-link a {
     margin-top: 1em;
   }
 
-  .aceart-page .aceart-exhibition-gallery {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery {
     display: block;
     margin-left: 0;
   }
@@ -1354,13 +1357,13 @@ button.info-link {
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  .aceart-page .aceart-exhibition-gallery,
-  .aceart-page .aceart-exhibition-title {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-title {
     display: inline;
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  .aceart-page .aceart-exhibition-gallery {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery {
     margin-left: 0.75em;
   }
 
@@ -1368,8 +1371,8 @@ button.info-link {
     margin-top: 0.35em;
   }
 
-  .aceart-page .aceart-exhibition-gallery + a,
-  .aceart-page .exhibition-text-current {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery + a,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .exhibition-text-current {
     margin-top: 0;
   }
 }
@@ -1507,19 +1510,19 @@ button.info-link {
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  .aceart-page .aceart-exhibition-gallery,
-  .aceart-page .aceart-exhibition-title {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-title {
     display: inline;
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  .aceart-page .aceart-exhibition-gallery {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery {
     margin-left: 0.75em;
   }
 
   .perennial-info-link a,
-  .aceart-page .aceart-exhibition-gallery + a,
-  .aceart-page .exhibition-text-current {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery + a,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .exhibition-text-current {
     margin-top: 0;
   }
 }
@@ -1679,8 +1682,9 @@ button.info-link {
 @media screen and (min-width: 900px) and (max-width: 1400px) {
   .exhibition-gallery .slide,
   .exhibition-gallery .slidevert,
-  .aceart-page .exhibition-gallery figure:nth-last-child(-n + 4) .slide,
-  .aceart-page .exhibition-gallery figure:nth-last-child(-n + 4) .slidevert {
+  :is(.aceart-page, .touchy-page) .exhibition-gallery figure:nth-last-child(-n + 4) .slide,
+  .shibumi-page .exhibition-gallery figure:last-child .slidevert,
+  :is(.aceart-page, .touchy-page) .exhibition-gallery figure:nth-last-child(-n + 4) .slidevert {
     height: auto;
     max-height: min(530px, 65vh);
     max-width: calc(100vw - 2 * var(--page-gutter) - var(--homepage-column-offset));
@@ -1688,7 +1692,8 @@ button.info-link {
     margin-top: 0;
   }
 
-  .aceart-page .exhibition-gallery figure:nth-last-child(-n + 4) figcaption {
+  .shibumi-page .exhibition-gallery figure:last-child figcaption,
+  :is(.aceart-page, .touchy-page) .exhibition-gallery figure:nth-last-child(-n + 4) figcaption {
     margin-top: 0.75em;
   }
 }
@@ -1956,4 +1961,126 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
     padding: 0;
     transform: translateY(-100%);
   }
+}
+
+/* Match portrait spacing in the Touchy and Soft Power galleries. */
+:is(.touchy-page, .shibumi-page) .exhibition-gallery figure:has(.slidevert) {
+  box-sizing: border-box;
+  padding-inline: clamp(16px, 2vw, 32px);
+}
+
+:is(.touchy-page, .pieceandparse-page) .exhibition-text-media {
+  gap: 0.75em;
+}
+
+/* Preserve the final Soft Power image's smaller scale in compact galleries. */
+@media screen and (min-width: 900px) and (max-width: 1400px) {
+  .shibumi-page .exhibition-gallery figure:last-child .slidevert {
+    max-height: min(460px, 56.415vh);
+    margin-top: min(35px, 4.2925vh);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .exhibition-page .exhibition-gallery figure:last-child {
+    padding-right: 4rem;
+  }
+}
+
+/* Vertical exhibitions use the homepage content column. */
+.vertical-exhibition-gallery figure {
+  margin: 0 0 5rem;
+}
+.vertical-exhibition-gallery figure:has(.slidevert) {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding-inline: clamp(16px, 2vw, 32px);
+}
+.vertical-exhibition-gallery .slide,
+.vertical-exhibition-gallery .slidevert {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.vertical-exhibition-gallery figcaption:empty {
+  display: none;
+}
+html[data-navigation="top"] .exhibition-page .vertical-exhibition-gallery {
+  margin-top: 0;
+}
+@media screen and (max-width: 600px) {
+  .vertical-exhibition-gallery figure {
+    margin-bottom: 3rem;
+  }
+  .vertical-exhibition-gallery figure:has(.slidevert) {
+    width: 90%;
+  }
+}
+
+/* A consistent finishing space after content on vertically scrolling pages. */
+:root { --vertical-page-end-space: 4rem; }
+body > :is(.slide-container:not(.exhibition-gallery), .slide-container2) {
+  margin-bottom: 0;
+  padding-bottom: var(--vertical-page-end-space);
+}
+body > :is(.slide-container:not(.exhibition-gallery), .slide-container2) > :last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+body > .slide-container + .page-spacer {
+  display: none;
+}
+@media screen and (max-width: 899px) {
+  .exhibition-page .slide-container.exhibition-gallery {
+    margin-bottom: 0;
+    padding-bottom: var(--vertical-page-end-space);
+  }
+  .exhibition-gallery figure:last-child,
+  .exhibition-gallery figure:last-child figcaption {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Portraits retain their proportions at 70% of the full content-column size. */
+body img.site-portrait {
+  min-width: 0;
+  max-width: 100%;
+  display: block;
+  width: 70%;
+  height: auto;
+  max-height: none;
+  margin-inline: auto;
+}
+body .vertical-exhibition-gallery figure:has(.site-portrait),
+body .homepage-exhibition-portrait,
+body .homepage-exhibition-portrait + .caption {
+  width: 70%;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+body .vertical-exhibition-gallery figure img.site-portrait,
+body .homepage-exhibition-portrait img.site-portrait {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+body .slide-container > .site-portrait + .caption {
+  width: 70%;
+  margin-inline: auto;
+}
+body .other-project-image-frame img.site-portrait {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+body .homepage-pair img.site-portrait {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
 }

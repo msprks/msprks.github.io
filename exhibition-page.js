@@ -1,8 +1,8 @@
 const exhibitionDetails = {
   shibumi: { title: 'Soft Power', year: '2026', gallery: 'Galerie Shibumi' },
-  touchy: { title: 'Touchy', year: '2025', gallery: '226 Gallery' },
+  touchy: { title: 'Touchy', year: '2025', gallery: '226 Main' },
   hemming: { title: 'Hemming', year: '2025' },
-  pieceandparse: { title: 'Piece and Parse', year: '2025', gallery: '226 Gallery' },
+  pieceandparse: { title: 'Piece and Parse', year: '2025', gallery: '226 Main' },
   nars: { title: 'Undercurrents', year: '2025', gallery: 'NARS' },
   alternator: { title: 'and a Rag in the Other', year: '2022', gallery: 'Alternator Centre for Contemporary Art' },
   gordonsmith: { title: 'We can only hint at this with words', year: '2022', gallery: 'Gordon Smith Gallery of Canadian Art' },
@@ -18,7 +18,7 @@ const exhibitionDetails = {
   glogauair: { title: 'Dear Home', year: '2017', gallery: 'GlogauAIR' },
   access: { title: 'A Terrible Signal', year: '2017', gallery: 'Access Gallery' },
   franc: { title: 'A Beast Salient', year: '2017', gallery: 'Franc Gallery' },
-  artmur: { title: 'Fresh Paint New Construction', year: '2016', gallery: 'Art Mur' },
+  artmur: { title: 'Art Mûr', year: '2016', italic: false, afterYearComma: false },
   stillhere: { title: 'Still Here', year: '2016', gallery: 'Concourse Gallery' }
 };
 
