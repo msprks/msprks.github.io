@@ -708,6 +708,7 @@ button.info-link {
   margin-top: 0.75em;
 }
 
+/* Projects image dimensions are user-approved; exclude them from global portrait resizing. */
 .other-project-image-frame {
   aspect-ratio: 842 / 1191;
   overflow: hidden;
@@ -2046,7 +2047,7 @@ body > .slide-container + .page-spacer {
 }
 
 /* Portraits retain their proportions at 70% of the full content-column size. */
-body img.site-portrait {
+body:not(.projects-page) img.site-portrait {
   min-width: 0;
   max-width: 100%;
   display: block;
@@ -2071,11 +2072,6 @@ body .homepage-exhibition-portrait img.site-portrait {
 body .slide-container > .site-portrait + .caption {
   width: 70%;
   margin-inline: auto;
-}
-body .other-project-image-frame img.site-portrait {
-  width: 70%;
-  height: 70%;
-  object-fit: contain;
 }
 
 body .homepage-pair img.site-portrait {
