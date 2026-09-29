@@ -1,13 +1,4 @@
 let img = [];
-let txt;
-let n = 0;
-
-let r1 = 0;
-let r2 = 0;
-
-let p1 = { x: 0, y: 0 };
-let p2 = { x: 0, y: 0 };
-
 let pt = [];
 let t_pt = [];
 
@@ -65,7 +56,6 @@ function setup() {
 		n: i*4
 		})
 	}
-  //noStroke();
 }
 
 function draw() {
@@ -96,7 +86,6 @@ function draw() {
    if(frameCount%75==0){
    	k++;
     let kk = floor(random(words.length));
-   	print(k%t_pt.length);
    	t_pt[k%t_pt.length].x = random(width);
    	t_pt[k%t_pt.length].y = random(height);
    	t_pt[k%t_pt.length].n = floor(random(0,t_pt.length));

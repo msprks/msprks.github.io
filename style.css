@@ -1775,6 +1775,7 @@ html[data-navigation="top"] .exhibition-page .slide-container.exhibition-gallery
 @media screen and (max-width: 899px) {
   /* Match the first-image breathing room of pages with secondary navigation. */
   .homepage > .slide-container,
+  html[data-navigation="top"] .video-page > .vertical-exhibition-gallery,
   .video-browser-page > .slide-container2 {
     margin-top: 4.75rem;
   }
@@ -1900,6 +1901,7 @@ html[data-navigation="top"] .info-page #writing-links[style*="none"] {
   }
 
   html[data-navigation="top"] .homepage > .slide-container,
+  html[data-navigation="top"] .video-page > .vertical-exhibition-gallery,
   html[data-navigation="top"] .video-browser-page > .slide-container2 {
     /* Reserve the same space as About's controls and details row. */
     margin-top: 5.25rem;
@@ -1995,6 +1997,20 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 .vertical-exhibition-gallery figure {
   margin: 0 0 5rem;
 }
+.exhibition-video-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 177.777778%;
+  background: #111;
+}
+.exhibition-video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .vertical-exhibition-gallery figure:has(.slidevert) {
   width: 75%;
   margin-left: auto;
@@ -2012,7 +2028,7 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 .vertical-exhibition-gallery figcaption:empty {
   display: none;
 }
-html[data-navigation="top"] .exhibition-page .vertical-exhibition-gallery {
+html[data-navigation="top"] .exhibition-page:not(.video-page) .vertical-exhibition-gallery {
   margin-top: 0;
 }
 @media screen and (max-width: 600px) {
@@ -2071,6 +2087,19 @@ body .homepage-exhibition-portrait img.site-portrait {
   width: 100%;
   height: auto;
   margin: 0;
+}
+@media screen and (min-width: 900px) {
+  /* Match the height of Ace Art's first image (1500 × 994) at the same column width. */
+  body.video-page .vertical-exhibition-gallery figure:has(.exhibition-video) {
+    width: 37.275%;
+  }
+  /* Give Drive a larger portrait viewport while preserving the displayed dimensions. */
+  .video-page .exhibition-video {
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
 }
 body .slide-container > .site-portrait + .caption {
   width: 70%;

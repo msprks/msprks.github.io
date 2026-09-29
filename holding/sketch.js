@@ -1,13 +1,4 @@
 let img = [];
-let txt;
-let n = 0;
-
-let r1 = 0;
-let r2 = 0;
-
-let p1 = { x: 0, y: 0 };
-let p2 = { x: 0, y: 0 };
-
 let pt = [];
 let t_pt = [];
 
@@ -48,7 +39,6 @@ function setup() {
 		n: floor(random(0,51))
 		})
 	}
-  //noStroke();
 }
 
 function draw() {
@@ -74,12 +64,10 @@ function draw() {
      fill(255);
      blendMode(BLEND);
      text(CHATGPT[t_pt[i].n],t_pt[i].x,t_pt[i].y);
-    // text(NOUNSNN[i],t_pt[i].y,t_pt[i].x);
    }
 
    if(frameCount%200==0){
    	k++;
-   	print(k%t_pt.length);
    	t_pt[k%t_pt.length].x = random(width);
    	t_pt[k%t_pt.length].y = random(height);
    	t_pt[k%t_pt.length].n = floor(random(0,CHATGPT.length));

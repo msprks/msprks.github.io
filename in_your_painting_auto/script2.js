@@ -48,7 +48,6 @@ window.onload = ()=>{
 window.setInterval(flashCursor,500);
 
 function flashCursor(){
-  console.log("flashing cursor");
   let cursor = document.getElementById("cursor");
 
   if(cursor.style.color == "black"){
@@ -58,29 +57,16 @@ function flashCursor(){
   }
 
   count++;
-//  console.log(count);
-
   if(count%interval===0){
     makeNewPoem();
-  //  interval = Math.floor(Math.random()*5)+5;
-    console.log(interval);
   }
 
 }
 
 function makeNewPoem(){
-  //  let image = document.getElementById("backgroundimage");
-    let outputwrapper = document.getElementById("poem-container");
-    let poem  = document.createElement("p");
-
-    // image.setAttribute("src","images/2.jpg");
-    let num = Math.floor(1+(Math.random()*50));
-  //  console.log(num);
-  //  image.setAttribute("src","images/"+num+".jpg");
-    let newpoem = poemList[p]();
-    poem.innerHTML = newpoem;
-    console.log(newpoem);
-
+    const outputwrapper = document.getElementById("poem-container");
+    const poem = document.createElement("p");
+    poem.innerHTML = poemList[p]();
     outputwrapper.appendChild(poem);
 
       p++;
@@ -88,37 +74,14 @@ function makeNewPoem(){
         p=0;
       }
 }
-// function fadeout(element){
-//   if(element.style.opacity>0){
-//     element.style.opacity+= -1;
-//     fadeout(element);
-//   }
-// }
-
 function random(wordArr){
-  let i = Math.floor(Math.random()*(wordArr.length-1));
-	let choice = wordArr[i];
-  console.log(choice);
-	return choice;
+  return wordArr[Math.floor(Math.random()*(wordArr.length-1))];
 }
-
-//poemsbelow
 
 function poem1c(){
 	let poem = "_in your house I was "+random(VERBSVBG)+" and "+random(VERBSVBG);
   return poem;
 }
-
-// function poem1d(){
-//   let poem = "and "+random(VERBSVBG);
-// 	return poem;
-// }
-
-// function poem1a(){
-//   let poem = "In your "+random(NOUNS)+" I "+random(VERBSPAST);
-// 	return poem;
-// }
-
 
 function poem2(){
 	let poem = "_in your chair I thought about my "+random(NOUNS);
