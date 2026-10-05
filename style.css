@@ -61,6 +61,16 @@ a:hover {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
+/* Lighten the shared title and navigation without changing their sizing. */
+.top-bar > a:first-child,
+.site-navigation {
+  font-weight: 200;
+}
+
+:where(.top-bar > a:first-child, .site-navigation a):not(:hover):not(:active):not([aria-current="page"]) {
+  color: #555;
+}
+
 .site-navigation > a:first-child {
   position: relative;
 }
@@ -259,6 +269,12 @@ button.info-link {
   border: 1px dotted #d6b500;
 }
 
+/* Match navigation placeholders without shrinking inside the video caption. */
+.video-page .images-coming-soon {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: var(--caption-size);
+}
+
 /* Keep the placeholder below the exhibition details at every screen width. */
 .perennial-info-link > br.images-coming-soon-break:first-of-type {
   display: block;
@@ -294,6 +310,11 @@ button.info-link {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.pieceandparse-page .exhibition-text-media img[src$="web_poster.png"] {
+  width: 70%;
+  margin-inline: auto;
 }
 
 .exhibition-text-page .site-header-spacer {
@@ -338,8 +359,7 @@ button.info-link {
   grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
   gap: 2em;
   align-items: stretch;
-  border-bottom: 1px dotted grey;
-  padding-bottom: 1.5em;
+  padding-bottom: 3em;
 }
 
 .about-image {
