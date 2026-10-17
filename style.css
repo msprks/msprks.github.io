@@ -2212,3 +2212,9 @@ body .homepage-pair img.site-portrait {
 .homepage .homepage-exhibition:is(:hover, :focus-within) + .caption .homepage-caption-link {
   color: blue;
 }
+
+/* Blue hover and keyboard-focus feedback for exhibition navigation links. */
+:is(.exhibition-page, .exhibition-text-page) .site-navigation a:hover,
+:is(.exhibition-page, .exhibition-text-page) .site-navigation a:focus-visible {
+  color: blue;
+}
