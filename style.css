@@ -1292,15 +1292,15 @@ button.info-link {
     margin-top: 1em;
   }
 
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-title {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-title {
     display: block;
   }
 
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .perennial-info-link a {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .perennial-info-link a {
     margin-top: 1em;
   }
 
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-gallery {
     display: block;
     margin-left: 0;
   }
@@ -1381,13 +1381,13 @@ button.info-link {
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-title {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-gallery,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-title {
     display: inline;
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-gallery {
     margin-left: 0.75em;
   }
 
@@ -1395,8 +1395,8 @@ button.info-link {
     margin-top: 0.35em;
   }
 
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery + a,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .exhibition-text-current {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-gallery + a,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .exhibition-text-current {
     margin-top: 0;
   }
 }
@@ -1534,19 +1534,19 @@ button.info-link {
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-title {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-gallery,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-title {
     display: inline;
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-gallery {
     margin-left: 0.75em;
   }
 
   .perennial-info-link a,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .aceart-exhibition-gallery + a,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page) .exhibition-text-current {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .aceart-exhibition-gallery + a,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page) .exhibition-text-current {
     margin-top: 0;
   }
 }
