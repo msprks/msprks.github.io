@@ -2132,3 +2132,8 @@ body .homepage-pair img.site-portrait {
   object-fit: contain;
   margin: 0;
 }
+
+/* Give homepage image groups more separation while keeping captions attached. */
+.homepage > .slide-container > .caption {
+  margin-bottom: 6em;
+}
