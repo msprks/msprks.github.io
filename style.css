@@ -2207,3 +2207,8 @@ body .homepage-pair img.site-portrait {
     top: -5.4px;
   }
 }
+
+/* Keep image hover feedback stronger than the resting grey link color. */
+.homepage .homepage-exhibition:is(:hover, :focus-within) + .caption .homepage-caption-link {
+  color: blue;
+}
