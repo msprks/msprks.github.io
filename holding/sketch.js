@@ -4,18 +4,31 @@ let t_pt = [];
 
 let k = 0;
 
+// Start with five random images; fetch the rest without blocking the animation.
+const pendingImages = Array.from({ length: 51 }, (_, i) => i + 1);
+for (let i = pendingImages.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [pendingImages[i], pendingImages[j]] = [pendingImages[j], pendingImages[i]];
+}
+
 function preload() {
+  for (const number of pendingImages.splice(0, 5)) {
+    img.push(loadImage(`images/${number}.webp`));
+  }
+}
 
-	for(let i=0;i<51;i++){
-		let k = loadImage("images/"+(i+1)+".png");
-		img.push(k);
-	}
-
+function loadNextImage() {
+  if (!pendingImages.length) return;
+  const number = pendingImages.shift();
+  loadImage(`images/${number}.webp`, (loaded) => {
+    img.push(loaded);
+    loadNextImage();
+  }, () => loadNextImage());
 }
 
 function setup() {
-  background(0);
   createCanvas(windowWidth, windowHeight);
+  background(0);
 	fullscreen();
   imageMode(CENTER);
   blendMode(BLEND);
@@ -36,9 +49,10 @@ function setup() {
 		y: random(height),
 		s: random(0.2,2),
 		r: random(TWO_PI),
-		n: floor(random(0,51))
+		n: floor(random(img.length))
 		})
 	}
+  for (let i = 0; i < 3; i++) loadNextImage();
 }
 
 function draw() {
@@ -50,7 +64,7 @@ function draw() {
 				pt[i].y = 0;
 				pt[i].x = random(width);
 				pt[i].s = random(0.25,1);
-				pt[i].n = floor(random(0,img.length-1));
+				pt[i].n = floor(random(img.length));
 			}
 			push();
 			translate(pt[i].x, pt[i].y);
