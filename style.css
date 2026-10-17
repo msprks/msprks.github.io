@@ -2218,3 +2218,13 @@ body .homepage-pair img.site-portrait {
 :is(.exhibition-page, .exhibition-text-page) .site-navigation a:focus-visible {
   color: blue;
 }
+
+/* Give each Projects caption more room before the next image. */
+.projects-page .caption2 {
+  padding-bottom: 7em;
+}
+@media screen and (max-width: 600px) {
+  .projects-page .caption2 {
+    padding-bottom: 5em;
+  }
+}
