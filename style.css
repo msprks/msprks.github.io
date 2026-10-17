@@ -1292,15 +1292,15 @@ button.info-link {
     margin-top: 1em;
   }
 
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-title {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-title {
     display: block;
   }
 
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .perennial-info-link a {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .perennial-info-link a {
     margin-top: 1em;
   }
 
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-gallery {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-gallery {
     display: block;
     margin-left: 0;
   }
@@ -1381,13 +1381,13 @@ button.info-link {
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-gallery,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-title {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-gallery,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-title {
     display: inline;
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-gallery {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-gallery {
     margin-left: 0.75em;
   }
 
@@ -1395,8 +1395,8 @@ button.info-link {
     margin-top: 0.35em;
   }
 
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-gallery + a,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .exhibition-text-current {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-gallery + a,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .exhibition-text-current {
     margin-top: 0;
   }
 }
@@ -1534,19 +1534,19 @@ button.info-link {
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-gallery,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-title {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-gallery,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-title {
     display: inline;
   }
 
   .perennial-info-link .exhibition-gallery-name,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-gallery {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-gallery {
     margin-left: 0.75em;
   }
 
   .perennial-info-link a,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .aceart-exhibition-gallery + a,
-  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page) .exhibition-text-current {
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .aceart-exhibition-gallery + a,
+  :is(.aceart-page, .touchy-page, .shibumi-page, .pieceandparse-page, .alternator-page, .gordonsmith-page, .trapp-page, .nars-page, .ou-page) .exhibition-text-current {
     margin-top: 0;
   }
 }
@@ -2163,4 +2163,19 @@ body .homepage-pair img.site-portrait {
 /* Lighten linked captions without changing ordinary artwork caption text. */
 .homepage .homepage-caption-link:not(:hover):not(:focus-visible):not(:active) {
   color: #a3a3a3;
+}
+
+/* Underline exhibition text destinations throughout exhibition navigation. */
+.exhibition-page .exhibition-text-nav a[href$="-text.html"],
+.exhibition-text-page .exhibition-text-nav a[href$="-text.html"] {
+  text-decoration: underline;
+  text-decoration-color: #d0d0d0;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+/* Match homepage exhibition-link underlines to exhibition text links. */
+.homepage .homepage-caption-link {
+  text-decoration-color: #d0d0d0;
+  text-decoration-thickness: 1px;
 }
