@@ -2229,10 +2229,15 @@ body .homepage-pair img.site-portrait {
   }
 }
 
-/* Give mobile exhibition text links more space above and below. */
+/* Keep exhibition text below the title with the same gap at every width. */
+.exhibition-page .exhibition-text-nav a[href$="-text.html"] {
+  display: block;
+  margin-top: 1.25em;
+}
+
+/* Keep additional breathing room below the link on mobile. */
 @media screen and (max-width: 899px) {
   .exhibition-page .exhibition-text-nav a[href$="-text.html"] {
-    margin-top: 1.25em;
     margin-bottom: 0.5em;
   }
 }
