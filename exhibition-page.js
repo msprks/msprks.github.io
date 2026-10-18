@@ -36,11 +36,6 @@ if (exhibition) {
     `<span class="exhibition-text-nav perennial-info-link">${exhibitionTitle}${dateSeparator}${exhibition.year}${exhibition.afterYearComma === false ? '' : ','}${exhibition.gallery ? `<br><span class="exhibition-gallery-name">${exhibition.gallery}</span>` : ''}<br class="images-coming-soon-break"><span class="images-coming-soon">images coming soon</span></span>`
   );
 
-  navigation.insertAdjacentHTML(
-    'beforeend',
-    '<a class="exhibition-home-back" href="index.html" aria-label="Return to painting"></a>'
-  );
-
   gallery.classList.add('slide-container', 'exhibition-gallery');
   gallery.setAttribute('aria-label', `${exhibition.title} exhibition`);
 
