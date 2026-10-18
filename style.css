@@ -2228,3 +2228,11 @@ body .homepage-pair img.site-portrait {
     padding-bottom: 5em;
   }
 }
+
+/* Give mobile exhibition text links more space above and below. */
+@media screen and (max-width: 899px) {
+  .exhibition-page .exhibition-text-nav a[href$="-text.html"] {
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+  }
+}
