@@ -359,6 +359,7 @@ button.info-link {
   grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
   gap: 2em;
   align-items: stretch;
+  border-bottom: 1px dotted grey;
   padding-bottom: 3em;
 }
 
