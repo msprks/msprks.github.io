@@ -2233,6 +2233,7 @@ body .homepage-pair img.site-portrait {
 /* Keep exhibition text below the title with the same gap at every width. */
 .exhibition-page .exhibition-text-nav a[href$="-text.html"] {
   display: block;
+  font-size: var(--caption-size);
   margin-top: 1.25em;
 }
 
