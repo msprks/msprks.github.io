@@ -1171,6 +1171,7 @@ button.info-link {
 /* Keep the exhibition details readable as the gallery moves behind them. */
 .exhibition-page .perennial-info-link {
   background: white;
+  font-size: var(--caption-size);
   padding: 0.25em 0 0.5em;
 }
 
