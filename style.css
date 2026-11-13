@@ -2244,3 +2244,40 @@ body .homepage-pair img.site-portrait {
     margin-bottom: 0.5em;
   }
 }
+
+/* Let exhibition information wrap according to the space available. */
+.exhibition-page .site-navigation .exhibition-text-nav.perennial-info-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5em 0.75em;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.exhibition-page .site-navigation .exhibition-text-nav.perennial-info-link > :is(span, a) {
+  display: block;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.exhibition-page .site-navigation .exhibition-text-nav.perennial-info-link > br {
+  display: none;
+}
+
+.exhibition-page .site-navigation .exhibition-text-nav.perennial-info-link > a[href$="-text.html"],
+.exhibition-page .site-navigation .exhibition-text-nav.perennial-info-link > .exhibition-status-row {
+  flex-basis: 100%;
+  margin-top: 0.75em;
+}
+
+.exhibition-page .site-navigation .exhibition-status-row > .images-coming-soon {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 0;
+}
