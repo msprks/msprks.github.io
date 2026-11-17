@@ -2281,3 +2281,8 @@ body .homepage-pair img.site-portrait {
   max-width: 100%;
   margin-top: 0;
 }
+
+/* Give the details link more breathing room when navigation moves above the images. */
+html[data-navigation="top"] .exhibition-page .site-navigation .exhibition-text-nav.perennial-info-link > a[href$="-text.html"] {
+  margin-bottom: 0.75rem;
+}
