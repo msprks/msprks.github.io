@@ -136,9 +136,9 @@
       const holdingGallery = document.querySelector('.holding-gallery');
       const holdingImage = holdingGallery.querySelector('img');
       const holdingScreenshots = [
-        { number: 3, height: 917 },
-        { number: 4, height: 916 },
-        { number: 2, height: 916 },
+        { file: 'holding-screenshot3-web.jpg', height: 917 },
+        { file: 'holding-screenshot4-web.jpg?v=top-trimmed', height: 911 },
+        { file: 'holding-screenshot2-web.jpg', height: 916 },
       ];
       let holdingIndex = 0;
 
@@ -147,7 +147,7 @@
           const count = holdingScreenshots.length;
           holdingIndex = (holdingIndex + Number(button.dataset.step) + count) % count;
           const screenshot = holdingScreenshots[holdingIndex];
-          holdingImage.src = `images/otherprojects/holding-screenshot${screenshot.number}-web.jpg`;
+          holdingImage.src = `images/otherprojects/${screenshot.file}`;
           holdingImage.height = screenshot.height;
           holdingImage.alt = `holding screenshot ${holdingIndex + 1} of ${count}`;
         });
