@@ -22,13 +22,29 @@
         transform: translateY(-50%);
         width: 44px;
         height: 44px;
+        padding: 0;
         border: 0;
         border-radius: 50%;
         background: rgba(232, 232, 232, 0.9);
         color: #111;
-        font-size: 1.5rem;
         cursor: pointer;
       }
+
+      .holding-gallery button:not([hidden]) {
+        display: grid;
+        place-items: center;
+      }
+
+      .holding-gallery button::before {
+        content: "";
+        width: 24px;
+        height: 18px;
+        background: #000;
+        -webkit-mask: url("images/arrow-right-straight.svg") center / contain no-repeat;
+        mask: url("images/arrow-right-straight.svg") center / contain no-repeat;
+      }
+
+      .holding-gallery button:first-of-type::before { transform: scaleX(-1); }
 
       .holding-gallery button:first-of-type { left: 8px; }
       .holding-gallery button:last-of-type { right: 8px; }
@@ -54,10 +70,10 @@
 
       <div class="holding-gallery" role="group" aria-label="holding screenshots">
         <div aria-live="polite">
-          <img decoding="async" class="slide" alt="holding screenshot 1 of 3" src="images/otherprojects/holding-screenshot3-web.jpg" width="1600" height="917">
+          <img decoding="async" class="slide" alt="holding screenshot 1 of 3" src="images/otherprojects/holding-screenshot3-web.jpg?v=907" width="1600" height="907">
         </div>
-        <button type="button" aria-label="Previous holding screenshot" data-step="-1" hidden>←</button>
-        <button type="button" aria-label="Next holding screenshot" data-step="1" hidden>→</button>
+        <button type="button" aria-label="Previous holding screenshot" data-step="-1" hidden></button>
+        <button type="button" aria-label="Next holding screenshot" data-step="1" hidden></button>
       </div>
       <div class="caption2">
         <a href="https://www.mesparks.com/holding/" style="color: blue; text-decoration: underline;"><em>holding</em></a>, 2025, is part of a series of browser-based works exploring quotation, collage, and language. Images of hands holding objects, drawn from historical paintings in The Metropolitan Museum of Art’s online collection, slowly float across the screen. The accompanying words are sourced from recurring descriptors of the women depicted in these paintings. The work was presented on a phone screen as part of the group exhibition <a href="touchy.html" style="color: blue; text-decoration: underline;"><em>Touchy</em></a>, 2025.
@@ -136,9 +152,9 @@
       const holdingGallery = document.querySelector('.holding-gallery');
       const holdingImage = holdingGallery.querySelector('img');
       const holdingScreenshots = [
-        { file: 'holding-screenshot3-web.jpg', height: 917 },
-        { file: 'holding-screenshot4-web.jpg?v=top-trimmed', height: 911 },
-        { file: 'holding-screenshot2-web.jpg', height: 916 },
+        { file: 'holding-screenshot3-web.jpg?v=907', height: 907 },
+        { file: 'holding-screenshot4-web.jpg?v=907', height: 907 },
+        { file: 'holding-screenshot2-web.jpg?v=907', height: 907 },
       ];
       let holdingIndex = 0;
 
