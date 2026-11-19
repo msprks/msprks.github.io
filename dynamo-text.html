@@ -7,6 +7,41 @@
     <link rel="stylesheet" href="style.css?v=20260926-46">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <script src="responsive-header.js?v=2" defer></script>
+    <style>
+      .dynamo-page .exhibition-text-media {
+        gap: 0.5em;
+      }
+
+      .dynamo-page .exhibition-material {
+        cursor: zoom-in;
+      }
+
+      .pamphlet-zoom {
+        max-width: calc(100% - 1rem);
+        max-height: calc(100% - 1rem);
+        padding: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      .pamphlet-zoom::backdrop {
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .pamphlet-zoom button {
+        display: block;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: zoom-out;
+      }
+
+      .pamphlet-zoom img {
+        display: block;
+        width: min(calc(100vw - 1rem), calc((100dvh - 1rem) * 841 / 595));
+        height: auto;
+      }
+    </style>
   </head>
   <body class="exhibition-page exhibition-text-page dynamo-page">
     <header class="top-bar">
@@ -21,10 +56,30 @@
     </header>
     <div class="site-header-spacer"></div>
     <main class="slide-container exhibition-text" aria-label="Mother Tongue exhibition details">
-      <section class="exhibition-text-media" aria-label="Mother Tongue exhibition pamphlet" style="gap: 1.5em;">
+      <section class="exhibition-text-media" aria-label="Mother Tongue exhibition pamphlet">
         <a class="exhibition-material" href="images/exhibitions/dynamo/pamphlet2-web.jpg" aria-label="Open full-size Mother Tongue pamphlet page 2"><img loading="eager" decoding="async" class="slide" alt="Mother Tongue pamphlet page 2, with a black-and-white image and text by Angela Glanzmann" src="images/exhibitions/dynamo/pamphlet2-web.jpg" width="841" height="595"></a>
         <a class="exhibition-material" href="images/exhibitions/dynamo/pamphlet4-web.jpg" aria-label="Open full-size Mother Tongue pamphlet page 4"><img loading="lazy" decoding="async" class="slide" alt="Mother Tongue pamphlet page 4, with the exhibition statement and artist biographies" src="images/exhibitions/dynamo/pamphlet4-web.jpg" width="841" height="595"></a>
       </section>
     </main>
+    <dialog class="pamphlet-zoom" aria-label="Enlarged exhibition pamphlet">
+      <form method="dialog">
+        <button type="submit" aria-label="Close enlarged pamphlet"><img alt="" width="841" height="595"></button>
+      </form>
+    </dialog>
+    <script>
+      const pamphletZoom = document.querySelector('.pamphlet-zoom');
+      const enlargedPamphlet = pamphletZoom.querySelector('img');
+
+      document.querySelectorAll('.exhibition-material').forEach((link) => {
+        link.setAttribute('aria-haspopup', 'dialog');
+        link.addEventListener('click', (event) => {
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+          event.preventDefault();
+          enlargedPamphlet.src = link.href;
+          enlargedPamphlet.alt = link.querySelector('img').alt;
+          pamphletZoom.showModal();
+        });
+      });
+    </script>
   </body>
 </html>
