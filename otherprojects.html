@@ -24,7 +24,7 @@
         height: 44px;
         border: 0;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(232, 232, 232, 0.9);
         color: #111;
         font-size: 1.5rem;
         cursor: pointer;
@@ -54,7 +54,7 @@
 
       <div class="holding-gallery" role="group" aria-label="holding screenshots">
         <div aria-live="polite">
-          <img decoding="async" class="slide" alt="holding screenshot 1 of 3" src="images/otherprojects/holding-screenshot2-web.jpg" width="1600" height="916">
+          <img decoding="async" class="slide" alt="holding screenshot 1 of 3" src="images/otherprojects/holding-screenshot3-web.jpg" width="1600" height="917">
         </div>
         <button type="button" aria-label="Previous holding screenshot" data-step="-1" hidden>←</button>
         <button type="button" aria-label="Next holding screenshot" data-step="1" hidden>→</button>
@@ -135,15 +135,20 @@
     <script>
       const holdingGallery = document.querySelector('.holding-gallery');
       const holdingImage = holdingGallery.querySelector('img');
-      const holdingHeights = [916, 917, 916];
+      const holdingScreenshots = [
+        { number: 3, height: 917 },
+        { number: 4, height: 916 },
+        { number: 2, height: 916 },
+      ];
       let holdingIndex = 0;
 
       holdingGallery.querySelectorAll('button').forEach((button) => {
         button.addEventListener('click', () => {
-          const count = holdingHeights.length;
+          const count = holdingScreenshots.length;
           holdingIndex = (holdingIndex + Number(button.dataset.step) + count) % count;
-          holdingImage.src = `images/otherprojects/holding-screenshot${holdingIndex + 2}-web.jpg`;
-          holdingImage.height = holdingHeights[holdingIndex];
+          const screenshot = holdingScreenshots[holdingIndex];
+          holdingImage.src = `images/otherprojects/holding-screenshot${screenshot.number}-web.jpg`;
+          holdingImage.height = screenshot.height;
           holdingImage.alt = `holding screenshot ${holdingIndex + 1} of ${count}`;
         });
         button.hidden = false;
