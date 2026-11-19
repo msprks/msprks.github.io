@@ -6,9 +6,33 @@
 
     <title>OTHER PROJECTS</title>
     <link rel="stylesheet" href="style.css?v=20260926-51">
-    <script>
+    <style>
+      .holding-gallery {
+        position: relative;
+      }
 
-    </script>
+      .holding-gallery img {
+        display: block;
+        height: auto;
+      }
+
+      .holding-gallery button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        color: #111;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .holding-gallery button:first-of-type { left: 8px; }
+      .holding-gallery button:last-of-type { right: 8px; }
+    </style>
 
     <script src="responsive-header.js?v=2" defer></script>
   </head>
@@ -28,9 +52,15 @@
 
     <div class="slide-container2" >
 
-      <img decoding="async" class="slide" alt="Screenshots of Holding" src="images/otherprojects/holding-screenshots-web.jpg" width="1600" height="1341" style="display: block; width: 100%; height: auto;">
+      <div class="holding-gallery" role="group" aria-label="holding screenshots">
+        <div aria-live="polite">
+          <img decoding="async" class="slide" alt="holding screenshot 1 of 3" src="images/otherprojects/holding-screenshot2-web.jpg" width="1600" height="916">
+        </div>
+        <button type="button" aria-label="Previous holding screenshot" data-step="-1" hidden>←</button>
+        <button type="button" aria-label="Next holding screenshot" data-step="1" hidden>→</button>
+      </div>
       <div class="caption2">
-        <a href="https://www.mesparks.com/holding/" style="color: blue; text-decoration: underline;"><em>holding</em></a>, 2026, is part of a series of browser-based works exploring quotation, collage, and language. Images of hands holding objects, drawn from historical paintings in The Metropolitan Museum of Art’s online collection, slowly float across the screen. The accompanying words are sourced from recurring descriptors of the women depicted in these paintings. The work was presented on a phone screen as part of the group exhibition <a href="touchy.html" style="color: blue; text-decoration: underline;"><em>Touchy</em></a>, 2025.
+        <a href="https://www.mesparks.com/holding/" style="color: blue; text-decoration: underline;"><em>holding</em></a>, 2025, is part of a series of browser-based works exploring quotation, collage, and language. Images of hands holding objects, drawn from historical paintings in The Metropolitan Museum of Art’s online collection, slowly float across the screen. The accompanying words are sourced from recurring descriptors of the women depicted in these paintings. The work was presented on a phone screen as part of the group exhibition <a href="touchy.html" style="color: blue; text-decoration: underline;"><em>Touchy</em></a>, 2025.
       </div>
 
       <img loading="lazy" decoding="async" class="slide" alt="Edges of Becoming" src="images/otherprojects/web_edgesofbecoming.JPG?v=9f75c8b15a" width="1600" height="948" style="display: block; width: 100%; height: auto;">
@@ -103,6 +133,22 @@
 
     <div class="image-zoom-overlay" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden><img loading="lazy" decoding="async" alt=""></div>
     <script>
+      const holdingGallery = document.querySelector('.holding-gallery');
+      const holdingImage = holdingGallery.querySelector('img');
+      const holdingHeights = [916, 917, 916];
+      let holdingIndex = 0;
+
+      holdingGallery.querySelectorAll('button').forEach((button) => {
+        button.addEventListener('click', () => {
+          const count = holdingHeights.length;
+          holdingIndex = (holdingIndex + Number(button.dataset.step) + count) % count;
+          holdingImage.src = `images/otherprojects/holding-screenshot${holdingIndex + 2}-web.jpg`;
+          holdingImage.height = holdingHeights[holdingIndex];
+          holdingImage.alt = `holding screenshot ${holdingIndex + 1} of ${count}`;
+        });
+        button.hidden = false;
+      });
+
       const imageZoomOverlay = document.querySelector('.image-zoom-overlay');
       const imageZoomTarget = imageZoomOverlay.querySelector('img');
       document.querySelectorAll('.zoomable-image').forEach((button) => {
