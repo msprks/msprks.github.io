@@ -75,22 +75,6 @@ a:hover {
   position: relative;
 }
 
-.site-navigation > a:first-child::before {
-  content: "under construction";
-  position: fixed;
-  top: calc(var(--page-gutter) + 0.75em);
-  right: var(--page-gutter);
-  bottom: auto;
-  left: auto;
-  color: #a3a3a3;
-  font-size: 0.75em;
-  font-style: italic;
-  font-weight: normal;
-  white-space: nowrap;
-  padding: 0.15em 0.35em;
-  border: 1px dotted #d6b500;
-}
-
 .site-title:hover {
   color: grey;
 }
@@ -457,7 +441,8 @@ button.info-link {
   padding: 0.25em 0 0.5em;
 }
 
-.info-action-group > .info-link {
+.info-action-group > .info-link,
+.info-page .info-navigation-actions > #insta {
   display: block;
   margin: 0;
   padding: 0;
@@ -497,7 +482,7 @@ button.info-link {
 }
 
 #email,
-#insta,
+#contact-details #insta,
 #CV,
 .writing-links .info-link {
   font-size: 0.8em;
@@ -505,7 +490,6 @@ button.info-link {
 
 /* Use one shared size for every secondary About-page destination. */
 .info-page #contact-details #email,
-.info-page #contact-details #insta,
 .info-page #CV,
 .info-page .writing-links .info-link {
   font-size: var(--caption-size) !important;
@@ -514,6 +498,10 @@ button.info-link {
 
 .info-page #email code {
   font: inherit;
+}
+
+.info-page :is(#email, #CV) {
+  text-decoration: underline;
 }
 
 .writing-links .info-link {
@@ -942,14 +930,6 @@ button.info-link {
     margin-top: 0.75em;
   }
 
-  .site-navigation > a:first-child::before {
-    position: fixed;
-    top: calc(var(--page-gutter) + 0.75em);
-    bottom: auto;
-    right: var(--page-gutter);
-    left: auto;
-  }
-
   .exhibition-text-nav {
     flex-basis: 100%;
     margin-top: 2em;
@@ -1058,15 +1038,6 @@ button.info-link {
   }
 }
 
-@media screen and (min-width: 1201px) {
-  .site-navigation > a:first-child::before {
-    top: 2.2em;
-    right: calc(var(--page-gutter) + 1.25rem);
-    bottom: auto;
-    left: auto;
-  }
-}
-
 /* Move navigation to the phone-style top row before the gallery itself changes layout. */
 @media screen and (min-width: 900px) and (max-width: 1400px) {
   .top-bar {
@@ -1084,14 +1055,6 @@ button.info-link {
     gap: 1em;
     row-gap: 0;
     margin-top: 0.75em;
-  }
-
-  .site-navigation > a:first-child::before {
-    position: fixed;
-    top: calc(var(--page-gutter) + 0.75em);
-    right: var(--page-gutter);
-    bottom: auto;
-    left: auto;
   }
 
   .exhibition-text-nav {
@@ -1416,6 +1379,13 @@ button.info-link {
   }
 }
 
+/* Embed the arrow masks so they also render in file previews. */
+:root {
+  --arrow-left-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2080%2052%22%3E%3Cpath%20d%3D%22M55%204v16c0%2011-9%2020-20%2020H12m12-12L12%2040l12%2012%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%223.5%22/%3E%3C/svg%3E");
+  --arrow-right-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2080%2052%22%3E%3Cpath%20d%3D%22M25%204v16c0%2011%209%2020%2020%2020h23M56%2028l12%2012-12%2012%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%223.5%22/%3E%3C/svg%3E");
+  --arrow-right-straight-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2080%2052%22%3E%3Cpath%20d%3D%22M6%2026h60M54%2014l12%2012-12%2012%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%223.5%22/%3E%3C/svg%3E");
+}
+
 /* Shared outlined, bent-line arrows. */
 .homepage-caption-link::after {
   width: 3em;
@@ -1423,8 +1393,8 @@ button.info-link {
   top: -0.45em;
   background: #a3a3a3;
   clip-path: none;
-  -webkit-mask: url("images/arrow-right.svg") center / contain no-repeat;
-  mask: url("images/arrow-right.svg") center / contain no-repeat;
+  -webkit-mask: var(--arrow-right-mask) center / contain no-repeat;
+  mask: var(--arrow-right-mask) center / contain no-repeat;
 }
 
 .homepage-caption-link:hover::after,
@@ -1441,8 +1411,8 @@ button.info-link {
   height: 2.1em;
   background: #a3a3a3;
   clip-path: none;
-  -webkit-mask: url("images/arrow-right-straight.svg") center / contain no-repeat;
-  mask: url("images/arrow-right-straight.svg") center / contain no-repeat;
+  -webkit-mask: var(--arrow-right-straight-mask) center / contain no-repeat;
+  mask: var(--arrow-right-straight-mask) center / contain no-repeat;
 }
 
 .gallery-scroll-left {
@@ -1462,8 +1432,8 @@ button.info-link {
   background: #a3a3a3;
   clip-path: none;
   transform: none;
-  -webkit-mask: url("images/arrow-left.svg") center / contain no-repeat;
-  mask: url("images/arrow-left.svg") center / contain no-repeat;
+  -webkit-mask: var(--arrow-left-mask) center / contain no-repeat;
+  mask: var(--arrow-left-mask) center / contain no-repeat;
 }
 
 .exhibition-home-back:hover,
@@ -1495,8 +1465,8 @@ button.info-link {
     background: #a3a3a3;
     clip-path: none;
     transform: none;
-    -webkit-mask: url("images/arrow-left.svg") center / contain no-repeat;
-    mask: url("images/arrow-left.svg") center / contain no-repeat;
+    -webkit-mask: var(--arrow-left-mask) center / contain no-repeat;
+    mask: var(--arrow-left-mask) center / contain no-repeat;
   }
 
   .exhibition-home-back:hover::before,
@@ -1724,17 +1694,6 @@ button.info-link {
   }
 }
 
-/* Keep the status at the viewport's top right at every breakpoint. */
-.site-navigation > a:first-child::before {
-  position: fixed;
-  top: calc(var(--page-gutter) + 0.25rem);
-  right: var(--page-gutter);
-  bottom: auto;
-  left: auto;
-  margin: 0;
-  background: white;
-}
-
 /* Secondary controls stay in one row; open details use a separate full-width row. */
 @media screen and (max-width: 1400px) {
   .info-navigation-actions {
@@ -1789,16 +1748,27 @@ html[data-navigation="top"] .info-navigation-actions {
   grid-template-rows: auto 1.75em;
 }
 
+html[data-navigation="top"] .info-page:not(.writing-page) .info-navigation-actions {
+  grid-template-rows: auto minmax(var(--caption-size), auto);
+  margin-top: 0.75em;
+  padding-top: 0;
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .info-page .info-navigation-actions > #insta {
+    grid-area: 1 / 3;
+    justify-self: start;
+  }
+}
+
 html[data-navigation="top"] .info-page .info-content,
 html[data-navigation="top"] .exhibition-page .slide-container.exhibition-gallery {
   margin-top: 0;
 }
 
 @media screen and (max-width: 899px) {
-  /* Match the first-image breathing room of pages with secondary navigation. */
-  .homepage > .slide-container,
-  html[data-navigation="top"] .video-page > .vertical-exhibition-gallery,
-  .video-browser-page > .slide-container2 {
+  html[data-navigation="top"] .video-page > .vertical-exhibition-gallery {
     margin-top: 4.75rem;
   }
 }
@@ -2285,4 +2255,17 @@ body .homepage-pair img.site-portrait {
 /* Give the details link more breathing room when navigation moves above the images. */
 html[data-navigation="top"] .exhibition-page .site-navigation .exhibition-text-nav.perennial-info-link > a[href$="-text.html"] {
   margin-bottom: 0.75rem;
+}
+
+/* Match the first image to the space used by mobile exhibition headers. */
+@media screen and (max-width: 899px) {
+  :is(.homepage, .projects-page, .info-page:not(.writing-page), .exhibition-page:not(.video-page)) > .site-header-spacer,
+  .site-header-spacer:has(+ .exhibition-text > .exhibition-text-media:first-child) {
+    height: max(9.5rem, var(--compact-header-height, 0px));
+  }
+
+  :is(.homepage, .projects-page, .info-page:not(.writing-page), .exhibition-page:not(.video-page)) > .site-header-spacer + :is(.slide-container, .slide-container2),
+  .site-header-spacer + .exhibition-text:has(> .exhibition-text-media:first-child) {
+    margin-top: 0;
+  }
 }
