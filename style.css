@@ -75,10 +75,6 @@ a:hover {
   position: relative;
 }
 
-.site-title:hover {
-  color: grey;
-}
-
 a:active,
 .info-link:active {
   color: blue;
@@ -94,7 +90,7 @@ a:active,
 }
 
 .info-link:hover {
-  color: #a3a3a3;
+  color: blue;
 }
 
 button.info-link {
@@ -164,14 +160,6 @@ button.info-link {
   font-size: 0.6667em;
   line-height: 1.25;
   gap: 0.25em;
-}
-
-.site-navigation [aria-current="page"] {
-  color: blue;
-}
-
-.site-navigation [aria-current="page"]:hover {
-  color: grey;
 }
 
 .video-browser-page .caption2 a {
@@ -512,10 +500,6 @@ button.info-link {
   color: #a3a3a3;
 }
 
-.writing-links .info-link[aria-current="page"] {
-  color: blue;
-}
-
 @media screen and (min-width: 900px) {
   /* Match the email/Instagram spacing to the writing-link list. */
   .info-page #contact-details[style*="inline-block"] {
@@ -559,19 +543,11 @@ button.info-link {
   white-space: nowrap;
 }
 
-.info-navigation-actions .info-link:hover {
-  color: blue;
-}
-
 .info-navigation-actions #insta:hover {
   color: blue;
 }
 
 .info-navigation-actions #email:hover {
-  color: blue;
-}
-
-.info-action-group > .info-link.is-active {
   color: blue;
 }
 
@@ -1782,12 +1758,6 @@ html[data-navigation="top"] .exhibition-page .slide-container.exhibition-gallery
   }
 }
 
-/* Active secondary links must still give visible hover feedback. */
-.info-action-group > .info-link.is-active:hover,
-.writing-links .info-link[aria-current="page"]:hover {
-  color: #a3a3a3;
-}
-
 button.info-link {
   cursor: pointer;
 }
@@ -2185,10 +2155,15 @@ body .homepage-pair img.site-portrait {
   color: blue;
 }
 
-/* Blue hover and keyboard-focus feedback for exhibition navigation links. */
-:is(.exhibition-page, .exhibition-text-page) .site-navigation a:hover,
-:is(.exhibition-page, .exhibition-text-page) .site-navigation a:focus-visible {
+/* Use the same interaction color throughout site navigation. */
+.top-bar > a:first-child:is(:hover, :focus-visible),
+.site-navigation :is(a, button):is(:hover, :focus-visible) {
   color: blue;
+}
+
+.site-navigation :is(a, button):is([aria-current="page"], .is-active),
+.writing-links .info-link[aria-current="page"] {
+  color: black;
 }
 
 /* Give each Projects caption more room before the next image. */

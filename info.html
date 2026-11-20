@@ -7,7 +7,7 @@
     <meta name="keywords" content="M.E. Sparks, painting, art, artist, sparks, me, M.E.">
 
     <title>INFO</title>
-    <link rel="stylesheet" href="style.css?v=20260926-55">
+    <link rel="stylesheet" href="style.css?v=20260926-57">
 
     <script>
 
@@ -31,7 +31,7 @@
 
     function activateInfoLink(element){
       document.querySelectorAll('.info-action-group > .info-link').forEach((link) => link.classList.remove('is-active'));
-      element.classList.add('is-active');
+      element.classList.toggle('is-active', element.nextElementSibling.style.display !== 'none');
     }
 
     window.addEventListener('DOMContentLoaded', () => {
