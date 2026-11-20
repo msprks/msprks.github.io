@@ -7,7 +7,7 @@
     <meta name="keywords" content="M.E. Sparks, painting, art, artist, sparks, me, M.E.">
 
     <title>INFO</title>
-    <link rel="stylesheet" href="style.css?v=20260926-53">
+    <link rel="stylesheet" href="style.css?v=20260926-55">
 
     <script>
 
@@ -35,9 +35,8 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll('.info-action-group > .info-link');
-      if (window.location.hash === '#contact') links[0].click();
-      if (window.location.hash === '#cv') links[1].click();
+      if (window.location.hash === '#contact') document.getElementById('contact-button').click();
+      if (window.location.hash === '#cv') document.getElementById('cv-button').click();
     });
     </script>
 
@@ -55,14 +54,14 @@
         <a href="info.html" aria-current="page">about</a>
         <div class="info-actions exhibition-text-nav info-navigation-actions">
           <div class="info-action-group">
-            <button class="info-link" type="button" onclick="hide('CV');hide('writing-links');toggle('contact-details');activateInfoLink(this)">contact</button>
+            <button id="cv-button" class="info-link" type="button" onclick="hide('contact-details');hide('writing-links');toggle('CV');activateInfoLink(this)">cv</button>
+            <a class="info-link toggles" id="CV" style="display:none;" target="_blank" rel="noopener noreferrer" href="web_Sparks_CV2026.pdf?v=4cd356f6f5">download</a>
+          </div>
+          <div class="info-action-group">
+            <button id="contact-button" class="info-link" type="button" onclick="hide('CV');hide('writing-links');toggle('contact-details');activateInfoLink(this)">contact</button>
             <span id="contact-details" style="display:none;">
               <a class="toggles" id="email" href="mailto:m.eliz.sparks@gmail.com"><code>m.eliz.sparks</code>&#64;gmail&#46;com</a>
             </span>
-          </div>
-          <div class="info-action-group">
-            <button class="info-link" type="button" onclick="hide('contact-details');hide('writing-links');toggle('CV');activateInfoLink(this)">cv</button>
-            <a class="info-link toggles" id="CV" style="display:none;" target="_blank" rel="noopener noreferrer" href="web_Sparks_CV2026.pdf?v=4cd356f6f5">download</a>
           </div>
           <!-- Text navigation temporarily hidden. -->
           <div class="info-action-group" style="display:none;">
