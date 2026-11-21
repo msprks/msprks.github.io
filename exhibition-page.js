@@ -14,7 +14,7 @@ const exhibitionDetails = {
   '13suite15': { title: '13suite15', year: '2019', afterYearComma: false },
   soma: { title: 'somebody any body', year: '2019', gallery: 'SOMA' },
   dynamo: { title: 'Mother Tongue', year: '2018', gallery: 'Dynamo Arts Association' },
-  support: { title: 'near channels', year: '2018', gallery: 'Support Support' },
+  support: { title: 'near channels', year: '2018', gallery: 'Support', galleryUrl: 'https://supportsupport.ca/index.html' },
   glogauair: { title: 'Dear Home', year: '2017', gallery: 'GlogauAIR' },
   access: { title: 'A Terrible Signal', year: '2017', gallery: 'Access Gallery' },
   franc: { title: 'A Beast Salient', year: '2017', gallery: 'Franc Gallery' },
@@ -30,10 +30,13 @@ if (exhibition) {
   const gallery = document.querySelector('main');
   const exhibitionTitle = exhibition.italic === false ? exhibition.title : `<em>${exhibition.title}</em>`;
   const dateSeparator = exhibition.dateSeparator ?? ', ';
+  const galleryName = exhibition.galleryUrl
+    ? `<a href="${exhibition.galleryUrl}">${exhibition.gallery}</a>`
+    : exhibition.gallery;
 
   navigation.insertAdjacentHTML(
     'beforeend',
-    `<span class="exhibition-text-nav perennial-info-link"><span class="aceart-exhibition-title">${exhibitionTitle}${dateSeparator}${exhibition.year}${exhibition.afterYearComma === false ? '' : ','}</span>${exhibition.gallery ? `<br><span class="exhibition-gallery-name">${exhibition.gallery}</span>` : ''}<br class="images-coming-soon-break"><span class="exhibition-status-row"><span class="images-coming-soon">images coming soon</span></span></span>`
+    `<span class="exhibition-text-nav perennial-info-link"><span class="aceart-exhibition-title">${exhibitionTitle}${dateSeparator}${exhibition.year}${exhibition.afterYearComma === false ? '' : ','}</span>${exhibition.gallery ? `<br><span class="exhibition-gallery-name">${galleryName}</span>` : ''}<br class="images-coming-soon-break"><span class="exhibition-status-row"><span class="images-coming-soon">images coming soon</span></span></span>`
   );
 
   gallery.classList.add('slide-container', 'exhibition-gallery');
