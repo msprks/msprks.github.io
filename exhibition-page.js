@@ -19,7 +19,7 @@ const exhibitionDetails = {
   access: { title: 'A Terrible Signal', year: '2017', gallery: 'Access Gallery' },
   franc: { title: 'A Beast Salient', year: '2017', gallery: 'Franc Gallery' },
   artmur: { title: 'Art Mûr', year: '2016', italic: false, afterYearComma: false },
-  stillhere: { title: 'Still Here', year: '2016', gallery: 'Concourse Gallery' }
+  stillhere: { title: 'Still/Here', year: '2016', gallery: 'Concourse Gallery, Emily Carr University' }
 };
 
 const exhibitionSlug = window.location.pathname.split('/').pop().replace(/\.html$/, '');
