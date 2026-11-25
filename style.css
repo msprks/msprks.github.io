@@ -1990,6 +1990,84 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 .vertical-exhibition-gallery figcaption:empty {
   display: none;
 }
+.vertical-exhibition-gallery .exhibition-reel-figure {
+  width: min(70%, calc(100% - 104px));
+  margin-inline: auto;
+}
+.exhibition-reel {
+  position: relative;
+}
+.exhibition-reel-frame {
+  aspect-ratio: var(--exhibition-reel-ratio);
+}
+.nars-page .exhibition-reel-frame {
+  --exhibition-reel-ratio: 2114 / 2158;
+}
+:is(.aceart-page, .shibumi-page) .exhibition-reel-frame {
+  --exhibition-reel-ratio: 9 / 16;
+}
+.aceart-page .holding-patterns-frame {
+  --exhibition-reel-ratio: 1571 / 1600;
+  overflow: hidden;
+}
+.exhibition-reel-frame .slide {
+  height: 100%;
+  object-fit: cover;
+}
+.holding-patterns-frame .slide {
+  /* Keep the wall-to-floor line at the same height while centering the crop. */
+  transform-origin: center 87%;
+  transform: translateY(var(--floor-alignment, 0.6%)) scale(1.04);
+}
+.holding-patterns-frame img:is([src$="/web_holdingpatterns-still5.jpg"], [src$="/web_holdingpatterns-still2.jpg"]) {
+  --floor-alignment: -0.44%;
+}
+.holding-patterns-frame img[src$="/web_holdingpatterns-still3.jpg"] {
+  --floor-alignment: 0.25%;
+}
+.seated-figure-color-filters {
+  position: absolute;
+}
+.shibumi-seated-figure-reel img[src*="/web_seatedfigure-still2-web.jpg"] {
+  filter: url(#shibumi-orange-still-2);
+}
+.shibumi-seated-figure-reel img[src*="/web_seatedfigure-still3-web.jpg"] {
+  filter: url(#shibumi-orange-still-3);
+}
+.exhibition-reel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(232, 232, 232, 0.9);
+  color: #111;
+  cursor: pointer;
+}
+.exhibition-reel button:not([hidden]) {
+  display: grid;
+  place-items: center;
+}
+.exhibition-reel button::before {
+  content: "";
+  width: 24px;
+  height: 18px;
+  background: #000;
+  -webkit-mask: var(--arrow-right-straight-mask) center / contain no-repeat;
+  mask: var(--arrow-right-straight-mask) center / contain no-repeat;
+}
+.exhibition-reel button[data-step="-1"] {
+  right: calc(100% + 8px);
+}
+.exhibition-reel button[data-step="-1"]::before {
+  transform: scaleX(-1);
+}
+.exhibition-reel button[data-step="1"] {
+  left: calc(100% + 8px);
+}
 html[data-navigation="top"] .exhibition-page:not(.video-page) .vertical-exhibition-gallery {
   margin-top: 0;
 }

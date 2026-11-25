@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Undercurrents — M.E. Sparks</title>
-    <link rel="stylesheet" href="style.css?v=20261017-nars">
+    <link rel="stylesheet" href="style.css?v=20261125-exhibition-reels">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <script src="responsive-header.js?v=2" defer></script>
+    <script src="exhibition-reel.js?v=2" defer></script>
   </head>
   <body class="exhibition-page nars-page">
     <header class="top-bar">
@@ -24,9 +25,16 @@
       <figure>
         <img loading="eager" decoding="async" class="slide" alt="Undercurrents exhibition view" src="images/exhibitions/undercurrents/web_nars1.jpeg" width="1600" height="1231">
       </figure>
-      <figure>
-        <img loading="lazy" decoding="async" class="site-portrait slide" alt="Holding Patterns video still" src="images/exhibitions/nars/web_holdingpatterns_still.jpg?v=96726c7a5f" width="1588" height="1606">
-        <figcaption><em>Holding Patterns (No.3)</em>, 2025, 4K digital video and sound, loop (video still)</figcaption>
+      <figure class="exhibition-reel-figure">
+        <div class="exhibition-reel" role="group" aria-label="Holding Patterns video stills" data-still-label="Holding Patterns video still"
+             data-stills='["images/exhibitions/undercurrents/video%20still%202.png", "images/exhibitions/undercurrents/holdingpatterns_still.jpg"]'>
+          <div class="exhibition-reel-frame" aria-live="polite">
+            <img loading="lazy" decoding="async" class="slide" alt="Holding Patterns video still 1 of 3" src="images/exhibitions/nars/web_holdingpatterns_still.jpg?v=96726c7a5f" width="1588" height="1606">
+          </div>
+          <button type="button" aria-label="Previous video still" data-step="-1" hidden></button>
+          <button type="button" aria-label="Next video still" data-step="1" hidden></button>
+        </div>
+        <figcaption><em>Holding Patterns (No.3)</em>, 2025, 4K digital video and sound, loop (video stills)</figcaption>
       </figure>
       <figure>
         <img loading="lazy" decoding="async" class="slide" alt="NARS International Studio Residency" src="images/exhibitions/nars/web_narsresidency.jpg" width="1600" height="1205">

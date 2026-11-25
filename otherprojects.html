@@ -158,15 +158,19 @@
       ];
       let holdingIndex = 0;
 
+      function advanceHoldingScreenshot(step) {
+        const count = holdingScreenshots.length;
+        holdingIndex = (holdingIndex + step + count) % count;
+        const screenshot = holdingScreenshots[holdingIndex];
+        holdingImage.src = `images/otherprojects/${screenshot.file}`;
+        holdingImage.height = screenshot.height;
+        holdingImage.alt = `holding screenshot ${holdingIndex + 1} of ${count}`;
+      }
+
+      holdingImage.style.cursor = 'pointer';
+      holdingImage.addEventListener('click', () => advanceHoldingScreenshot(1));
       holdingGallery.querySelectorAll('button').forEach((button) => {
-        button.addEventListener('click', () => {
-          const count = holdingScreenshots.length;
-          holdingIndex = (holdingIndex + Number(button.dataset.step) + count) % count;
-          const screenshot = holdingScreenshots[holdingIndex];
-          holdingImage.src = `images/otherprojects/${screenshot.file}`;
-          holdingImage.height = screenshot.height;
-          holdingImage.alt = `holding screenshot ${holdingIndex + 1} of ${count}`;
-        });
+        button.addEventListener('click', () => advanceHoldingScreenshot(Number(button.dataset.step)));
         button.hidden = false;
       });
 

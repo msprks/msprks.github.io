@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Soft Power — M.E. Sparks</title>
-    <link rel="stylesheet" href="style.css?v=20260927-1">
+    <link rel="stylesheet" href="style.css?v=20261125-shibumi-orange">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <script src="responsive-header.js?v=2" defer></script>
+    <script src="exhibition-reel.js?v=3" defer></script>
   </head>
 
   <body class="exhibition-page shibumi-page">
@@ -30,9 +31,40 @@
         <img loading="lazy" decoding="async" class="slide" alt="Soft Power exhibition view" src="images/exhibitions/shibumi/web_01_shibumi1%20copy-balanced.jpg" width="1500" height="1000">
         <figcaption>Right: <em>Draped Composition (In-Progress)</em>, 2024–25, acrylic, tempera, ink, oil paint on canvas and recycled fabrics, approximately 78” x 84”<br><span class="caption-following-line">Left: <em>Seated Figure</em>, 2025, 4K digital video, loop, 58” monitor</span></figcaption>
       </figure>
-      <figure>
-        <img loading="lazy" decoding="async" class="site-portrait slidevert" alt="Seated Figure video still" src="images/exhibitions/shibumi/web_03_seatedfigure.webp" srcset="images/exhibitions/shibumi/web_03_seatedfigure-640.webp 360w, images/exhibitions/shibumi/web_03_seatedfigure.webp 900w" sizes="(max-width: 600px) 90vw, 60vw" width="900" height="1600">
-        <figcaption><em>Seated Figure</em>, 2025, 4K digital video, loop (video still)</figcaption>
+      <figure class="exhibition-reel-figure">
+        <div class="exhibition-reel shibumi-seated-figure-reel" role="group" aria-label="Seated Figure video stills" data-still-label="Seated Figure video still"
+             data-stills='["images/exhibitions/shibumi/web_seatedfigure-still2-web.jpg?v=20261125-2", "images/exhibitions/shibumi/web_seatedfigure-still3-web.jpg?v=20261125-5"]'>
+          <svg class="seated-figure-color-filters" width="0" height="0" aria-hidden="true" focusable="false">
+            <filter id="shibumi-orange-still-2" color-interpolation-filters="sRGB">
+              <!-- Select orange using both red–green and green–blue separation. -->
+              <feColorMatrix in="SourceGraphic" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  12 -12 0 0 -.96" result="redMask"/>
+              <feColorMatrix in="SourceGraphic" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 12 -12 0 -.84" result="goldMask"/>
+              <feComposite in="redMask" in2="goldMask" operator="in" result="orangeMask"/>
+              <feComponentTransfer in="SourceGraphic" result="corrected">
+                <feFuncR type="linear" slope="1.015" intercept=".009"/>
+              </feComponentTransfer>
+              <feComposite in="corrected" in2="orangeMask" operator="in"/>
+              <feComposite in2="SourceGraphic" operator="over"/>
+            </filter>
+            <filter id="shibumi-orange-still-3" color-interpolation-filters="sRGB">
+              <feColorMatrix in="SourceGraphic" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  12 -12 0 0 -.96" result="redMask"/>
+              <feColorMatrix in="SourceGraphic" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 12 -12 0 -.84" result="goldMask"/>
+              <feComposite in="redMask" in2="goldMask" operator="in" result="orangeMask"/>
+              <feComponentTransfer in="SourceGraphic" result="corrected">
+                <feFuncR type="linear" slope="1.035" intercept=".021"/>
+                <feFuncG type="linear" slope="1" intercept=".008"/>
+              </feComponentTransfer>
+              <feComposite in="corrected" in2="orangeMask" operator="in"/>
+              <feComposite in2="SourceGraphic" operator="over"/>
+            </filter>
+          </svg>
+          <div class="exhibition-reel-frame" aria-live="polite">
+            <img loading="lazy" decoding="async" class="slide" alt="Seated Figure video still 1 of 3" src="images/exhibitions/shibumi/web_03_seatedfigure-web.jpg?v=20261125-1307" srcset="images/exhibitions/shibumi/web_03_seatedfigure-640.jpg?v=20261125-1307 360w, images/exhibitions/shibumi/web_03_seatedfigure-web.jpg?v=20261125-1307 900w" sizes="70vw" width="900" height="1600">
+          </div>
+          <button type="button" aria-label="Previous video still" data-step="-1" hidden></button>
+          <button type="button" aria-label="Next video still" data-step="1" hidden></button>
+        </div>
+        <figcaption><em>Seated Figure</em>, 2025, 4K digital video, loop (video stills)</figcaption>
       </figure>
     </main>
   </body>
