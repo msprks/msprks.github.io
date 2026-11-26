@@ -2019,10 +2019,10 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
   transform-origin: center 87%;
   transform: translateY(var(--floor-alignment, 0.6%)) scale(1.04);
 }
-.holding-patterns-frame img:is([src$="/web_holdingpatterns-still5.jpg"], [src$="/web_holdingpatterns-still2.jpg"]) {
+.holding-patterns-frame img:is([src$="/web_holdingpatterns-still5-web.jpg"], [src$="/web_holdingpatterns-still2-web.jpg"]) {
   --floor-alignment: -0.44%;
 }
-.holding-patterns-frame img[src$="/web_holdingpatterns-still3.jpg"] {
+.holding-patterns-frame img[src$="/web_holdingpatterns-still3-web.jpg"] {
   --floor-alignment: 0.25%;
 }
 .seated-figure-color-filters {
