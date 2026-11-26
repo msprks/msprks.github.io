@@ -2034,10 +2034,12 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 .shibumi-seated-figure-reel img[src*="/web_seatedfigure-still3-web.jpg"] {
   filter: url(#shibumi-orange-still-3);
 }
-.exhibition-reel button {
+:is(.exhibition-reel, .holding-gallery) > button[data-step] {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  box-sizing: border-box;
+  appearance: none;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -2047,11 +2049,11 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
   color: #111;
   cursor: pointer;
 }
-.exhibition-reel button:not([hidden]) {
+:is(.exhibition-reel, .holding-gallery) > button[data-step]:not([hidden]) {
   display: grid;
   place-items: center;
 }
-.exhibition-reel button::before {
+:is(.exhibition-reel, .holding-gallery) > button[data-step]::before {
   content: "";
   width: 24px;
   height: 18px;
@@ -2062,7 +2064,7 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 .exhibition-reel button[data-step="-1"] {
   right: calc(100% + 8px);
 }
-.exhibition-reel button[data-step="-1"]::before {
+:is(.exhibition-reel, .holding-gallery) > button[data-step="-1"]::before {
   transform: scaleX(-1);
 }
 .exhibition-reel button[data-step="1"] {
