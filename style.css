@@ -2047,13 +2047,20 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 }
 @media screen and (min-width: 900px) {
   .vertical-exhibition-gallery .exhibition-reel-figure {
-    --reel-height-limit: calc(100dvh - 64px);
+    /* Leave room for the fixed title area and a wrapped caption. */
+    --reel-top-space: 7rem;
+    --reel-height-limit: max(0px, calc(100dvh - var(--reel-top-space) - 4rem));
     width: min(70%, calc(100% - 104px), calc(var(--reel-height-limit) * (var(--exhibition-reel-ratio))));
   }
   html[data-navigation="top"] .vertical-exhibition-gallery .exhibition-reel-figure {
-    --reel-height-limit: calc(100dvh - var(--compact-header-height, 0px) - 64px);
+    --reel-top-space: calc(var(--compact-header-height, 8rem) + var(--page-gutter));
+  }
+  .vertical-exhibition-gallery .exhibition-reel-frame {
+    position: relative;
   }
   .vertical-exhibition-gallery .exhibition-reel-frame .slide {
+    position: absolute;
+    inset: 0;
     object-fit: contain;
     transform: none;
   }
@@ -2062,13 +2069,15 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
   container-type: inline-size;
   overflow: hidden;
 }
-.holding-patterns-reel .exhibition-reel-frame .slide {
-  /* Adjust the ceiling around the wall-to-floor line. */
-  transform-origin: center 88%;
-  transform: translateY(var(--undercurrents-floor-offset, 0%)) scale(1.01);
-  transform: translateY(var(--undercurrents-floor-offset, 0%)) perspective(200cqw)
-    rotateY(var(--undercurrents-ceiling-angle, 0deg))
-    scale(1.01) scaleY(var(--undercurrents-ceiling-stretch, 1));
+@media screen and (max-width: 899px) {
+  .holding-patterns-reel .exhibition-reel-frame .slide {
+    /* Adjust the ceiling around the wall-to-floor line. */
+    transform-origin: center 88%;
+    transform: translateY(var(--undercurrents-floor-offset, 0%)) scale(1.01);
+    transform: translateY(var(--undercurrents-floor-offset, 0%)) perspective(200cqw)
+      rotateY(var(--undercurrents-ceiling-angle, 0deg))
+      scale(1.01) scaleY(var(--undercurrents-ceiling-stretch, 1));
+  }
 }
 .seated-figure-color-filters {
   position: absolute;
