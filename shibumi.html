@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Soft Power — M.E. Sparks</title>
-    <link rel="stylesheet" href="style.css?v=20261126-reel-viewport-fit">
+    <link rel="stylesheet" href="style.css?v=shibumi-seated-figure-blue-match">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <script src="responsive-header.js?v=2" defer></script>
     <script src="exhibition-reel.js?v=0fe4b230e4" defer></script>
@@ -35,6 +35,28 @@
         <div class="exhibition-reel shibumi-seated-figure-reel" role="group" aria-label="Seated Figure video stills" data-still-label="Seated Figure video still"
              data-stills='["images/exhibitions/shibumi/web_seatedfigure-still2-web.webp?v=4e938077a0", "images/exhibitions/shibumi/web_seatedfigure-still3-web.webp?v=199c2266ba"]'>
           <svg class="seated-figure-color-filters" width="0" height="0" aria-hidden="true" focusable="false">
+            <!-- Match the blue fabric and dark spots along the left edge. -->
+            <filter id="shibumi-blue-still-1" x="0" y="0" width="100%" height="100%" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+              <feImage x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="fabric"
+                       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 225 400'%3E%3Cpath d='M0 0H35L39 119 37 145 30 159 16 193 0 221Z'/%3E%3C/svg%3E"/>
+              <feColorMatrix in="SourceGraphic" values="1 0 0 0 -.020  0 1 0 0 .004  0 0 1 0 .020  0 0 0 1 0" result="matched"/>
+              <feComposite in="matched" in2="fabric" operator="in"/>
+              <feComposite in2="SourceGraphic" operator="over"/>
+            </filter>
+            <filter id="shibumi-blue-still-2" x="0" y="0" width="100%" height="100%" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+              <feImage x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="fabric"
+                       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 225 400'%3E%3Cpath d='M0 0H35L39 94 40 127 33 141 24 150 14 173 0 209Z'/%3E%3C/svg%3E"/>
+              <feColorMatrix in="SourceGraphic" values="1 0 0 0 -.035  0 1 0 0 -.024  0 0 1 0 -.008  0 0 0 1 0" result="matched"/>
+              <feComposite in="matched" in2="fabric" operator="in"/>
+              <feComposite in2="SourceGraphic" operator="over"/>
+            </filter>
+            <filter id="shibumi-blue-still-3" x="0" y="0" width="100%" height="100%" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+              <feImage x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="fabric"
+                       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 225 400'%3E%3Cpath d='M0 0H35L40 101 36 111 26 122 19 136 17 158 12 175 0 191Z'/%3E%3C/svg%3E"/>
+              <feColorMatrix in="SourceGraphic" values="1 0 0 0 .004  0 1 0 0 .004  0 0 1 0 .016  0 0 0 1 0" result="matched"/>
+              <feComposite in="matched" in2="fabric" operator="in"/>
+              <feComposite in2="SourceGraphic" operator="over"/>
+            </filter>
             <filter id="shibumi-orange-still-2" color-interpolation-filters="sRGB">
               <!-- Select orange using both red–green and green–blue separation. -->
               <feColorMatrix in="SourceGraphic" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  12 -12 0 0 -.96" result="redMask"/>

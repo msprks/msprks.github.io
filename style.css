@@ -2095,11 +2095,23 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 .seated-figure-color-filters {
   position: absolute;
 }
+.aceart-seated-figure-reel .slide {
+  filter: url(#aceart-seated-figure-still-1-match);
+}
+.aceart-seated-figure-reel img[src*="/web_seatedfigure-still2-web.webp"] {
+  filter: url(#aceart-seated-figure-still-2-match);
+}
+.aceart-seated-figure-reel img[src*="/web_seatedfigure-still3-web.webp"] {
+  filter: url(#aceart-seated-figure-still-3-match);
+}
+.shibumi-seated-figure-reel .slide {
+  filter: url(#shibumi-blue-still-1);
+}
 .shibumi-seated-figure-reel img[src*="/web_seatedfigure-still2-web.webp"] {
-  filter: url(#shibumi-orange-still-2);
+  filter: url(#shibumi-orange-still-2) url(#shibumi-blue-still-2);
 }
 .shibumi-seated-figure-reel img[src*="/web_seatedfigure-still3-web.webp"] {
-  filter: url(#shibumi-orange-still-3);
+  filter: url(#shibumi-orange-still-3) url(#shibumi-blue-still-3);
 }
 :is(.exhibition-reel, .holding-gallery) > button[data-step] {
   position: absolute;
