@@ -2010,30 +2010,65 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 .exhibition-reel-frame {
   aspect-ratio: var(--exhibition-reel-ratio);
 }
-.nars-page .exhibition-reel-frame {
-  --exhibition-reel-ratio: 2114 / 2158;
+.holding-patterns-reel .exhibition-reel-frame img[src*="/web_holdingpatterns_video_still_2.webp"] {
+  filter: brightness(0.90) contrast(1.16);
+  --undercurrents-floor-offset: 0.4%;
+  --undercurrents-ceiling-stretch: 1.006;
+  --undercurrents-ceiling-angle: -0.15deg;
 }
-:is(.aceart-page, .shibumi-page) .exhibition-reel-frame {
+.holding-patterns-reel .exhibition-reel-frame img[src*="/web_videostill_holdingpatterns_videostill3.webp"] {
+  --undercurrents-floor-offset: 0.8%;
+  --undercurrents-ceiling-stretch: 1.0027;
+  --undercurrents-ceiling-angle: 0.6deg;
+}
+.holding-patterns-reel .exhibition-reel-frame img[src*="/web_holdingpatterns_still2.webp"] {
+  --undercurrents-floor-offset: 0.4%;
+  --undercurrents-ceiling-stretch: 1.0013;
+  --undercurrents-ceiling-angle: 0.3deg;
+}
+.holding-patterns-reel .exhibition-reel-frame img[src*="/web_11_videostill_holdingpatterns_videostill4-web.webp"] {
+  --undercurrents-floor-offset: 0.1%;
+  --undercurrents-ceiling-stretch: 0.996;
+  --undercurrents-ceiling-angle: 0.3deg;
+}
+.aceart-page .exhibition-reel-figure,
+.shibumi-page .exhibition-reel-figure {
   --exhibition-reel-ratio: 9 / 16;
 }
-.aceart-page .holding-patterns-frame {
-  --exhibition-reel-ratio: 1571 / 1600;
-  overflow: hidden;
+.exhibition-reel-figure.holding-patterns-reel {
+  --exhibition-reel-ratio: 2114 / 2158;
 }
 .exhibition-reel-frame .slide {
   height: 100%;
   object-fit: cover;
 }
-.holding-patterns-frame .slide {
-  /* Keep the wall-to-floor line at the same height while centering the crop. */
-  transform-origin: center 87%;
-  transform: translateY(var(--floor-alignment, 0.6%)) scale(1.04);
+.aceart-page .exhibition-reel-frame img[src*="/web_08_perennial_videostill2-balanced.webp"] {
+  filter: contrast(1.04);
 }
-.holding-patterns-frame img[src*="/web_holdingpatterns-still2-web.webp"] {
-  --floor-alignment: -0.44%;
+@media screen and (min-width: 900px) {
+  .vertical-exhibition-gallery .exhibition-reel-figure {
+    --reel-height-limit: calc(100dvh - 64px);
+    width: min(70%, calc(100% - 104px), calc(var(--reel-height-limit) * (var(--exhibition-reel-ratio))));
+  }
+  html[data-navigation="top"] .vertical-exhibition-gallery .exhibition-reel-figure {
+    --reel-height-limit: calc(100dvh - var(--compact-header-height, 0px) - 64px);
+  }
+  .vertical-exhibition-gallery .exhibition-reel-frame .slide {
+    object-fit: contain;
+    transform: none;
+  }
 }
-.holding-patterns-frame img[src*="/web_holdingpatterns-still3-web.webp"] {
-  --floor-alignment: 0.25%;
+.holding-patterns-reel .exhibition-reel-frame {
+  container-type: inline-size;
+  overflow: hidden;
+}
+.holding-patterns-reel .exhibition-reel-frame .slide {
+  /* Adjust the ceiling around the wall-to-floor line. */
+  transform-origin: center 88%;
+  transform: translateY(var(--undercurrents-floor-offset, 0%)) scale(1.01);
+  transform: translateY(var(--undercurrents-floor-offset, 0%)) perspective(200cqw)
+    rotateY(var(--undercurrents-ceiling-angle, 0deg))
+    scale(1.01) scaleY(var(--undercurrents-ceiling-stretch, 1));
 }
 .seated-figure-color-filters {
   position: absolute;
@@ -2141,6 +2176,13 @@ body .homepage-exhibition-portrait img.site-portrait {
   margin: 0;
 }
 @media screen and (min-width: 900px) {
+  .touchy-page .vertical-exhibition-gallery .touchy-lead-image {
+    --touchy-header-space: 5.25rem;
+    width: min(70%, calc((100dvh - var(--touchy-header-space) - 2.5rem) * 1189 / 1600));
+  }
+  html[data-navigation="top"] .touchy-page .touchy-lead-image {
+    --touchy-header-space: var(--compact-header-height, 8rem);
+  }
   /* Match the height of Ace Art's first image (1500 × 994) at the same column width. */
   body.video-page .vertical-exhibition-gallery figure:has(.exhibition-video) {
     width: 37.275%;
