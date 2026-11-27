@@ -1959,6 +1959,16 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 .vertical-exhibition-gallery figure {
   margin: 0 0 5rem;
 }
+.aceart-floor-shadow {
+  position: relative;
+}
+.aceart-floor-shadow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 58% 29% at 92% 96%, rgb(255 255 255 / 19%), transparent);
+}
 .exhibition-video-frame {
   position: relative;
   width: 100%;
@@ -2019,19 +2029,19 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
   transform-origin: center 87%;
   transform: translateY(var(--floor-alignment, 0.6%)) scale(1.04);
 }
-.holding-patterns-frame img:is([src$="/web_holdingpatterns-still5-web.jpg"], [src$="/web_holdingpatterns-still2-web.jpg"]) {
+.holding-patterns-frame img[src*="/web_holdingpatterns-still2-web.webp"] {
   --floor-alignment: -0.44%;
 }
-.holding-patterns-frame img[src$="/web_holdingpatterns-still3-web.jpg"] {
+.holding-patterns-frame img[src*="/web_holdingpatterns-still3-web.webp"] {
   --floor-alignment: 0.25%;
 }
 .seated-figure-color-filters {
   position: absolute;
 }
-.shibumi-seated-figure-reel img[src*="/web_seatedfigure-still2-web.jpg"] {
+.shibumi-seated-figure-reel img[src*="/web_seatedfigure-still2-web.webp"] {
   filter: url(#shibumi-orange-still-2);
 }
-.shibumi-seated-figure-reel img[src*="/web_seatedfigure-still3-web.jpg"] {
+.shibumi-seated-figure-reel img[src*="/web_seatedfigure-still3-web.webp"] {
   filter: url(#shibumi-orange-still-3);
 }
 :is(.exhibition-reel, .holding-gallery) > button[data-step] {

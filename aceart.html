@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ace Art — M.E. Sparks</title>
-    <link rel="stylesheet" href="style.css?v=20261126-reel-arrows">
+    <link rel="stylesheet" href="style.css?v=20261126-floor-shadow">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <script src="responsive-header.js?v=2" defer></script>
     <script src="exhibition-reel.js?v=2" defer></script>
@@ -25,29 +25,29 @@
 
     <main class="slide-container vertical-exhibition-gallery" aria-label="Ace Art exhibition">
       <figure>
-        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_02_aceart2-balanced.jpg" width="1500" height="994">
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_01_aceart1-balanced.jpg" width="1500" height="1047">
-      </figure>
-      <figure>
         <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_04_install2-balanced.jpg" width="1600" height="1230">
+        <figcaption>
+          Right: <em>Draped Composition (In-Progress)</em>, 2024–2025, acrylic, tempera, ink, oil paint on canvas and recycled fabrics, dimensions variable<br>
+          Left: <em>Yellow Curtain</em>, 2025, 4K digital video, loop, 50" monitor
+        </figcaption>
       </figure>
       <figure>
-        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_03_install6-balanced.jpg" width="1600" height="1068">
+        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_02_aceart2-balanced.jpg" width="1500" height="994">
       </figure>
       <figure>
         <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_07_install8-balanced.jpg" width="1600" height="1066">
       </figure>
+      <figure class="aceart-floor-shadow">
+        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_03_install6-balanced.jpg" width="1600" height="1068">
+      </figure>
       <figure>
-        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_06_install4-balanced.jpg" width="1600" height="1067">
-        <figcaption><em>Draped Composition (In-Progress)</em>, 2024–2025, acrylic, tempera, ink, oil paint on canvas and recycled fabrics, dimensions variable</figcaption>
+        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_01_aceart1-balanced.jpg" width="1500" height="1047">
       </figure>
       <figure class="exhibition-reel-figure">
         <div class="exhibition-reel" role="group" aria-label="Floor Life video stills" data-still-label="Floor Life video still"
-             data-stills='["images/exhibitions/aceart/web_floorlife-still2-web.jpg?v=ddc0a532b0", "images/exhibitions/aceart/web_floorlife-still5-web.jpg?v=85ed424f38"]'>
+             data-stills='["images/exhibitions/aceart/web_floorlife-still2-web.webp?v=548c74f605", "images/exhibitions/aceart/web_floorlife-still5-web.webp?v=0ccb3ae679"]'>
           <div class="exhibition-reel-frame" aria-live="polite">
-            <img loading="lazy" decoding="async" class="slide" alt="Floor Life video still 1 of 3" src="images/exhibitions/aceart/web_08_perennial_videostill2-balanced.jpg" width="900" height="1600">
+            <img loading="lazy" decoding="async" class="slide" alt="Floor Life video still 1 of 3" src="images/exhibitions/aceart/web_08_perennial_videostill2-balanced.webp?v=3962c52afd" width="900" height="1600">
           </div>
           <button type="button" aria-label="Previous video still" data-step="-1" hidden></button>
           <button type="button" aria-label="Next video still" data-step="1" hidden></button>
@@ -56,9 +56,24 @@
       </figure>
       <figure class="exhibition-reel-figure">
         <div class="exhibition-reel" role="group" aria-label="Seated Figure video stills" data-still-label="Seated Figure video still"
-             data-stills='["images/exhibitions/aceart/web_seatedfigure-still2-web.jpg?v=34640b648d", "images/exhibitions/aceart/web_seatedfigure-still3-web.jpg?v=9ff595ecee"]'>
+             data-stills='["images/exhibitions/aceart/web_seatedfigure-still2-web.webp?v=97c02cfc0d", "images/exhibitions/aceart/web_seatedfigure-still3-web.webp?v=590c9ab8f2"]'>
+          <svg class="seated-figure-color-filters" width="0" height="0" aria-hidden="true" focusable="false">
+            <filter id="aceart-seated-figure-blue" x="0" y="0" width="100%" height="100%" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+              <!-- Limit the correction to cyan in the hanging fabric at the upper left. -->
+              <feColorMatrix in="SourceGraphic" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -30 0 30 0 -.5" result="blueMask"/>
+              <feColorMatrix in="SourceGraphic" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -30 30 0 0 -.5" result="greenMask"/>
+              <feComposite in="blueMask" in2="greenMask" operator="in" result="cyanMask"/>
+              <feColorMatrix in="SourceGraphic" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 -12 12 0 1.45" result="greenLimit"/>
+              <feComposite in="cyanMask" in2="greenLimit" operator="in" result="fabricMask"/>
+              <feFlood x="0" y="0" width="20%" height="47%" flood-color="white" result="upperLeft"/>
+              <feComposite in="fabricMask" in2="upperLeft" operator="in" result="localizedFabric"/>
+              <feColorMatrix in="SourceGraphic" values=".16 .54 .08 0 0  .20 .68 .09 0 0  .26 .86 .12 0 .025  0 0 0 1 0" result="blueFabric"/>
+              <feComposite in="blueFabric" in2="localizedFabric" operator="in"/>
+              <feComposite in2="SourceGraphic" operator="over"/>
+            </filter>
+          </svg>
           <div class="exhibition-reel-frame" aria-live="polite">
-            <img loading="lazy" decoding="async" class="slide" alt="Seated Figure video still 1 of 3" src="images/exhibitions/aceart/web_09_seatedfigure_videostill1-web.jpg" width="900" height="1600">
+            <img loading="lazy" decoding="async" class="slide" alt="Seated Figure video still 1 of 3" src="images/exhibitions/aceart/web_09_seatedfigure_videostill1-web.webp?v=ff067cca65" width="900" height="1600" style="filter: url(#aceart-seated-figure-blue)">
           </div>
           <button type="button" aria-label="Previous video still" data-step="-1" hidden></button>
           <button type="button" aria-label="Next video still" data-step="1" hidden></button>
@@ -67,9 +82,9 @@
       </figure>
       <figure class="exhibition-reel-figure">
         <div class="exhibition-reel" role="group" aria-label="Yellow Curtain video stills" data-still-label="Yellow Curtain video still"
-             data-stills='["images/exhibitions/aceart/web_10yellowcurtain_videostill3.jpg", "images/exhibitions/aceart/web_yellowcurtain-still3.jpg"]'>
+             data-stills='["images/exhibitions/aceart/web_10yellowcurtain_videostill3.webp?v=3dd29e2db5", "images/exhibitions/aceart/web_yellowcurtain-still3.webp?v=b5c80fd977"]'>
           <div class="exhibition-reel-frame" aria-live="polite">
-            <img loading="lazy" decoding="async" class="slide" alt="Yellow Curtain video still 1 of 3" src="images/exhibitions/aceart/web_yellowcurtain1.jpg" width="863" height="1534">
+            <img loading="lazy" decoding="async" class="slide" alt="Yellow Curtain video still 1 of 3" src="images/exhibitions/aceart/web_yellowcurtain1.webp?v=8f4cc55dba" width="863" height="1534">
           </div>
           <button type="button" aria-label="Previous video still" data-step="-1" hidden></button>
           <button type="button" aria-label="Next video still" data-step="1" hidden></button>
@@ -78,9 +93,9 @@
       </figure>
       <figure class="exhibition-reel-figure">
         <div class="exhibition-reel" role="group" aria-label="Holding Patterns video stills" data-still-label="Holding Patterns video still"
-             data-stills='["images/exhibitions/aceart/web_holdingpatterns-still5-web.jpg", "images/exhibitions/aceart/web_holdingpatterns-still2-web.jpg", "images/exhibitions/aceart/web_holdingpatterns-still3-web.jpg"]'>
+             data-stills='["images/exhibitions/aceart/web_videostill_holdingpatterns_videostill3.webp?v=409e61d875", "images/exhibitions/aceart/web_holdingpatterns-still2-web.webp?v=66ca4dae36", "images/exhibitions/aceart/web_holdingpatterns-still3-web.webp?v=87d01a5818"]'>
           <div class="exhibition-reel-frame holding-patterns-frame" aria-live="polite">
-            <img loading="lazy" decoding="async" class="slide" alt="Holding Patterns video still 1 of 4" src="images/exhibitions/aceart/web_11_videostill_holdingpatterns_videostill4-web.jpg" width="1572" height="1600">
+            <img loading="lazy" decoding="async" class="slide" alt="Holding Patterns video still 1 of 4" src="images/exhibitions/aceart/web_11_videostill_holdingpatterns_videostill4-web.webp?v=ab825880d9" width="1572" height="1600">
           </div>
           <button type="button" aria-label="Previous video still" data-step="-1" hidden></button>
           <button type="button" aria-label="Next video still" data-step="1" hidden></button>
