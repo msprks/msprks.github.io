@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ace Art — M.E. Sparks</title>
-    <link rel="stylesheet" href="style.css?v=20261126-reel-viewport-fit">
+    <link rel="stylesheet" href="style.css?v=20261127-aceart-wall-balance">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <script src="responsive-header.js?v=2" defer></script>
     <script src="exhibition-reel.js?v=0fe4b230e4" defer></script>
@@ -23,25 +23,66 @@
     </header>
     <div class="site-header-spacer"></div>
 
+    <svg class="aceart-wall-masks" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <!-- Masks follow the gallery walls and exclude the hanging works. -->
+        <clipPath id="aceart-wall-04" clipPathUnits="objectBoundingBox">
+          <path clip-rule="evenodd" transform="scale(.0025 0.003257329)"
+                d="M0 48 140 40 140 98 135 98 134 211 140 211 140 238 0 227Z M145 39 169 39 169 101 145 99Z M180 38 400 27 400 249 334 243 335 169 339 169 339 110 180 101Z M59 115H100V186H59Z"/>
+        </clipPath>
+        <clipPath id="aceart-wall-02" clipPathUnits="objectBoundingBox">
+          <path clip-rule="evenodd" transform="scale(.0025 0.003773585)"
+                d="M0 45 6 43 6 116 0 116Z M6 49 35 56 35 187 6 190Z M36 95 143 80 143 106 49 106 49 161 47 161 47 120 36 120Z M146 0 190 0 190 222 169 228 146 223Z M192 76 400 32 400 99 323 91 323 149 333 149 333 188 192 174Z M199 114H221V153H199Z M267 110H295V155H267Z"/>
+        </clipPath>
+        <clipPath id="aceart-wall-03" clipPathUnits="objectBoundingBox">
+          <path clip-rule="evenodd" transform="scale(.0025 0.003745318)"
+                d="M0 57 147 80 147 97 211 99 211 119 142 112 142 104 12 79 11 164 0 166Z M143 141 154 141 154 151 165 151 165 162 143 165Z M214 36 229 39 229 194 213 191Z M230 39 243 49 243 191 230 194Z M245 96 400 69 400 179 396 178 396 110 295 112 294 156 303 156 303 169 245 168Z M270 115H289V149H270Z"/>
+        </clipPath>
+        <clipPath id="aceart-wall-07" clipPathUnits="objectBoundingBox">
+          <path clip-rule="evenodd" transform="scale(.0025 0.003759398)"
+                d="M0 18 154 88 154 120 151 120 151 174 0 234Z M17 95H56V171H17Z M96 111H116V162H96Z M154 88 170 85 170 121 154 121Z M172 84 259 82 259 110 255 110 255 121 172 121Z M262 82 279 62 279 109 262 111Z M281 41 306 39 306 104 281 110Z"/>
+        </clipPath>
+        <clipPath id="aceart-wall-01" clipPathUnits="objectBoundingBox">
+          <path clip-rule="evenodd" transform="scale(.0025 0.003584229)"
+                d="M0 51 74 51 74 202 0 202Z M84 51 288 50 288 202 194 201 194 74 187 74 182 101 84 108Z M219 106H253V164H219Z M290 50 314 50 314 202 290 202Z M317 50 367 50 367 102 362 102 362 171 367 171 367 202 317 202Z M370 0H400V259L370 248Z"/>
+        </clipPath>
+      </defs>
+    </svg>
+
     <main class="slide-container vertical-exhibition-gallery" aria-label="Ace Art exhibition">
       <figure>
-        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_04_install2-balanced.jpg" width="1600" height="1230">
+        <div class="aceart-wall-balanced" style="--wall-mask: url(#aceart-wall-04)">
+          <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_04_install2-balanced.jpg" width="1600" height="1230">
+          <img loading="lazy" decoding="async" class="slide aceart-wall-overlay" alt="" aria-hidden="true" src="images/exhibitions/aceart/web_04_install2-balanced.jpg" width="1600" height="1230">
+        </div>
         <figcaption>
           Right: <em>Draped Composition (In-Progress)</em>, 2024–2025, acrylic, tempera, ink, oil paint on canvas and recycled fabrics, dimensions variable<br>
           Left: <em>Yellow Curtain</em>, 2025, 4K digital video, loop, 50" monitor
         </figcaption>
       </figure>
       <figure>
-        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_02_aceart2-balanced.jpg" width="1500" height="994">
+        <div class="aceart-wall-balanced" style="--wall-mask: url(#aceart-wall-02)">
+          <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_02_aceart2-balanced.jpg" width="1500" height="994">
+          <img loading="lazy" decoding="async" class="slide aceart-wall-overlay" alt="" aria-hidden="true" src="images/exhibitions/aceart/web_02_aceart2-balanced.jpg" width="1500" height="994">
+        </div>
       </figure>
       <figure class="aceart-floor-shadow">
-        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_03_install6-balanced.jpg" width="1600" height="1068">
+        <div class="aceart-wall-balanced" style="--wall-mask: url(#aceart-wall-03)">
+          <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_03_install6-balanced.jpg" width="1600" height="1068">
+          <img loading="lazy" decoding="async" class="slide aceart-wall-overlay" alt="" aria-hidden="true" src="images/exhibitions/aceart/web_03_install6-balanced.jpg" width="1600" height="1068">
+        </div>
       </figure>
       <figure>
-        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_07_install8-balanced.jpg" width="1600" height="1066">
+        <div class="aceart-wall-balanced" style="--wall-mask: url(#aceart-wall-07)">
+          <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_07_install8-balanced.jpg" width="1600" height="1066">
+          <img loading="lazy" decoding="async" class="slide aceart-wall-overlay" alt="" aria-hidden="true" src="images/exhibitions/aceart/web_07_install8-balanced.jpg" width="1600" height="1066">
+        </div>
       </figure>
       <figure>
-        <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_01_aceart1-balanced.jpg" width="1500" height="1047">
+        <div class="aceart-wall-balanced" style="--wall-mask: url(#aceart-wall-01)">
+          <img loading="lazy" decoding="async" class="slide" alt="Ace Art installation view" src="images/exhibitions/aceart/web_01_aceart1-balanced.jpg" width="1500" height="1047">
+          <img loading="lazy" decoding="async" class="slide aceart-wall-overlay" alt="" aria-hidden="true" src="images/exhibitions/aceart/web_01_aceart1-balanced.jpg" width="1500" height="1047">
+        </div>
       </figure>
       <figure class="exhibition-reel-figure">
         <div class="exhibition-reel" role="group" aria-label="Floor Life video stills" data-still-label="Floor Life video still"

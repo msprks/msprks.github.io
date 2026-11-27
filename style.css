@@ -1962,6 +1962,19 @@ html[data-navigation="side"] .exhibition-page .gallery-scroll-right {
 .aceart-floor-shadow {
   position: relative;
 }
+.aceart-wall-masks {
+  position: absolute;
+}
+.aceart-wall-balanced {
+  position: relative;
+}
+.aceart-wall-overlay {
+  position: absolute;
+  inset: 0;
+  clip-path: var(--wall-mask);
+  filter: saturate(25%);
+  pointer-events: none;
+}
 .aceart-floor-shadow::after {
   content: "";
   position: absolute;
